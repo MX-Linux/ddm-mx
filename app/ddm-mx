@@ -10,15 +10,6 @@
 # 6 - Cannot purge driver
 # 7 - Card not supported
 
-# Broadcom hardware list (device ids)
-# Update URL: http://linuxwireless.org/en/users/Drivers/b43
-# Last update: 13-07-2016
-#B43='|4307|4311|4312|4315|4318|4319|4320|4321|4322|4324|432c|4331|4350|4353|4357|43a9|43aa|a8d6|a8d8|a8db|'
-#B43LEGACY='|4301|4306|4325|'
-#WLDEBIAN='|0576|4313|4328|4329|432a|432b|432d|4358|4359|4365|43a0|435a|4727|a99d|'
-#BRCMDEBIAN=''
-#UNKNOWN='|4360|43b1|'
-
 ###original code from the solydXK project.
 
 ####MODIFICATIONS FOR MX by dolphin oracle
@@ -34,7 +25,8 @@ CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
 ERR_FILE="/dev/null"
 LOG="/var/log/ddm.log"
-BP="jessie-backports"
+BP_REPO="jessie-backports"
+BP_REPO_ADDRESS="deb http://httpredir.debian.org/debian"
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
@@ -61,10 +53,6 @@ do_flock
 FORCE='--force-yes'
 source /etc/lsb-release
 
-##commented out for mx 
-#if [[ -z "$DISTRIB_RELEASE" ]] || [ "$DISTRIB_RELEASE" -gt 8 ]; then
-#  FORCE='--allow-downgrades --allow-remove-essential --allow-change-held-packages'
-#fi
 
 # -------------------------------------------------------------------------
 
@@ -164,27 +152,8 @@ for DRV in $PURGE; do
     nvidia)
       install_open
       ;;
-#    broadcom)
-#      # If 'purge' is passed as an argument, purge Broadcom
-#      echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
-#      #apt-get purge -y $FORCE firmware-b43* 2>&1 | tee -a $LOG
-#      apt-get purge -y $FORCE broadcom-sta-dkms 2>&1 | tee -a $LOG
-#      #apt-get purge -y $FORCE firmware-brcm80211 2>&1 | tee -a $LOG
-#      rm '/etc/modprobe.d/blacklist-broadcom.conf' 2>/dev/null
-#      ;;
     open)
       ;;
-#    pae)
-#      RELEASE=`uname -r`
-#      if [[ "$RELEASE" =~ "pae" ]]; then
-#	echo "ERROR: Cannot remove PAE kernel when PAE is booted" | tee -a $LOG
-#	exit 6
-#      else
-#	echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
-#	apt-get purge -y $FORCE $(dpkg-query -W -f='${Package}\n' *-pae) 2>&1 | tee -a $LOG
-#	echo "PAE kernel successfully removed" | tee -a $LOG
-#     fi
-#      ;;
     fixbumblebee)
       ;;
     *)
@@ -297,45 +266,10 @@ for DRV in $INSTALL; do
       # Install the Nvidia drivers
       install_nvidia
       ;;
-#    broadcom)
-#      # Get device ids for Broadcom
-#      BCID='14e4'
-#      DEVICEIDS=$(lspci -n -d $BCID: | awk '{print $3}' | cut -d':' -f 2)
-      
-#      # Testing
-#      if $TEST; then
-#        DEVICEIDS='4313'
-#      fi
-      
-#      if [ "$DEVICEIDS" == "" ]; then
-#	echo "No Broadcom device found - exiting" | tee -a $LOG
-#	exit 0
-#      fi
-
-#      # Install the Broadcom drivers
-#      install_broadcom $DEVICEIDS
-#     ;;
     open)
       # Install the open drivers
       install_open
       ;;
-#    pae)
-#      MACHINE=`uname -m`
-      
-#      if $TEST; then
-#        MACHINE='i686'
-#      fi
-      
-      # Install PAE when more than one CPU and not running on 64-bit system
-#      if [ $MACHINE == "i686" ]; then
-#	apt-get update
-#	echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
-#	apt-get install --reinstall -y $FORCE linux-headers-686-pae linux-image-686-pae 2>&1 | tee -a $LOG
-#	echo "PAE kernel successfully installed" | tee -a $LOG
- #     else
-#	echo "amd64 machine: not installing" | tee -a $LOG
- #     fi
-#      ;;
     fixbumblebee)
       # purge nvidia-xconfig and move xorg.conf away
       apt-get purge -y $FORCE nvidia-xconfig 2>&1 | tee -a $LOG
@@ -384,20 +318,6 @@ function usage() {
   echo "======================================================================"
 }
 
-#####removed gui launch
-#function launch_gui() {
-#  ARGS=$1
-#  optimize='OO'; case "$*" in *--debug*) unset optimize; esac
-#  MSG='Please enter your password'
-#  CMD="python3 -tt${optimize} /usr/lib/ddm/main.py $ARGS"
-#  if [ -e "/usr/bin/kdesudo" ]; then
-#    kdesudo -i "ddm" -d --comment "<b>$MSG</b>" "$CMD"
-#  else
-#    gksudo --message "<b>$MSG</b>" "$CMD"
-#  fi
-#  exit 0
-#}
-
 
 
 # =========================================================================
@@ -405,23 +325,6 @@ function usage() {
 # =========================================================================
 
 
-####removed backports function for mx
-# Create string to install from backports when available
-#function get_backports_string() {
-#  PCK=$1
-#  local BPSTR=''
-#  BP=$(grep backports /etc/apt/sources.list | grep -v ^# | awk '{print $3}')
-#  if [ "$BP" == "" ]; then
-#    BP=$(grep backports /etc/apt/sources.list.d/*.list | grep -v ^# | awk '{print $3}')
-#  fi
-#  if [ "$BP" != "" ]; then
-#    PCKCHK=$(apt-cache madison $PCK | grep "$BP")
-#    if [ "$PCKCHK" != "" ]; then
-#      BPSTR="-t $BP"
-#    fi
-#  fi
-#  echo $BPSTR
-#}
 
 # fglrx -------------------------------------------------------------------------
 
@@ -480,12 +383,6 @@ function install_fglrx {
 
   echo "Need driver: $DRIVER ($CANDIDATE)" | tee -a $LOG
 
-####removed backports function for mx  
-#  # Backport?
-#  BP=''
-#  if $BACKPORTS; then
-#    BP=$(get_backports_string $DRIVER)
-#  fi
   
   # Add additional packages
   if ! $RADEON; then
@@ -510,10 +407,6 @@ read x
   apt-get update | tee -a $LOG
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
-###removed backports for mx
-#  echo "Driver command = apt-get install --reinstall $BP -y $FORCE $DRIVER" | tee -a $LOG
-#  apt-get install --reinstall -y $FORCE linux-headers-$(uname -r) build-essential firmware-linux-nonfree amd-opencl-icd 2>&1 | tee -a $LOG
-#  apt-get install --reinstall $BP -y $FORCE $DRIVER 2>&1 | tee -a $LOG
 
   echo "Driver command = apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
   apt-get install --reinstall -y $FORCE linux-headers-$(uname -r) build-essential firmware-linux-nonfree amd-opencl-icd 2>&1 | tee -a $LOG
@@ -528,115 +421,6 @@ read x
   
 }
 
-# broadcom -------------------------------------------------------------------------
-
-function preseed_broadcom {
-  echo 'b43-fwcutter b43-fwcutter/install-unconditional boolean true' | debconf-set-selections
-}
-
-function add_broadcom_dependencies {
-  DRIVER=$1
-  HEADERS="linux-headers-$(uname -r)"
-  INSTALLED=`env LANG=C apt-cache policy $HEADERS | grep Installed | awk '{print $2}' | tr -d ' '`
-  if [ "$INSTALLED" == "" ]; then
-    DRIVER="$DRIVER $HEADER"
-  fi
-  DEPS=`apt-cache depends $DRIVER | grep Depends: | awk '{print $2}' | sed '/>/d' | tr '\n' ' '`
-  DRIVER="$DRIVER $DEPS"
-}
-
-function install_broadcom {
-  DEVICEIDS=$1
-  
-  # Get the appropriate driver
-  DRIVER=''
-  BLACKLIST=''
-  MODPROBE=''
-  for DID in $DEVICEIDS; do
-    if [[ "$B43" =~ "|$DID|" ]] ; then
-      DRIVER='firmware-b43-installer'
-      MODPROBE='b43'
-    elif [[ "$B43LEGACY" =~ "|$DID|" ]] ; then
-      DRIVER='firmware-b43legacy-installer'
-      MODPROBE='b43legacy'
-    elif [[ "$WLDEBIAN" =~ "|$DID|" ]] ; then
-      DRIVER='broadcom-sta-dkms'
-      BLACKLIST='blacklist b43 brcmsmac bcma ssb'
-      MODPROBE='wl'
-    elif [[ "$BRCMDEBIAN" =~ "|$DID|" ]] ; then
-      DRIVER='firmware-brcm80211'
-      MODPROBE='brcmsmac'
-    elif [[ "$UNKNOWN" =~ "|$DID|" ]] ; then
-      echo "This Broadcom device is not supported: $DID"
-    fi
-  done
-  
-  if [ "$DRIVER" != "" ]; then
-    # Add the dependencies 
-    add_broadcom_dependencies $DRIVER
-    
-    # Preseed debconf answers
-    preseed_broadcom
-      
-    # Create download directory
-    CURDIR=$PWD
-    DLDIR='/tmp/dl'
-    mkdir -p $DLDIR 2>/dev/null
-    cd $DLDIR
-    rm -f *.deb 2>/dev/null
-    
-    # Download the packages
-    LIVEDEBS=$(ls /lib/live/mount/medium/offline/broadcom*.deb 2>/dev/null)
-    if [ "$LIVEDEBS" != "" ] && [ "$DRIVER" == "broadcom-sta-dkms" ]; then
-      cp -v $LIVEDEBS ./ | tee -a $LOG
-    else
-      # Backport?
-      BP=''
-      if $BACKPORTS; then
-	BP=$(get_backports_string $DRIVER)
-      fi
-      apt-get update
-      echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
-      echo "Broadcom command = apt-get download $BP $DRIVER" | tee -a $LOG
-      apt-get download $BP $DRIVER 2>&1 | tee -a $LOG
-    fi
-    
-    # Check if packages were downloaded
-    CNT=`ls -1 *.deb 2>/dev/null | wc -l`
-    if [ $CNT -eq 0 ]; then
-      echo "No packages were downloaded - exiting" | tee -a $LOG
-      exit 5
-    fi
-    
-    # Remove modules
-    modprobe -rf b44
-    modprobe -rf b43
-    modprobe -rf b43legacy
-    modprobe -rf ssb
-    modprobe -rf brcmsmac
-    
-    # Install the downloaded packages
-    dpkg -i *.deb 2>&1 | tee -a $LOG
-    
-    # Remove download directory
-    cd $CURDIR
-    rm -r $DLDIR
-    
-    # Blacklist if needed
-    CONF='/etc/modprobe.d/blacklist-broadcom.conf'
-    if [ "$BLACKLIST" != "" ]; then
-      echo $BLACKLIST > $CONF
-    else
-      rm -f $CONF 2>/dev/null
-    fi
-    
-    # Start the new driver
-    modprobe $MODPROBE
-
-    echo "Broadcomm driver successfully installed" | tee -a $LOG
-    
-  fi
-}
 
 # nvidia -------------------------------------------------------------------------
 
@@ -664,23 +448,7 @@ function install_nvidia {
     TESTSWITCH="-s"
   fi
 
-  #enabling debian-backports
-  echo $"Enabling backports repo"
-  echo $"Running apt-get update..."
-  echo "deb http://httpredir.debian.org/debian $BP main contrib non-free">>/etc/apt/sources.list.d/debian-backports-temp.list
-  apt-get update |tee -a $LOG
-  if [ $? = 100 ]; then
-    echo $"There was a problem with the apt-get update.  See $LOG for details"
-    my_exit
-  fi
-  echo ""
-  echo $"Installing latest nvidia-detect package"
-  echo ""
-  apt-get install -t $BP nvidia-detect |tee -a $LOG  
-  echo ""
-  
-  CANDIDATE=`env LANG=C apt-cache policy -t $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
-  INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+  check_cand
 
   if [ "$CANDIDATE" == "" ]; then
     	##refresh sources and try again
@@ -688,8 +456,7 @@ function install_nvidia {
 	echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
 	read x
     	apt-get update | tee -a $LOG
-	CANDIDATE=`env LANG=C apt-cache policy -t $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
-  	INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+	check_cand
   fi
   
 echo ""
@@ -714,13 +481,27 @@ echo ""
 
     if [ $OPTIMUS = 2 ]; then
         DRIVER='bumblebee-nvidia'    
-        CANDIDATE=`env LANG=C apt-cache policy -t $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
-        INSTALLED=`env LANG=C apt-cache policy -t $BP $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+        check_cand
     fi
   echo ""
-  echo "Candidate is: " $CANDIDATE | tee -a $LOG
-  echo "Installed is: " $INSTALLED | tee -a $LOG
+  echo $"Candidate is: " $CANDIDATE | tee -a $LOG
+  echo $"Installed is: " $INSTALLED | tee -a $LOG
   echo ""
+
+  MAIN_CAND=$CANDIDATE
+  debian_backports_dialog
+  check_cand
+
+  if [ -f /etc/apt/sources.list.d/debian-backports-temp.list ]; then
+      echo $"Main repo candidate is:  " $MAIN_CAND |tee -a $LOG
+      echo $"Debian backports candidate is:  "  $CANDIDATE |tee -a $LOG
+      which_driver
+      echo ""
+  else
+      echo $"Candidate is: " $CANDIDATE | tee -a $LOG
+      echo $"Installed is: " $INSTALLED | tee -a $LOG
+      echo ""
+  fi  
   
   if [ "$CANDIDATE" != "" ]; then
       if [ "$INSTALLED" = "$CANDIDATE" ]; then
@@ -759,12 +540,6 @@ echo ""
   echo ""
   echo $"Need driver: "$DRIVER "($CANDIDATE)" | tee -a $LOG
 
-####removed backports function for mx  
-  # Backport?
-#  BP=''
-#  if $BACKPORTS; then
-#    BP=$(get_backports_string $DRIVER)
-#  fi
   
   # Add additional packages
 
@@ -801,32 +576,6 @@ echo ""
                                        exit 2
    esac
 
-####replaced this section with case statement above
-#  if [[ "$DRIVER" = "" ]]; then
-#    # Legacy drivers
-#    DRIVER="$DRIVER nvidia-settings-legacy-304xx"
-#    if [ "$ARCHITECTURE" == "x86_64" ]; then
-#      DRIVER="$DRIVER libgl1-nvidia-legacy-304xx-glx-i386"
-#    fi
-#  else
-#    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
-#      # Bumblebee drivers
-#      DRIVER="$DRIVER primus-libs-ia32:i386"
-#    else
-#      if [ "$ARCHITECTURE" == "x86_64" ]; then
-#	# Additional 32-bit drivers for 64-bit systems
-#	DRIVER="$DRIVER libgl1-nvidia-glx-i386"
-#      fi
-#    fi
-#    DRIVER="$DRIVER nvidia-settings"
-#  fi
-  
-  # In case this is a bybrid (by default installed on SolydXK)
-  #DRIVER="$DRIVER xserver-xorg-video-intel"
-  
-#  # Configuration package
-#  DRIVER="$DRIVER nvidia-xconfig"
-
 echo "NVIDIA packages to install are " $DRIVER | tee -a $LOG  
 
 echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG 
@@ -839,14 +588,9 @@ read x
   #apt-get update | tee -a $LOG 
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
-#####removed backports for mx
-#  echo "Nvidia command = apt-get install --reinstall $BP -y $FORCE $DRIVER" | tee -a $LOG
-#  apt-get install --reinstall -y $FORCE linux-headers-$(uname -r) build-essential firmware-linux-nonfree 2>&1 | tee -a $LOG
-#  apt-get install --reinstall $BP -y $FORCE $DRIVER 2>&1 | tee -a $LOG
-  
-  echo "Nvidia command = apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
+  echo "Nvidia command = apt-get install --reinstall -y $FORCE $SWITCH $ BP $DRIVER" | tee -a $LOG
   apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
-  apt-get install --reinstall --install-recommends -y -t $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
+  apt-get install --reinstall --install-recommends -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
 
 # Configure
@@ -927,6 +671,82 @@ my_exit() {
 
     # Msg "=> cleaning up"
     exit $ret
+}
+
+enable_debian_backports()
+{
+#enabling debian-backports
+  echo $"Enabling backports repo"
+  echo $"Running apt-get update..."
+  echo "$BP_REPO_ADDRESS $BP main contrib non-free">>/etc/apt/sources.list.d/debian-backports-temp.list
+  apt-get update |tee -a $LOG
+  if [ $? = 100 ]; then
+    echo $"There was a problem with the apt-get update.  See $LOG for details"
+    my_exit
+  fi
+  echo ""
+  echo $"Installing latest nvidia-detect package"|tee -a $LOG
+  echo ""
+  apt-get install $SWITCH $BP nvidia-detect |tee -a $LOG  
+  echo ""
+}
+
+debian_backports_dialog()
+{
+echo $"Would you like to check debian-backports for a later version?" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo $"Yes or No?" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo 1: $"Yes" | tee -a $LOG
+        echo 2: $"No" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo "Enter Number of selection" | tee -a $LOG
+        read -n 1 -e x
+
+        case $x in
+           1) echo $"Ok"...| tee -a $LOG 
+	      SWITCH="-t"
+              BP=$BP_REPO
+	      enable_debian_backports	;;
+           2) echo $"Ok"... | tee -a $LOG
+              SWITCH=""
+	      BP=""             ;;
+           *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
+        esac
+}
+
+which_driver()
+{
+echo $"Which driver do you wish to install" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo $"Main repos or debian-backports?" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo 1: $"Main" $MAIN_CAND| tee -a $LOG
+        echo "" | tee -a $LOG
+        echo 2: $"debian-backports" $CANDIDATE | tee -a $LOG
+        echo "" | tee -a $LOG
+	echo 3: $"Exit" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo "Enter Number of selection" | tee -a $LOG
+        read -n 1 -e x
+
+        case $x in
+           1) echo $"Ok"...| tee -a $LOG 
+	      SWITCH=""
+              BP=""
+	      ;;
+           2) echo $"Ok"... | tee -a $LOG
+                     ;;
+           3) echo $"exiting" |tee -a $LOG && exit 0;;
+
+           *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
+        esac
+}
+
+check_cand()
+{
+CANDIDATE=`env LANG=C apt-cache policy $SWITCH $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
+INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
 }
 
 main "$@"

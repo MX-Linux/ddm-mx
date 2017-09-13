@@ -439,8 +439,20 @@ function preseed_nvidia {
 function install_nvidia {
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
-  DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
-  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86)
+  USER=$(logname)
+  ARCHITECTURE=$(uname -m)
+  
+  #test for multiple drivers
+  if [ "$(nvidia-detect-mx | grep INSTALL: | tr -d ' ' | cut -d ':' -f2 | uniq | wc -l)" -ne "1" ]; then 
+    echo $"Nvidia cards requiring multiple drivers detected"|tee -a $LOG
+    echo $"This tool cannot install drivers in this case"|tee -a $LOG
+    echo $"Exiting..." |tee -a $LOG
+    exit 7
+fi
+
+#do it again for real - need to do this after test for multiples
+    DRIVER=$(nvidia-detect-mx | grep INSTALL: | tr -d ' ' | cut -d ':' -f2 | uniq)
+    UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86)
   
   # Testing
   if $TEST; then

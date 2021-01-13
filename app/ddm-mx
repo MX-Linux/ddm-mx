@@ -492,7 +492,14 @@ echo ""
     fi
 
     if [ $OPTIMUS = 2 ]; then
-        DRIVER='bumblebee-nvidia'    
+        # Bumblebee used to be required, but now NVIDIA drivers support Optimus out of the box.
+        # See https://wiki.debian.org/NVIDIA%20Optimus#Using_NVIDIA_PRIME_Render_Offload
+        if grep "MX-19" /etc/mx-version; then 
+            DRIVER='nvidia-driver'    
+        else
+            # For xorg versions below 1.20.8 we must still use Bumblebee
+            DRIVER='bumblebee-nvidia'
+        fi
         check_cand
     fi
   echo ""

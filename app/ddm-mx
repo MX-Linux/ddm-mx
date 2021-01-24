@@ -494,9 +494,19 @@ echo ""
     if [ $OPTIMUS = 2 ]; then
         # Bumblebee used to be required, but now NVIDIA drivers support Optimus out of the box.
         # See https://wiki.debian.org/NVIDIA%20Optimus#Using_NVIDIA_PRIME_Render_Offload
-        if grep "MX-19" /etc/mx-version; then 
+        
+        # Requires Xorg 1.20.8 or greater
+        MIN_XORG_VERSION="1.20.8"
+
+        # I'm sure there's a cleaner way to detect Xorg version, but this works for now.
+        XORG_VERSION=`xdpyinfo | grep "X.Org version" | grep -Poe '\:\s(.*)' | cut -c 3-`
+
+        if { echo $MIN_XORG_VERSION; echo $XORG_VERSION; } | sort -n -c 2>/dev/null
+        then
+            echo "You can use the new PRIMUS driver."
             DRIVER='nvidia-driver'    
         else
+            echo "You need to use the bumblebee-nvidia driver."
             # For xorg versions below 1.20.8 we must still use Bumblebee
             DRIVER='bumblebee-nvidia'
         fi

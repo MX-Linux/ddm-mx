@@ -216,7 +216,7 @@ function usage() {
   echo $"-p driver    Purge given driver."
   echo $"             driver: nvidia"
   echo
-  echo $"-f           force specific nvidia driver package.  nvidia-driver, nvidia-legacy-390xx-driver, nvidia-legacy-340xx-driver"
+  echo $"-f           force specific nvidia driver package.  nvidia-driver, nvidia-legacy-390xx-driver, nvidia-tesla-418-driver, nvidia-tesla-450-driver, nvidia-tesla-460-driver"
   echo
   echo $"-t           For development testing only!  simulate installs"
   echo $"             This will install drivers for pre-defined hardware."
@@ -807,18 +807,36 @@ set_packages(){
                                            DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings libnvidia-encode1" 
                                        fi
                                        ;;
-        nvidia-legacy-340xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms $NVIDIA_XCONFIG"
-                                       else
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms $NVIDIA_XCONFIG"
-                                       fi
-                                       ;;
         nvidia-legacy-390xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
                                            NVIDIA_XCONFIG=""
                                            DRIVER="$DRIVER nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms"
                                        else
                                            NVIDIA_XCONFIG=""
                                            DRIVER="$DRIVER nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms"
+                                       fi
+                                       ;;
+        nvidia-tesla-418-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-418 nvidia-tesla-418-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-418 nvidia-tesla-418-kernel-dkms"
+                                       fi
+                                       ;;
+        nvidia-tesla-450-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-450 nvidia-tesla-450-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-450 nvidia-tesla-450-kernel-dkms"
+                                       fi
+                                       ;;
+        nvidia-tesla-460-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-460 nvidia-tesla-460-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-460 nvidia-tesla-460-kernel-dkms"
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
@@ -831,9 +849,7 @@ set_packages(){
 											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-driver" ]; then
 												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings nvidia-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
-											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-340xx-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
-											fi
+											
                                        fi
                                        ;;
                                  *)

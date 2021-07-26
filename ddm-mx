@@ -25,9 +25,9 @@ CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
 ERR_FILE="/dev/null"
 LOG="/var/log/ddm.log"
-BP_REPO="buster-backports"
+BP_REPO="bullseye-backports"
 BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
-MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ buster test"
+MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ bullseye test"
 BACKPORTS_OVERRIDE=false
 
 TEXTDOMAINDIR=/usr/share/locale 

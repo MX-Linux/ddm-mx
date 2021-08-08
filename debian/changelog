@@ -1,3 +1,9 @@
+ddm-mx (21.08.01mx21) mx; urgency=medium
+
+  * remove virtualgl
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 08 Aug 2021 14:17:33 -0400
+
 ddm-mx (21.07.01mx21) mx; urgency=medium
 
   *  update for bullseye drivers

@@ -55,9 +55,9 @@ echo
 
 BUMBLEBEE_EXTRA_LIBS="primus primus-libs-ia32:i386"
 
-if [ "$DISTRIB_ID" = "MX" ]; then
-     BUMBLEBEE_EXTRA_LIBS="virtualgl virtualgl-libs:i386"
-fi
+#if [ "$DISTRIB_ID" = "MX" ]; then
+#     BUMBLEBEE_EXTRA_LIBS="virtualgl virtualgl-libs:i386"
+#fi
 
 
 BACKPORTS=false

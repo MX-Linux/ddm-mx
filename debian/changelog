@@ -1,3 +1,9 @@
+ddm-mx (21.08.02mx21) mx; urgency=medium
+
+  * rework primus libs 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 08 Aug 2021 14:31:02 -0400
+
 ddm-mx (21.08.01mx21) mx; urgency=medium
 
   * remove virtualgl

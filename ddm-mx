@@ -53,7 +53,7 @@ echo
 
 # -------------------------------------------------------------------------
 
-BUMBLEBEE_EXTRA_LIBS="primus primus-libs-ia32:i386"
+BUMBLEBEE_EXTRA_LIBS="primus primus-libs"
 
 #if [ "$DISTRIB_ID" = "MX" ]; then
 #     BUMBLEBEE_EXTRA_LIBS="virtualgl virtualgl-libs:i386"

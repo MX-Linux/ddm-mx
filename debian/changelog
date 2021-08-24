@@ -1,3 +1,9 @@
+ddm-mx (21.08.03mx21) mx; urgency=medium
+
+  * expand unsupported legacy detection
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 23 Aug 2021 23:17:39 -0400
+
 ddm-mx (21.08.02mx21) mx; urgency=medium
 
   * rework primus libs 

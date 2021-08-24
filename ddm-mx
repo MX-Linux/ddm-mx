@@ -255,7 +255,7 @@ function install_nvidia {
 	DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
   fi
   
-  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86)
+  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86 -e304.123 -e340.76)
   
   # Testing
   if $TEST; then

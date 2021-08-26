@@ -32,7 +32,7 @@ shopt -s compat31 nocasematch 2>/dev/null || { echo "Error: this script only wor
 
 # last time the PCI IDs were updated
 
-LATEST="460.73.01"
+LATEST="418.56"
 NVIDIA_DETECT_PRESENT="/usr/bin/nvidia-detect"
 
 ARCH=$(dpkg --print-architecture)
@@ -92,38 +92,6 @@ if [ "$ARCH" = "amd64" ]; then
     then
         VERSIONS[391]=390.87
     fi
-    
-    if grep -q -i $NVGA $IDLISTDIR/nvidia-418.ids 2>/dev/null
-	then
-		VERSIONS[418]=418.74
-	fi
-	
-	if grep -q -i $NVGA $IDLISTDIR/nvidia-tesla-418.ids 2>/dev/null
-	then
-		VERSIONS[419]=418.87.01
-	fi
-
-	if grep -q -i $NVGA $IDLISTDIR/nvidia-tesla-440.ids 2>/dev/null
-	then
-		VERSIONS[441]=440.64.00
-	fi
-
-	if grep -q -i $NVGA $IDLISTDIR/nvidia-tesla-450.ids 2>/dev/null
-	then
-		VERSIONS[451]=450.51.05
-	fi
-
-	if grep -q -i $NVGA $IDLISTDIR/nvidia-tesla-460.ids 2>/dev/null
-	then
-		VERSIONS[461]=460.32.03
-	fi
-	
-	if grep -q -i $NVGA $IDLISTDIR/nvidia.ids 2>/dev/null
-	then
-	# 999 means current
-		VERSIONS[999]=$LATEST
-	fi
-	
 fi
 
 if [ "$ARCH" = "amd64" ]; then
@@ -134,6 +102,14 @@ if [ "$ARCH" = "amd64" ]; then
 	fi
 fi
 
+if [ "$ARCH" = "amd64" ]; then
+    if grep -q -i $NVGA $IDLISTDIR/nvidia-amd64.ids 2>/dev/null
+    then
+	# 998 means current, but amd64-only
+	VERSIONS[998]=$LATEST
+    fi
+fi
+
 if [[ ${#VERSIONS[*]} == 0 ]]; then
        	echo "Uh oh. Your card is not supported by any driver version up to $LATEST."
 	echo "A newer driver may add support for your card."
@@ -141,7 +117,10 @@ if [[ ${#VERSIONS[*]} == 0 ]]; then
 	return
 fi
 
-if [[ -n ${VERSIONS[999]} ]]; then
+if [[ -n ${VERSIONS[998]} ]]; then
+	echo "Your card is supported by the nvidia-driver $LATEST package"
+	PACKAGE="nvidia-driver" #; changes for mx
+elif [[ -n ${VERSIONS[999]} ]]; then
 	echo "Your card is supported by the nvidia-driver $LATEST package"
 	PACKAGE="nvidia-driver" #; changes for mx
 elif [[ -n ${VERSIONS[391]} ]]; then
@@ -150,20 +129,9 @@ elif [[ -n ${VERSIONS[391]} ]]; then
 elif [[ -n ${VERSIONS[390]} ]]; then
 	echo "Your card is supported by the nvidia 390 driver"
 	PACKAGE="nvidia-legacy-390xx-driver" #; changes for mx
-elif [[ -n ${VERSIONS[461]} ]]; then
-	echo "Your card is supported by the Tesla 460 drivers series."
-	PACKAGE="nvidia-tesla-460-driver"
-elif [[ -n ${VERSIONS[451]} ]]; then
-	echo "Your card is supported by the Tesla 450 drivers series."
-	PACKAGE="nvidia-tesla-450-driver"
-elif [[ -n ${VERSIONS[441]} ]]; then
-	echo "Your card is supported by the Tesla 440 drivers series."
-	PACKAGE="nvidia-tesla-440-driver"
-elif [[ -n ${VERSIONS[419]} ]]; then
-	echo "Your card is supported by the Tesla 418 drivers series."
-	PACKAGE="nvidia-tesla-418-driver"
 elif [[ -n ${VERSIONS[340]} ]]; then
-	echo "Uh oh. Your card is only supported by the 340 legacy drivers series, which is not in any current Debian suite."
+	echo "Your card is supported by the nvidia 340 driver"
+	PACKAGE="nvidia-legacy-340xx-driver" #; changes for mx
 elif [[ -n ${VERSIONS[304]} ]]; then
 	echo "Uh oh. Your card is only supported by the 304 legacy drivers series, which is not in any current Debian suite."
 elif [[ -n ${VERSIONS[173]} ]]; then

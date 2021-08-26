@@ -1,3 +1,9 @@
+ddm-mx (21.08.04mx21) mx; urgency=medium
+
+  * update detection message for legacy parts
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 26 Aug 2021 19:43:52 -0400
+
 ddm-mx (21.08.03mx21) mx; urgency=medium
 
   * expand unsupported legacy detection

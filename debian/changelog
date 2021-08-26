@@ -1,3 +1,50 @@
+ddm-mx (21.08.04mx21) mx; urgency=medium
+
+  * update detection message for legacy parts
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 26 Aug 2021 19:43:52 -0400
+
+ddm-mx (21.08.03mx21) mx; urgency=medium
+
+  * expand unsupported legacy detection
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 23 Aug 2021 23:17:39 -0400
+
+ddm-mx (21.08.02mx21) mx; urgency=medium
+
+  * rework primus libs 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 08 Aug 2021 14:31:02 -0400
+
+ddm-mx (21.08.01mx21) mx; urgency=medium
+
+  * remove virtualgl
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 08 Aug 2021 14:17:33 -0400
+
+ddm-mx (21.07.01mx21) mx; urgency=medium
+
+  *  update for bullseye drivers
+  *  update for PIDS for backup detect scheme
+  *  update detection 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 25 Jul 2021 19:57:06 -0400
+
+ddm-mx (21.02.02mx19) mx; urgency=medium
+
+  * update translations
+  * change location of nvidia-run-mx wrapper script
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 26 Feb 2021 20:56:20 -0500
+
+ddm-mx (21.02.01) mx; urgency=medium
+
+  * allow for PRIMUS driver installs (farius)
+  * reorder script into logical blocks
+  * nvidia-run-mx wrapper script
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 07 Feb 2021 19:19:08 -0500
+
 ddm-mx (20.05.01) mx; urgency=medium
 
   * remove firmware-linux-nonfree from install list 

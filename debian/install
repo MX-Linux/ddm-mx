@@ -1,7 +1,7 @@
 LICENSE				usr/share/doc/ddm-mx
 ddm-mx				usr/local/bin
 nvidia-detect-mx	usr/local/bin
-nvidia-run-mx		usr/local/bin
+nvidia-run-mx		usr/bin
 *.desktop			usr/share/applications
 *.png               usr/share/pixmaps
 PIDS/*              usr/share/ddm-mx

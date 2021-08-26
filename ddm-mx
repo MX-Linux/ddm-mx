@@ -20,14 +20,15 @@
 #add BitJam's soure cli-shell-utils
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 
+VERSION="21.08.04"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
 ERR_FILE="/dev/null"
 LOG="/var/log/ddm.log"
-BP_REPO="buster-backports"
+BP_REPO="bullseye-backports"
 BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
-MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ buster test"
+MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ bullseye test"
 BACKPORTS_OVERRIDE=false
 
 TEXTDOMAINDIR=/usr/share/locale 
@@ -53,11 +54,11 @@ echo
 
 # -------------------------------------------------------------------------
 
-BUMBLEBEE_EXTRA_LIBS="primus primus-libs-ia32:i386"
+BUMBLEBEE_EXTRA_LIBS="primus primus-libs"
 
-if [ "$DISTRIB_ID" = "MX" ]; then
-     BUMBLEBEE_EXTRA_LIBS="virtualgl virtualgl-libs:i386"
-fi
+#if [ "$DISTRIB_ID" = "MX" ]; then
+#     BUMBLEBEE_EXTRA_LIBS="virtualgl virtualgl-libs:i386"
+#fi
 
 
 BACKPORTS=false
@@ -141,6 +142,11 @@ if [ -f $LOG ]; then
   fi
 fi 
 
+#log version
+echo "===================================" | tee -a $LOG
+echo "ddm-mx: $VERSION" | tee -a $LOG
+echo "===================================" | tee -a $LOG
+
 # =========================================================================
 # =========================================================================
 # =========================================================================
@@ -204,7 +210,7 @@ exit 0
 
 function usage() {
   echo "======================================================================"
-  echo $"Device Driver Manager Help:"
+  echo $"Device Driver Manager Help:" "ddm-mx:  $VERSION"
   echo "======================================================================"
   echo $"The following options are allowed:"
   echo
@@ -216,7 +222,7 @@ function usage() {
   echo $"-p driver    Purge given driver."
   echo $"             driver: nvidia"
   echo
-  echo $"-f           force specific nvidia driver package.  nvidia-driver, nvidia-legacy-390xx-driver, nvidia-legacy-340xx-driver"
+  echo $"-f           force specific nvidia driver package.  nvidia-driver, nvidia-legacy-390xx-driver, nvidia-tesla-418-driver, nvidia-tesla-450-driver, nvidia-tesla-460-driver"
   echo
   echo $"-t           For development testing only!  simulate installs"
   echo $"             This will install drivers for pre-defined hardware."
@@ -255,7 +261,7 @@ function install_nvidia {
 	DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
   fi
   
-  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86)
+  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86 -e304 -e340)
   
   # Testing
   if $TEST; then
@@ -807,18 +813,36 @@ set_packages(){
                                            DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings libnvidia-encode1" 
                                        fi
                                        ;;
-        nvidia-legacy-340xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms $NVIDIA_XCONFIG"
-                                       else
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms $NVIDIA_XCONFIG"
-                                       fi
-                                       ;;
         nvidia-legacy-390xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
                                            NVIDIA_XCONFIG=""
                                            DRIVER="$DRIVER nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms"
                                        else
                                            NVIDIA_XCONFIG=""
                                            DRIVER="$DRIVER nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms"
+                                       fi
+                                       ;;
+        nvidia-tesla-418-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-418 nvidia-tesla-418-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-418 nvidia-tesla-418-kernel-dkms"
+                                       fi
+                                       ;;
+        nvidia-tesla-450-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-450 nvidia-tesla-450-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-450 nvidia-tesla-450-kernel-dkms"
+                                       fi
+                                       ;;
+        nvidia-tesla-460-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-460 nvidia-tesla-460-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-460 nvidia-tesla-460-kernel-dkms"
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
@@ -831,9 +855,7 @@ set_packages(){
 											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-driver" ]; then
 												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings nvidia-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
-											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-340xx-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
-											fi
+											
                                        fi
                                        ;;
                                  *)

@@ -1,0 +1,310 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Kristian B <mopardud@hotmail.com>, 2017
+# anticapitalista <anticapitalista@riseup.net>, 2017
+# xmaus <49bolgen@gmail.com>, 2018
+# Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-07 21:28-0600\n"
+"PO-Revision-Date: 2016-11-29 14:08+0000\n"
+"Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2021\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/anticapitalista/teams/10162/nb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ddm-mx:36
+msgid "Unknown error"
+msgstr "Ukjent feil"
+
+#: ddm-mx:37
+msgid "Option-"
+msgstr "Valget-"
+
+#: ddm-mx:38
+msgid "requires an argument."
+msgstr "krever et argument."
+
+#: ddm-mx:39
+msgid "Run as root"
+msgstr "Kjør som root"
+
+#: ddm-mx:40
+msgid "Install drivers for: "
+msgstr "Installer drivere for:"
+
+#: ddm-mx:99 ddm-mx:109
+msgid "Invalid option"
+msgstr "Ugyldig valg"
+
+#: ddm-mx:127
+msgid "creating lock ..."
+msgstr "oppretter lås …"
+
+#: ddm-mx:152
+msgid "Purge drivers for: "
+msgstr "Fjern drivere og slett oppsettsfiler for:"
+
+#: ddm-mx:153 ddm-mx:175
+msgid "Start at (m/d/y):"
+msgstr "Start den (m/d/å):"
+
+#: ddm-mx:161
+#, sh-format
+msgid "ERROR: Unknown argument: $DRV"
+msgstr "FEIL: Ukjent argument: $DRV"
+
+#: ddm-mx:194
+msgid "ERROR: Unknown argument: "
+msgstr "FEIL: Ukjent argument:"
+
+#: ddm-mx:207
+msgid "Device Driver Manager Help:"
+msgstr "Hjelp for DDM (enhetsdriverbehandling):"
+
+#: ddm-mx:209
+msgid "The following options are allowed:"
+msgstr "Følgende valg er tilgjengelige:"
+
+#: ddm-mx:213
+msgid "-i driver    Install given driver."
+msgstr "-i driver    Installer angitt driver."
+
+#: ddm-mx:214
+msgid "             drivers: nvidia, open, fixbumblebee"
+msgstr "             drivere: nvidia, open, fixbumblebee"
+
+#: ddm-mx:216
+msgid "-p driver    Purge given driver."
+msgstr "-p driver    Fjern driver og slett oppsettsfiler."
+
+#: ddm-mx:217
+msgid "             driver: nvidia"
+msgstr "             driver: nvidia"
+
+#: ddm-mx:219
+msgid ""
+"-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-legacy-340xx-driver"
+msgstr ""
+"-f           tving spesifikk nvidia-driverpakke.  nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-legacy-340xx-driver"
+
+#: ddm-mx:221
+msgid "-t           For development testing only!  simulate installs"
+msgstr "-t           Kun for testing ved utvikling!  Simulerer installasjon"
+
+#: ddm-mx:222
+msgid "             This will install drivers for pre-defined hardware."
+msgstr ""
+"             Dette valget installerer drivere for forvalgt maskinvare."
+
+#: ddm-mx:223
+msgid "             Use with -i."
+msgstr "             Bruk sammen med -i."
+
+#: ddm-mx:312
+msgid "Need driver: "
+msgstr "Trenger driver:"
+
+#: ddm-mx:316
+msgid "NVIDIA packages to install are "
+msgstr "NVIDIA-pakker som skal installeres er"
+
+#: ddm-mx:318 ddm-mx:618
+msgid "Continue?"
+msgstr "Fortsett?"
+
+#: ddm-mx:339
+msgid "Nvidia command "
+msgstr "Nvidia-kommando"
+
+#: ddm-mx:363
+msgid "ERROR: Could not configure Bumblebee for user: "
+msgstr "FEIL: Klarte ikke sette opp Bumblebee for bruker:"
+
+#: ddm-mx:367
+msgid "test enabled, not creating xorg.conf file"
+msgstr "testmodus, oppretter ikke fila xorg.conf"
+
+#: ddm-mx:371
+msgid "creating /etc/X11/xorg.conf file"
+msgstr "oppretter fila /etc/X11/xorg.conf"
+
+#: ddm-mx:380
+msgid "Finished"
+msgstr "Fullført"
+
+#: ddm-mx:397
+msgid "Proprietary drivers removed"
+msgstr "Fjernet produsenteide drivere"
+
+#: ddm-mx:410
+msgid "Open command "
+msgstr "Åpen-kommando"
+
+#: ddm-mx:414
+msgid "Open drivers installed"
+msgstr "Åpne drivere er installert"
+
+#: ddm-mx:428 ddm-mx:434
+msgid "Resetting sources"
+msgstr "Tilbakestiller kilder"
+
+#: ddm-mx:445
+msgid "Press <Enter> to exit"
+msgstr "Trykk <Enter> for å avslutte"
+
+#: ddm-mx:459
+msgid "Enabling backports repo"
+msgstr "Aktiverer backports-pakkearkiv"
+
+#: ddm-mx:460 ddm-mx:476
+msgid "Running apt-get update..."
+msgstr "Kjører apt-get update …"
+
+#: ddm-mx:465 ddm-mx:481
+msgid "Installing latest nvidia-detect package"
+msgstr "Installerer nyeste nvidia-detect-pakke"
+
+#: ddm-mx:475
+msgid "Enabling MX Test repo"
+msgstr "Aktiverer MX Test-pakkearkiv"
+
+#: ddm-mx:490
+msgid "Would you like to check debian-backports for a later version?"
+msgstr "Vil du undersøke i debian-backports etter nyere versjon?"
+
+#: ddm-mx:492
+msgid "Yes or No?"
+msgstr "Ja eller nei?"
+
+#: ddm-mx:494
+msgid "Yes"
+msgstr "Ja"
+
+#: ddm-mx:495
+msgid "No"
+msgstr "Nei"
+
+#: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
+#: ddm-mx:578 ddm-mx:585
+msgid "Ok"
+msgstr "OK"
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
+msgid "invalid option."
+msgstr "ugyldig valg."
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
+msgid "exiting"
+msgstr "avslutter"
+
+#: ddm-mx:514 ddm-mx:515
+msgid "Would you like to check MX Test Repo for a later version?"
+msgstr "Vil du undersøke i MX Test-pakkearkivet etter nyere versjon?"
+
+#: ddm-mx:532 ddm-mx:564
+msgid "Which driver do you wish to install"
+msgstr "Hvilken driver vil du installere"
+
+#: ddm-mx:534
+msgid "Main repos or debian-backports?"
+msgstr "Hovedpakkearkiv eller debian-backports?"
+
+#: ddm-mx:536 ddm-mx:568
+msgid "Main"
+msgstr "Hoved"
+
+#: ddm-mx:540 ddm-mx:572
+msgid "Exit"
+msgstr "Avslutt"
+
+#: ddm-mx:542 ddm-mx:574
+msgid "Enter Number of selection"
+msgstr "Angi valgets tall"
+
+#: ddm-mx:566
+msgid "Main repos or MX Test"
+msgstr "Hovedpakkearkiv eller MX Test"
+
+#: ddm-mx:608
+msgid "Candidate is: "
+msgstr "Kandidat:"
+
+#: ddm-mx:609
+msgid "Installed is: "
+msgstr "Installert:"
+
+#: ddm-mx:617
+msgid "Refreshing Sources with apt-get update"
+msgstr "Oppdaterer kilder med apt-get update"
+
+#: ddm-mx:624
+#, sh-format
+msgid "There was a problem with the apt-get update.  See $LOG for details"
+msgstr "Det oppstod et problem med apt-get update. Se $LOG for detaljer."
+
+#: ddm-mx:634
+msgid "To restore open source drivers use:  "
+msgstr "For å gjenopprette drivere med åpen kildekode bruk:"
+
+#: ddm-mx:651
+msgid "To restore open source drivers later use:  "
+msgstr "For å gjenopprette drivere med åpen kildekode senere, bruk:"
+
+#: ddm-mx:663
+msgid "For recovery help see "
+msgstr "For hjelp til gjenoppretting se"
+
+#: ddm-mx:666
+msgid "Information written to "
+msgstr "Informasjon skrives til"
+
+#: ddm-mx:702
+msgid "Possible previous install from source or smxi/sgfxi detected."
+msgstr "Oppdaget mulig tidligere installering fra kildekode eller smxi/sgfxi."
+
+#: ddm-mx:703
+msgid "Version detected: "
+msgstr "Oppdaget versjon:"
+
+#: ddm-mx:704
+msgid "Latest possible with this script : "
+msgstr "Siste mulige med dette skriptet:"
+
+#: ddm-mx:705
+msgid ""
+"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
+" to proceed"
+msgstr ""
+"Fjern med <sudo nvidia-install --uninstall> og start på nytt hvis du vil "
+"fortsette"
+
+#: ddm-mx:720
+msgid "nvidia-optimus detected"
+msgstr "oppdaget nvidia-optimus"
+
+#: ddm-mx:723
+msgid "Is this a NVIDIA/INTEL Optimus system?"
+msgstr "Er dette et Nvidia/Intel Optimus-system?"
+
+#: ddm-mx:759
+msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
+msgstr ""
+"Du kan bruke den nye PRIMUS-driveren som er inkludert i nvidia-driverne."
+
+#: ddm-mx:760
+msgid "Use \\"
+msgstr "Bruk \\"

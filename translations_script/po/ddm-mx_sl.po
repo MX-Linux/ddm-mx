@@ -1,0 +1,312 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# anticapitalista <anticapitalista@riseup.net>, 2017
+# Mario <al.manja@gmx.com>, 2019
+# Arnold Marko <arnold.marko@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-07 21:28-0600\n"
+"PO-Revision-Date: 2016-11-29 14:08+0000\n"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2021\n"
+"Language-Team: Slovenian (https://www.transifex.com/anticapitalista/teams/10162/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#: ddm-mx:36
+msgid "Unknown error"
+msgstr "Neznana napaka"
+
+#: ddm-mx:37
+msgid "Option-"
+msgstr "Opcija-"
+
+#: ddm-mx:38
+msgid "requires an argument."
+msgstr "potrebuje argument."
+
+#: ddm-mx:39
+msgid "Run as root"
+msgstr "Zaženi korensko"
+
+#: ddm-mx:40
+msgid "Install drivers for: "
+msgstr "Namesti gonilnike za:"
+
+#: ddm-mx:99 ddm-mx:109
+msgid "Invalid option"
+msgstr "Napačna opcija"
+
+#: ddm-mx:127
+msgid "creating lock ..."
+msgstr "zaklepam ..."
+
+#: ddm-mx:152
+msgid "Purge drivers for: "
+msgstr "Počisti gonilnike za:"
+
+#: ddm-mx:153 ddm-mx:175
+msgid "Start at (m/d/y):"
+msgstr "Začni na (m/d/y):"
+
+#: ddm-mx:161
+#, sh-format
+msgid "ERROR: Unknown argument: $DRV"
+msgstr "NAPAKA: neznan argument: $DRV"
+
+#: ddm-mx:194
+msgid "ERROR: Unknown argument: "
+msgstr "NAPAKA: neznan argument:"
+
+#: ddm-mx:207
+msgid "Device Driver Manager Help:"
+msgstr "Pomoč za upravljalnik gonilnikov naprav:"
+
+#: ddm-mx:209
+msgid "The following options are allowed:"
+msgstr "Na voljo so naslednje opcije:"
+
+#: ddm-mx:213
+msgid "-i driver    Install given driver."
+msgstr "-i driver Namesti podani gonilnik."
+
+#: ddm-mx:214
+msgid "             drivers: nvidia, open, fixbumblebee"
+msgstr "             gonilniki: nvidia, open, fixbumblebee"
+
+#: ddm-mx:216
+msgid "-p driver    Purge given driver."
+msgstr "-p driver    Pobriši podani gonilnik"
+
+#: ddm-mx:217
+msgid "             driver: nvidia"
+msgstr "             driver: nvidia"
+
+#: ddm-mx:219
+msgid ""
+"-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-legacy-340xx-driver"
+msgstr ""
+"-f           prisili rabo določenega paketa z nvidia gonilnikom.  nvidia-"
+"driver, nvidia-legacy-390xx-driver, nvidia-legacy-340xx-driver"
+
+#: ddm-mx:221
+msgid "-t           For development testing only!  simulate installs"
+msgstr "-t le za potrebe testiranja! simulira namestitve"
+
+#: ddm-mx:222
+msgid "             This will install drivers for pre-defined hardware."
+msgstr "To bo namestilo gonilnike za vnaprej določeno strojno opremo."
+
+#: ddm-mx:223
+msgid "             Use with -i."
+msgstr "             Uporabi z -i."
+
+#: ddm-mx:312
+msgid "Need driver: "
+msgstr "Potreben gonilnik:"
+
+#: ddm-mx:316
+msgid "NVIDIA packages to install are "
+msgstr "NVIDIA gonilniki za namestitev"
+
+#: ddm-mx:318 ddm-mx:618
+msgid "Continue?"
+msgstr "Nadaljujem?"
+
+#: ddm-mx:339
+msgid "Nvidia command "
+msgstr "Nvidia ukaz"
+
+#: ddm-mx:363
+msgid "ERROR: Could not configure Bumblebee for user: "
+msgstr "NAPAKA: Nisem mogel konfigurirati Bumblebee za uporabnika:"
+
+#: ddm-mx:367
+msgid "test enabled, not creating xorg.conf file"
+msgstr "vključeno je testiranje, zato ne bom ustvaril xorg.conf datoteke"
+
+#: ddm-mx:371
+msgid "creating /etc/X11/xorg.conf file"
+msgstr "ustvarjam /etc/X11/xorg.conf datoteko"
+
+#: ddm-mx:380
+msgid "Finished"
+msgstr "Končano"
+
+#: ddm-mx:397
+msgid "Proprietary drivers removed"
+msgstr "Proizvajalčevi gonilniki so bili odstranjeni"
+
+#: ddm-mx:410
+msgid "Open command "
+msgstr "Ukaz za odpiranje"
+
+#: ddm-mx:414
+msgid "Open drivers installed"
+msgstr "Nameščeni so odprtokodni gonilniki"
+
+#: ddm-mx:428 ddm-mx:434
+msgid "Resetting sources"
+msgstr "Ponastavitev virov"
+
+#: ddm-mx:445
+msgid "Press <Enter> to exit"
+msgstr "Pritisnite <Enter> za izhod"
+
+#: ddm-mx:459
+msgid "Enabling backports repo"
+msgstr "Vključi backport repozitorije"
+
+#: ddm-mx:460 ddm-mx:476
+msgid "Running apt-get update..."
+msgstr "Izvajam apt-get update..."
+
+#: ddm-mx:465 ddm-mx:481
+msgid "Installing latest nvidia-detect package"
+msgstr "Nameščam zadnjo različico paketa nvidia-detect"
+
+#: ddm-mx:475
+msgid "Enabling MX Test repo"
+msgstr "Omogočam MX Testni repozitorij"
+
+#: ddm-mx:490
+msgid "Would you like to check debian-backports for a later version?"
+msgstr ""
+"Ali naj preverim,  če obstaja kakšna kasnejša različica med debian-"
+"backporti?"
+
+#: ddm-mx:492
+msgid "Yes or No?"
+msgstr "Da ali ne?"
+
+#: ddm-mx:494
+msgid "Yes"
+msgstr "Da"
+
+#: ddm-mx:495
+msgid "No"
+msgstr "Ne"
+
+#: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
+#: ddm-mx:578 ddm-mx:585
+msgid "Ok"
+msgstr "V redu"
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
+msgid "invalid option."
+msgstr "napačna opcija."
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
+msgid "exiting"
+msgstr "zapiram"
+
+#: ddm-mx:514 ddm-mx:515
+msgid "Would you like to check MX Test Repo for a later version?"
+msgstr ""
+"Ali naj preverim,  če obstaja kakšna kasnejša različica v MX testnem "
+"repozitoriju?"
+
+#: ddm-mx:532 ddm-mx:564
+msgid "Which driver do you wish to install"
+msgstr "Kateri gonilnik naj namestim?"
+
+#: ddm-mx:534
+msgid "Main repos or debian-backports?"
+msgstr "Glavni repozitorij ali debian-backporti?"
+
+#: ddm-mx:536 ddm-mx:568
+msgid "Main"
+msgstr "Glavni"
+
+#: ddm-mx:540 ddm-mx:572
+msgid "Exit"
+msgstr "Končaj"
+
+#: ddm-mx:542 ddm-mx:574
+msgid "Enter Number of selection"
+msgstr "Vnesite številko izbire"
+
+#: ddm-mx:566
+msgid "Main repos or MX Test"
+msgstr "Glavni repozitoriji ali MX testni"
+
+#: ddm-mx:608
+msgid "Candidate is: "
+msgstr "Kandidat je:"
+
+#: ddm-mx:609
+msgid "Installed is: "
+msgstr "Nameščen je:"
+
+#: ddm-mx:617
+msgid "Refreshing Sources with apt-get update"
+msgstr "Osveževanje virov z ukazom apt-get update"
+
+#: ddm-mx:624
+#, sh-format
+msgid "There was a problem with the apt-get update.  See $LOG for details"
+msgstr ""
+"Pojavila se je težava pri izvajanju apt-get update. Glej $LOG za podrobnosti"
+
+#: ddm-mx:634
+msgid "To restore open source drivers use:  "
+msgstr "Za obnovitev odprtokodnih gonilnikov uporabite:"
+
+#: ddm-mx:651
+msgid "To restore open source drivers later use:  "
+msgstr "Za kasnejšo obnovitev odprtokodnih gonilnikov uporabite:"
+
+#: ddm-mx:663
+msgid "For recovery help see "
+msgstr "Za pomoč pri obnovi glej"
+
+#: ddm-mx:666
+msgid "Information written to "
+msgstr "Podatki zapisani na"
+
+#: ddm-mx:702
+msgid "Possible previous install from source or smxi/sgfxi detected."
+msgstr "Odkrite so bile možne predhodne namestitve iz vira ali smxi/sgfxi."
+
+#: ddm-mx:703
+msgid "Version detected: "
+msgstr "Najdena različica:"
+
+#: ddm-mx:704
+msgid "Latest possible with this script : "
+msgstr "Zadnja možna različica, ob uporabi te skripte:"
+
+#: ddm-mx:705
+msgid ""
+"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
+" to proceed"
+msgstr ""
+"Prosimo, odstranite jo z <sudo nvidia-install --uninstall> in ponovno "
+"zaženite računalnik, če želite nadaljevati"
+
+#: ddm-mx:720
+msgid "nvidia-optimus detected"
+msgstr "nvidia-optimus zaznan"
+
+#: ddm-mx:723
+msgid "Is this a NVIDIA/INTEL Optimus system?"
+msgstr "Ali gre za NVIDIA/INTEL Optimus sistem?"
+
+#: ddm-mx:759
+msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
+msgstr "Lahko uporabite novi PRIMUS gonilnik, vgrajen v nvidia gonilnike"
+
+#: ddm-mx:760
+msgid "Use \\"
+msgstr "Uporabite \\"

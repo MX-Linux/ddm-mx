@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# anticapitalista <anticapitalista@riseup.net>, 2017
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019
+# José Vieira <jvieira33@sapo.pt>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-07 21:28-0600\n"
+"PO-Revision-Date: 2016-11-29 14:08+0000\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>, 2021\n"
+"Language-Team: Portuguese (https://www.transifex.com/anticapitalista/teams/10162/pt/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ddm-mx:36
+msgid "Unknown error"
+msgstr "Erro desconhecido"
+
+#: ddm-mx:37
+msgid "Option-"
+msgstr "Opção-"
+
+#: ddm-mx:38
+msgid "requires an argument."
+msgstr "requer um argumento."
+
+#: ddm-mx:39
+msgid "Run as root"
+msgstr "Executar como root"
+
+#: ddm-mx:40
+msgid "Install drivers for: "
+msgstr "Instalar controladores para: "
+
+#: ddm-mx:99 ddm-mx:109
+msgid "Invalid option"
+msgstr "Opção inválida"
+
+#: ddm-mx:127
+msgid "creating lock ..."
+msgstr "a criar bloqueio ..."
+
+#: ddm-mx:152
+msgid "Purge drivers for: "
+msgstr "Purgar controladores para: "
+
+#: ddm-mx:153 ddm-mx:175
+msgid "Start at (m/d/y):"
+msgstr "Iniciar em (m/d/a):"
+
+#: ddm-mx:161
+#, sh-format
+msgid "ERROR: Unknown argument: $DRV"
+msgstr "ERRO: Argumento desconhecido: $DRV"
+
+#: ddm-mx:194
+msgid "ERROR: Unknown argument: "
+msgstr "ERRO: Argumento desconhecido: "
+
+#: ddm-mx:207
+msgid "Device Driver Manager Help:"
+msgstr "Ajuda do Gestor de Controladores de Dispositivos:"
+
+#: ddm-mx:209
+msgid "The following options are allowed:"
+msgstr "São permitidas as seguintes opções:"
+
+#: ddm-mx:213
+msgid "-i driver    Install given driver."
+msgstr "-i driver    Instalar o controlador indicado."
+
+#: ddm-mx:214
+msgid "             drivers: nvidia, open, fixbumblebee"
+msgstr "             controladores: nvidia, open, fixbumblebee"
+
+#: ddm-mx:216
+msgid "-p driver    Purge given driver."
+msgstr "-p driver    Purgar o controlador indicado."
+
+#: ddm-mx:217
+msgid "             driver: nvidia"
+msgstr "             controlador: nvidia"
+
+#: ddm-mx:219
+msgid ""
+"-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-legacy-340xx-driver"
+msgstr ""
+"-f           forçar o pacote específico para o controlador nvidia:  nvidia-"
+"driver, nvidia-legacy-390xx-driver, nvidia-legacy-340xx-driver"
+
+#: ddm-mx:221
+msgid "-t           For development testing only!  simulate installs"
+msgstr ""
+"-t           Apenas para testes de desenvolvimento!  instalções simuladas"
+
+#: ddm-mx:222
+msgid "             This will install drivers for pre-defined hardware."
+msgstr ""
+"             Isto irá instalar controladores para equipamentos pré-"
+"definidos."
+
+#: ddm-mx:223
+msgid "             Use with -i."
+msgstr "             Usar com -i."
+
+#: ddm-mx:312
+msgid "Need driver: "
+msgstr "Controlador requerido:"
+
+#: ddm-mx:316
+msgid "NVIDIA packages to install are "
+msgstr "Os pacotes NVIDIA a instalar são "
+
+#: ddm-mx:318 ddm-mx:618
+msgid "Continue?"
+msgstr "Continuar?"
+
+#: ddm-mx:339
+msgid "Nvidia command "
+msgstr "Comando nvidia "
+
+#: ddm-mx:363
+msgid "ERROR: Could not configure Bumblebee for user: "
+msgstr "ERRO: Não foi possível configurar o Bumblebee para o utilizador: "
+
+#: ddm-mx:367
+msgid "test enabled, not creating xorg.conf file"
+msgstr "teste activado; não será criado o ficheiro xorg.conf"
+
+#: ddm-mx:371
+msgid "creating /etc/X11/xorg.conf file"
+msgstr "a criar o ficheiro xorg.conf em /etc/X11"
+
+#: ddm-mx:380
+msgid "Finished"
+msgstr "Terminado"
+
+#: ddm-mx:397
+msgid "Proprietary drivers removed"
+msgstr "Removidos os controladores não-livres"
+
+#: ddm-mx:410
+msgid "Open command "
+msgstr "comando Abrir"
+
+#: ddm-mx:414
+msgid "Open drivers installed"
+msgstr "Controladores abertos instalados"
+
+#: ddm-mx:428 ddm-mx:434
+msgid "Resetting sources"
+msgstr "A restabelecer as origens"
+
+#: ddm-mx:445
+msgid "Press <Enter> to exit"
+msgstr "Premir <Introduzir> (Enter) para sair"
+
+#: ddm-mx:459
+msgid "Enabling backports repo"
+msgstr "A activar repositório de retroportados"
+
+#: ddm-mx:460 ddm-mx:476
+msgid "Running apt-get update..."
+msgstr "A executar 'apt-get update'..."
+
+#: ddm-mx:465 ddm-mx:481
+msgid "Installing latest nvidia-detect package"
+msgstr "A instalar a versão mais recente do pacote 'nvidia-detect'"
+
+#: ddm-mx:475
+msgid "Enabling MX Test repo"
+msgstr "A activar o repositório MX Test"
+
+#: ddm-mx:490
+msgid "Would you like to check debian-backports for a later version?"
+msgstr "Verificar se há uma versão mais recente em debian-backports? "
+
+#: ddm-mx:492
+msgid "Yes or No?"
+msgstr "Sim ou Não?"
+
+#: ddm-mx:494
+msgid "Yes"
+msgstr "Sim"
+
+#: ddm-mx:495
+msgid "No"
+msgstr "Não"
+
+#: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
+#: ddm-mx:578 ddm-mx:585
+msgid "Ok"
+msgstr "Aceitar"
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
+msgid "invalid option."
+msgstr "opção inválida."
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
+msgid "exiting"
+msgstr "a sair"
+
+#: ddm-mx:514 ddm-mx:515
+msgid "Would you like to check MX Test Repo for a later version?"
+msgstr "Verificar se há uma versão mais recente no repositório MX Test?"
+
+#: ddm-mx:532 ddm-mx:564
+msgid "Which driver do you wish to install"
+msgstr "Instalar qual controlador?"
+
+#: ddm-mx:534
+msgid "Main repos or debian-backports?"
+msgstr "Repositórios principais ou debian-backports?"
+
+#: ddm-mx:536 ddm-mx:568
+msgid "Main"
+msgstr "Principais"
+
+#: ddm-mx:540 ddm-mx:572
+msgid "Exit"
+msgstr "Sair"
+
+#: ddm-mx:542 ddm-mx:574
+msgid "Enter Number of selection"
+msgstr "Introduzir o número da opção a executar"
+
+#: ddm-mx:566
+msgid "Main repos or MX Test"
+msgstr "Repositórios principais ou MX Test"
+
+#: ddm-mx:608
+msgid "Candidate is: "
+msgstr "Candidato: "
+
+#: ddm-mx:609
+msgid "Installed is: "
+msgstr "Instalado: "
+
+#: ddm-mx:617
+msgid "Refreshing Sources with apt-get update"
+msgstr "A actualizar as Origens com 'apt-get update'"
+
+#: ddm-mx:624
+#, sh-format
+msgid "There was a problem with the apt-get update.  See $LOG for details"
+msgstr ""
+"Houve um problema ao executar 'apt-get update'.  Ver $LOG para mais "
+"informação"
+
+#: ddm-mx:634
+msgid "To restore open source drivers use:  "
+msgstr "Para restaurar controladores de fonte aberta, usar:  "
+
+#: ddm-mx:651
+msgid "To restore open source drivers later use:  "
+msgstr "Para restaurar mais tarde controladores de fonte aberta, usar:  "
+
+#: ddm-mx:663
+msgid "For recovery help see "
+msgstr "Para ajuda (em inglês) sobre a recuperação, ver "
+
+#: ddm-mx:666
+msgid "Information written to "
+msgstr "Informação guardada em "
+
+#: ddm-mx:702
+msgid "Possible previous install from source or smxi/sgfxi detected."
+msgstr ""
+"Detetada uma possível instalação anterior a partir de código fonte ou por "
+"smxi/sgfxi."
+
+#: ddm-mx:703
+msgid "Version detected: "
+msgstr "Versão detectada: "
+
+#: ddm-mx:704
+msgid "Latest possible with this script : "
+msgstr "Último possível com esta sequência de instruções (script): "
+
+#: ddm-mx:705
+msgid ""
+"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
+" to proceed"
+msgstr ""
+"Remover com  <sudo nvidia-install --uninstall> e reiniciar, se para "
+"prosseguir"
+
+#: ddm-mx:720
+msgid "nvidia-optimus detected"
+msgstr "detectado o nvidia-optimus"
+
+#: ddm-mx:723
+msgid "Is this a NVIDIA/INTEL Optimus system?"
+msgstr "Este sistema é NVIDIA/INTEL Optimus?"
+
+#: ddm-mx:759
+msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
+msgstr ""
+"Pode ser usado o novo controlador PRIMUS, incorporado nos controladores "
+"nvidia."
+
+#: ddm-mx:760
+msgid "Use \\"
+msgstr "Usar \\"

@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# worktowork <worktowork@ya.ru>, 2017
+# anticapitalista <anticapitalista@riseup.net>, 2017
+# Вячеслав Волошин <vol_vel@mail.ru>, 2017
+# Vladimir O <vldoduv@yandex.ru>, 2018
+# Radu Martin, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-07 21:28-0600\n"
+"PO-Revision-Date: 2016-11-29 14:08+0000\n"
+"Last-Translator: Radu Martin, 2020\n"
+"Language-Team: Russian (https://www.transifex.com/anticapitalista/teams/10162/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: ddm-mx:36
+msgid "Unknown error"
+msgstr "Неизвестная ошибка"
+
+#: ddm-mx:37
+msgid "Option-"
+msgstr "Опция-"
+
+#: ddm-mx:38
+msgid "requires an argument."
+msgstr "требует аргумент."
+
+#: ddm-mx:39
+msgid "Run as root"
+msgstr "Запуск от root"
+
+#: ddm-mx:40
+msgid "Install drivers for: "
+msgstr "Установка драйверов для:"
+
+#: ddm-mx:99 ddm-mx:109
+msgid "Invalid option"
+msgstr "Неверная опция"
+
+#: ddm-mx:127
+msgid "creating lock ..."
+msgstr "создаю блокировку ..."
+
+#: ddm-mx:152
+msgid "Purge drivers for: "
+msgstr "Сбросить драйверы для:"
+
+#: ddm-mx:153 ddm-mx:175
+msgid "Start at (m/d/y):"
+msgstr "Начало в (m/d/y):"
+
+#: ddm-mx:161
+#, sh-format
+msgid "ERROR: Unknown argument: $DRV"
+msgstr "ОШИБКА: Неизвестный аргумент: $DRV"
+
+#: ddm-mx:194
+msgid "ERROR: Unknown argument: "
+msgstr "ОШИБКА: Неизвестный аргумент:"
+
+#: ddm-mx:207
+msgid "Device Driver Manager Help:"
+msgstr "Справка по Менеджеру драйверов устройств:"
+
+#: ddm-mx:209
+msgid "The following options are allowed:"
+msgstr "Доступны следующие опции:"
+
+#: ddm-mx:213
+msgid "-i driver    Install given driver."
+msgstr "-i driver   Установить заданный драйвер."
+
+#: ddm-mx:214
+msgid "             drivers: nvidia, open, fixbumblebee"
+msgstr "драйверы: nvidia, open, fixbumblebee"
+
+#: ddm-mx:216
+msgid "-p driver    Purge given driver."
+msgstr "-p driver  Сбросить заданный драйвер."
+
+#: ddm-mx:217
+msgid "             driver: nvidia"
+msgstr "драйвер: nvidia"
+
+#: ddm-mx:219
+msgid ""
+"-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-legacy-340xx-driver"
+msgstr ""
+
+#: ddm-mx:221
+msgid "-t           For development testing only!  simulate installs"
+msgstr ""
+
+#: ddm-mx:222
+msgid "             This will install drivers for pre-defined hardware."
+msgstr "Установка драйверов для предопределенного оборудования."
+
+#: ddm-mx:223
+msgid "             Use with -i."
+msgstr "Использовать вместе с -i."
+
+#: ddm-mx:312
+msgid "Need driver: "
+msgstr "Требуется драйвер:"
+
+#: ddm-mx:316
+msgid "NVIDIA packages to install are "
+msgstr ""
+
+#: ddm-mx:318 ddm-mx:618
+msgid "Continue?"
+msgstr "Продолжить?"
+
+#: ddm-mx:339
+msgid "Nvidia command "
+msgstr "Команда Nvidia"
+
+#: ddm-mx:363
+msgid "ERROR: Could not configure Bumblebee for user: "
+msgstr "ОШИБКА: Не удалось настроить Bumblebee для пользователя:"
+
+#: ddm-mx:367
+msgid "test enabled, not creating xorg.conf file"
+msgstr "включен режим тестирования, не создаём xorg.conf"
+
+#: ddm-mx:371
+msgid "creating /etc/X11/xorg.conf file"
+msgstr "создание файла /etc/X11/xorg.conf"
+
+#: ddm-mx:380
+msgid "Finished"
+msgstr "Завершено"
+
+#: ddm-mx:397
+msgid "Proprietary drivers removed"
+msgstr "Проприетарные драйверы удалены"
+
+#: ddm-mx:410
+msgid "Open command "
+msgstr "Открыть команду"
+
+#: ddm-mx:414
+msgid "Open drivers installed"
+msgstr "Открыть установленные драйвера"
+
+#: ddm-mx:428 ddm-mx:434
+msgid "Resetting sources"
+msgstr "Восстановить источники APT по умолчанию"
+
+#: ddm-mx:445
+msgid "Press <Enter> to exit"
+msgstr "Нажмите <Enter> для выхода"
+
+#: ddm-mx:459
+msgid "Enabling backports repo"
+msgstr "Подключение репозитория бэкпорт"
+
+#: ddm-mx:460 ddm-mx:476
+msgid "Running apt-get update..."
+msgstr "Выполняется обновление..."
+
+#: ddm-mx:465 ddm-mx:481
+msgid "Installing latest nvidia-detect package"
+msgstr "Устанавливается последний пакет nvidia-detect"
+
+#: ddm-mx:475
+msgid "Enabling MX Test repo"
+msgstr ""
+
+#: ddm-mx:490
+msgid "Would you like to check debian-backports for a later version?"
+msgstr "Хотите проверить наличие в debian-бэкпорт более свежей версии?"
+
+#: ddm-mx:492
+msgid "Yes or No?"
+msgstr "Да или Нет?"
+
+#: ddm-mx:494
+msgid "Yes"
+msgstr "Да"
+
+#: ddm-mx:495
+msgid "No"
+msgstr "Нет"
+
+#: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
+#: ddm-mx:578 ddm-mx:585
+msgid "Ok"
+msgstr "Ok"
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
+msgid "invalid option."
+msgstr "неверная опция."
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
+msgid "exiting"
+msgstr "выход"
+
+#: ddm-mx:514 ddm-mx:515
+msgid "Would you like to check MX Test Repo for a later version?"
+msgstr "Хотите проверить наличие в репозитарии MX Test более свежей версии?"
+
+#: ddm-mx:532 ddm-mx:564
+msgid "Which driver do you wish to install"
+msgstr "Какой драйвер Вы хотите установить"
+
+#: ddm-mx:534
+msgid "Main repos or debian-backports?"
+msgstr "Основные репозитории или debian-бэкпорт?"
+
+#: ddm-mx:536 ddm-mx:568
+msgid "Main"
+msgstr "Основные"
+
+#: ddm-mx:540 ddm-mx:572
+msgid "Exit"
+msgstr "Выход"
+
+#: ddm-mx:542 ddm-mx:574
+msgid "Enter Number of selection"
+msgstr "Введите выбранное число"
+
+#: ddm-mx:566
+msgid "Main repos or MX Test"
+msgstr "Основные репозитории или репозиторий MS Test?"
+
+#: ddm-mx:608
+msgid "Candidate is: "
+msgstr "Кандидат:"
+
+#: ddm-mx:609
+msgid "Installed is: "
+msgstr "Установленный:"
+
+#: ddm-mx:617
+msgid "Refreshing Sources with apt-get update"
+msgstr "Обновление источников с помощью apt-get update"
+
+#: ddm-mx:624
+#, sh-format
+msgid "There was a problem with the apt-get update.  See $LOG for details"
+msgstr "Возникла проблема с apt-get update. Посмотрите подробности в $LOG"
+
+#: ddm-mx:634
+msgid "To restore open source drivers use:  "
+msgstr ""
+
+#: ddm-mx:651
+msgid "To restore open source drivers later use:  "
+msgstr ""
+
+#: ddm-mx:663
+msgid "For recovery help see "
+msgstr ""
+
+#: ddm-mx:666
+msgid "Information written to "
+msgstr ""
+
+#: ddm-mx:702
+msgid "Possible previous install from source or smxi/sgfxi detected."
+msgstr "Возможно, найдена предыдущая установка из источников или smxi/sgfxi."
+
+#: ddm-mx:703
+msgid "Version detected: "
+msgstr "Обнаружена версия:"
+
+#: ddm-mx:704
+msgid "Latest possible with this script : "
+msgstr "Последнее возможно с помощью этого скрипта :"
+
+#: ddm-mx:705
+msgid ""
+"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
+" to proceed"
+msgstr ""
+"Пожалуйста, удалите с помощью  <sudo nvidia-install --uninstall> и "
+"перезагрузите для продолжения процесса"
+
+#: ddm-mx:720
+msgid "nvidia-optimus detected"
+msgstr "обнаружен nvidia-optimus"
+
+#: ddm-mx:723
+msgid "Is this a NVIDIA/INTEL Optimus system?"
+msgstr ""
+
+#: ddm-mx:759
+msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
+msgstr ""
+
+#: ddm-mx:760
+msgid "Use \\"
+msgstr ""

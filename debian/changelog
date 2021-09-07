@@ -1,3 +1,9 @@
+ddm-mx (21.09.01mx21) mx; urgency=medium
+
+  * use gui authenticator 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 06 Sep 2021 23:24:31 -0400
+
 ddm-mx (21.08.04mx21) mx; urgency=medium
 
   * update detection message for legacy parts

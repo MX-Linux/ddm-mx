@@ -8,7 +8,7 @@
 # anticapitalista <anticapitalista@riseup.net>, 2017
 # Geoff Gigg <geoffgigg@hotmail.com>, 2017
 # Roberto Saravia <saravia.jroberto@gmail.com>, 2018
-# Casper casper, 2021
+# Casper, 2021
 # Pedro Delgado, 2021
 # 
 #, fuzzy

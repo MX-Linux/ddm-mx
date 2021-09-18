@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Panwar108 <caspian7pena@gmail.com>, 2020
+# Panwar108 <caspian7pena@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-07 21:28-0600\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Panwar108 <caspian7pena@gmail.com>, 2020\n"
+"Last-Translator: Panwar108 <caspian7pena@gmail.com>, 2021\n"
 "Language-Team: Hindi (https://www.transifex.com/anticapitalista/teams/10162/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,118 +23,121 @@ msgstr ""
 
 #: ddm-mx:36
 msgid "Unknown error"
-msgstr ""
+msgstr "अज्ञात त्रुटि"
 
 #: ddm-mx:37
 msgid "Option-"
-msgstr ""
+msgstr "विकल्प -"
 
 #: ddm-mx:38
 msgid "requires an argument."
-msgstr ""
+msgstr "मानदंड आवश्यक।"
 
 #: ddm-mx:39
 msgid "Run as root"
-msgstr ""
+msgstr "रूट के रूप में निष्पादन"
 
 #: ddm-mx:40
 msgid "Install drivers for: "
-msgstr ""
+msgstr "इस हेतु ड्राइवर इंस्टॉल :"
 
 #: ddm-mx:99 ddm-mx:109
 msgid "Invalid option"
-msgstr ""
+msgstr "अमान्य विकल्प"
 
 #: ddm-mx:127
 msgid "creating lock ..."
-msgstr ""
+msgstr "लॉक सृजन जारी..."
 
 #: ddm-mx:152
 msgid "Purge drivers for: "
-msgstr ""
+msgstr "इस हेतु ड्राइवर हटाएँ :"
 
 #: ddm-mx:153 ddm-mx:175
 msgid "Start at (m/d/y):"
-msgstr ""
+msgstr "इस (m/d/y) समय आरंभ करें :"
 
 #: ddm-mx:161
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
-msgstr ""
+msgstr "त्रुटि : अज्ञात मानदंड : $DRV"
 
 #: ddm-mx:194
 msgid "ERROR: Unknown argument: "
-msgstr ""
+msgstr "त्रुटि : अज्ञात मानदंड :"
 
 #: ddm-mx:207
 msgid "Device Driver Manager Help:"
-msgstr ""
+msgstr "उपकरण ड्राइवर प्रबंधक सहायता :"
 
 #: ddm-mx:209
 msgid "The following options are allowed:"
-msgstr ""
+msgstr "निम्नलिखित विकल्प स्वीकार्य हैं :"
 
 #: ddm-mx:213
 msgid "-i driver    Install given driver."
-msgstr ""
+msgstr "-i driver    निर्दिष्ट ड्राइवर इंस्टॉल करें।"
 
 #: ddm-mx:214
 msgid "             drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "             ड्राइवर : एनवीडिया, मुक्त स्रोत, fixbumblebee"
 
 #: ddm-mx:216
 msgid "-p driver    Purge given driver."
-msgstr ""
+msgstr "-p driver    निर्दिष्ट ड्राइवर हटाएँ।"
 
 #: ddm-mx:217
 msgid "             driver: nvidia"
-msgstr ""
+msgstr "             ड्राइवर : एनवीडिया"
 
 #: ddm-mx:219
 msgid ""
 "-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
 "legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
+"-f           विशिष्ट एनवीडिया ड्राइवर पैकेज बाध्य करें। nvidia-driver, "
+"nvidia-legacy-390xx-driver, nvidia-legacy-340xx-driver"
 
 #: ddm-mx:221
 msgid "-t           For development testing only!  simulate installs"
-msgstr ""
+msgstr "-t           केवल परीक्षण हेतु! इंस्टॉल का सॉफ्टवेयर अनुकरण"
 
 #: ddm-mx:222
 msgid "             This will install drivers for pre-defined hardware."
 msgstr ""
+"             इस द्वारा पूर्व-निर्धारित हार्डवेयर हेतु ड्राइवर इंस्टॉल होंगे।"
 
 #: ddm-mx:223
 msgid "             Use with -i."
-msgstr ""
+msgstr "             -i के साथ उपयोग करें।"
 
 #: ddm-mx:312
 msgid "Need driver: "
-msgstr ""
+msgstr "आवश्यक ड्राइवर :"
 
 #: ddm-mx:316
 msgid "NVIDIA packages to install are "
-msgstr ""
+msgstr "इंस्टॉल हेतु एनवीडिया पैकेज हैं"
 
 #: ddm-mx:318 ddm-mx:618
 msgid "Continue?"
-msgstr ""
+msgstr "जारी रखें?"
 
 #: ddm-mx:339
 msgid "Nvidia command "
-msgstr ""
+msgstr "एनवीडिया कमांड"
 
 #: ddm-mx:363
 msgid "ERROR: Could not configure Bumblebee for user: "
-msgstr ""
+msgstr "त्रुटि : उपयोक्ता हेतु BumbleBee विन्यास विफल :"
 
 #: ddm-mx:367
 msgid "test enabled, not creating xorg.conf file"
-msgstr ""
+msgstr "परीक्षण सक्रिय, xorg.conf फाइल सृजन नहीं होगी"
 
 #: ddm-mx:371
 msgid "creating /etc/X11/xorg.conf file"
-msgstr ""
+msgstr "/etc/X11/xorg.conf फाइल सृजन जारी"
 
 #: ddm-mx:380
 msgid "Finished"
@@ -142,47 +145,47 @@ msgstr "पूर्ण हुआ"
 
 #: ddm-mx:397
 msgid "Proprietary drivers removed"
-msgstr ""
+msgstr "अमुक्त स्रोत ड्राइवर हटाए गए"
 
 #: ddm-mx:410
 msgid "Open command "
-msgstr ""
+msgstr "कमांड आरंभ करें"
 
 #: ddm-mx:414
 msgid "Open drivers installed"
-msgstr ""
+msgstr "मुक्त स्रोत ड्राइवर इंस्टॉल सफल"
 
 #: ddm-mx:428 ddm-mx:434
 msgid "Resetting sources"
-msgstr ""
+msgstr "स्रोत पुनः सेट करना जारी"
 
 #: ddm-mx:445
 msgid "Press <Enter> to exit"
-msgstr ""
+msgstr "बंद करने हेतु <Enter> दबाएँ"
 
 #: ddm-mx:459
 msgid "Enabling backports repo"
-msgstr ""
+msgstr "बैकपोर्ट पैकेज-संग्रह सक्रिय करना जारी"
 
 #: ddm-mx:460 ddm-mx:476
 msgid "Running apt-get update..."
-msgstr ""
+msgstr "apt-get update निष्पादन जारी..."
 
 #: ddm-mx:465 ddm-mx:481
 msgid "Installing latest nvidia-detect package"
-msgstr ""
+msgstr "नवीनतम nvidia-detect पैकेज इंस्टॉल जारी"
 
 #: ddm-mx:475
 msgid "Enabling MX Test repo"
-msgstr ""
+msgstr "एमएक्स परीक्षण पैकेज-संग्रह सक्रिय करना जारी"
 
 #: ddm-mx:490
 msgid "Would you like to check debian-backports for a later version?"
-msgstr ""
+msgstr "क्या आप नवीनतम संस्करण हेतु डेबियन-बैकपोर्ट जाँचना चाहते हैं?"
 
 #: ddm-mx:492
 msgid "Yes or No?"
-msgstr ""
+msgstr "हाँ या नहीं?"
 
 #: ddm-mx:494
 msgid "Yes"
@@ -195,31 +198,31 @@ msgstr "नहीं"
 #: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
 #: ddm-mx:578 ddm-mx:585
 msgid "Ok"
-msgstr ""
+msgstr "ठीक है"
 
 #: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
 msgid "invalid option."
-msgstr ""
+msgstr "अमान्य विकल्प।"
 
 #: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
 msgid "exiting"
-msgstr ""
+msgstr "बंद करना जारी"
 
 #: ddm-mx:514 ddm-mx:515
 msgid "Would you like to check MX Test Repo for a later version?"
-msgstr ""
+msgstr "क्या आप अगले संस्करण हेतु डेबियन-बैकपोर्ट जाँचना चाहते हैं?"
 
 #: ddm-mx:532 ddm-mx:564
 msgid "Which driver do you wish to install"
-msgstr ""
+msgstr "आप कौन सा ड्राइवर इंस्टॉल करना चाहते हैं"
 
 #: ddm-mx:534
 msgid "Main repos or debian-backports?"
-msgstr ""
+msgstr "मुख्य पैकेज-संग्रह या डेबियन बैकपोर्ट?"
 
 #: ddm-mx:536 ddm-mx:568
 msgid "Main"
-msgstr ""
+msgstr "मुख्य"
 
 #: ddm-mx:540 ddm-mx:572
 msgid "Exit"
@@ -227,75 +230,78 @@ msgstr "बंद करें"
 
 #: ddm-mx:542 ddm-mx:574
 msgid "Enter Number of selection"
-msgstr ""
+msgstr "चयन हेतु संख्या दर्ज करें"
 
 #: ddm-mx:566
 msgid "Main repos or MX Test"
-msgstr ""
+msgstr "मुख्य पैकेज-संग्रह या एमएक्स परीक्षण"
 
 #: ddm-mx:608
 msgid "Candidate is: "
-msgstr ""
+msgstr "प्रत्याशी है :"
 
 #: ddm-mx:609
 msgid "Installed is: "
-msgstr ""
+msgstr "इंस्टॉल है :"
 
 #: ddm-mx:617
 msgid "Refreshing Sources with apt-get update"
-msgstr ""
+msgstr "apt-get update द्वारा स्रोत रिफ्रेश करना जारी"
 
 #: ddm-mx:624
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
-msgstr ""
+msgstr "apt-get update हेतु त्रुटि हुई। विवरण हेतु $LOG देखें "
 
 #: ddm-mx:634
 msgid "To restore open source drivers use:  "
-msgstr ""
+msgstr "यह उपयोग कर मुक्त स्रोत ड्राइवर पुनः स्थापित करें :"
 
 #: ddm-mx:651
 msgid "To restore open source drivers later use:  "
-msgstr ""
+msgstr "यह बाद में उपयोग कर मुक्त स्रोत ड्राइवर पुनः स्थापित करें :"
 
 #: ddm-mx:663
 msgid "For recovery help see "
-msgstr ""
+msgstr "निवारण सहायता हेतु देखें"
 
 #: ddm-mx:666
 msgid "Information written to "
-msgstr ""
+msgstr "इनकी सूचना अनुसार"
 
 #: ddm-mx:702
 msgid "Possible previous install from source or smxi/sgfxi detected."
-msgstr ""
+msgstr "स्रोत या smxi/sgfxi से संभावित पूर्व इंस्टॉल की पहचान हुई।"
 
 #: ddm-mx:703
 msgid "Version detected: "
-msgstr ""
+msgstr "पहचाना गया संस्करण :"
 
 #: ddm-mx:704
 msgid "Latest possible with this script : "
-msgstr ""
+msgstr "इस स्क्रिप्ट अनुसार संभावित नवीनतम :"
 
 #: ddm-mx:705
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
+"कृपया <sudo nvidia-install --uninstall> द्वारा हटाकर सिस्टम पुनः आरंभ करें "
+"यदि आप जारी रखना चाहते हैं"
 
 #: ddm-mx:720
 msgid "nvidia-optimus detected"
-msgstr ""
+msgstr "nvidia-optimus पहचाना गया"
 
 #: ddm-mx:723
 msgid "Is this a NVIDIA/INTEL Optimus system?"
-msgstr ""
+msgstr "क्या यह एनवीडिया/इंटेल ऑप्टिमस सिस्टम है?"
 
 #: ddm-mx:759
 msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
 msgstr ""
+"आप एनवीडिया ड्राइवर में सम्मिलित नवीन PRIMUS ड्राइवर उपयोग कर सकते हैं।"
 
 #: ddm-mx:760
 msgid "Use \\"
-msgstr ""
+msgstr "उपयोग करें \\"

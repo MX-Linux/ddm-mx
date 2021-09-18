@@ -92,5 +92,5 @@ Comment[zh_TW]=從軟體倉庫安裝 nvidia 持有的驅動程式
 Icon=nvidia-ddm-mx
 Type=Application
 Terminal=true
-Exec=su-to-root -X -c "/usr/local/bin/ddm-mx -i nvidia"
+Exec=su-to-root -X -c "/usr/bin/ddm-mx -i nvidia"
 Categories=ConsoleOnly;System;MX-Setup;

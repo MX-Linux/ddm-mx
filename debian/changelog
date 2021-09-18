@@ -1,3 +1,9 @@
+ddm-mx (21.09.02mx21) mx; urgency=medium
+
+  * update application locations
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 18 Sep 2021 19:58:52 -0400
+
 ddm-mx (21.09.01mx21) mx; urgency=medium
 
   * use gui authenticator 

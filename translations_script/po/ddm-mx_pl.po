@@ -5,8 +5,8 @@
 # 
 # Translators:
 # anticapitalista <anticapitalista@riseup.net>, 2017
-# MX Linux Polska <mxlinuxpl@gmail.com>, 2019
 # Przemek P <ppjg@dami.pl>, 2019
+# MX Linux Polska <mxlinuxpl@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-07 21:28-0600\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Przemek P <ppjg@dami.pl>, 2019\n"
+"Last-Translator: MX Linux Polska <mxlinuxpl@gmail.com>, 2021\n"
 "Language-Team: Polish (https://www.transifex.com/anticapitalista/teams/10162/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -117,7 +117,7 @@ msgstr "Potrzebujesz sterownika:"
 
 #: ddm-mx:316
 msgid "NVIDIA packages to install are "
-msgstr ""
+msgstr "Pakiety NVIDIA do zainstalowania to"
 
 #: ddm-mx:318 ddm-mx:618
 msgid "Continue?"
@@ -258,19 +258,19 @@ msgstr ""
 
 #: ddm-mx:634
 msgid "To restore open source drivers use:  "
-msgstr ""
+msgstr "Aby przywrócić sterowniki typu open source, użyj:"
 
 #: ddm-mx:651
 msgid "To restore open source drivers later use:  "
-msgstr ""
+msgstr "Aby później przywrócić sterowniki open source, użyj:"
 
 #: ddm-mx:663
 msgid "For recovery help see "
-msgstr ""
+msgstr "Aby uzyskać pomoc w odzyskiwaniu, zobacz"
 
 #: ddm-mx:666
 msgid "Information written to "
-msgstr ""
+msgstr "Informacje napisane do"
 
 #: ddm-mx:702
 msgid "Possible previous install from source or smxi/sgfxi detected."
@@ -302,8 +302,8 @@ msgstr "Czy to jest system NVIDIA/INTEL Optimus?"
 
 #: ddm-mx:759
 msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
-msgstr ""
+msgstr "Możesz użyć nowego sterownika PRIMUS wbudowanego w sterowniki nvidia."
 
 #: ddm-mx:760
 msgid "Use \\"
-msgstr ""
+msgstr "Użyj \\"

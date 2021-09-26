@@ -103,7 +103,7 @@ msgstr ""
 #: ddm-mx:221
 msgid "-t           For development testing only!  simulate installs"
 msgstr ""
-"-t           Apenas para testes de desenvolvimento!  instalções simuladas"
+"-t           Apenas para testes de desenvolvimento!  instalações simuladas"
 
 #: ddm-mx:222
 msgid "             This will install drivers for pre-defined hardware."

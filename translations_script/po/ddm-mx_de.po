@@ -13,6 +13,7 @@
 # count.negative <count.negative@gmx.de>, 2019
 # Vinzenz Vietzke <vinz@vinzv.de>, 2021
 # wahnsinn, 2021
+# Robin, 2021
 # 
 #, fuzzy
 msgid ""
@@ -21,7 +22,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-07 21:28-0600\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: wahnsinn, 2021\n"
+"Last-Translator: Robin, 2021\n"
 "Language-Team: German (https://www.transifex.com/anticapitalista/teams/10162/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -103,6 +104,9 @@ msgid ""
 "-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
 "legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
+"-f           Erzwinge die Verwendung eines spezifischen Nvidia-"
+"Treiberpaketes.  Nvidia-Treiber, Nvidia-legacy-390xx-Treiber, Nvidia-legacy-"
+"340xx-Treiber."
 
 #: ddm-mx:221
 msgid "-t           For development testing only!  simulate installs"
@@ -276,7 +280,7 @@ msgstr "Hilfe zur Wiederherstellung siehe unter"
 
 #: ddm-mx:666
 msgid "Information written to "
-msgstr ""
+msgstr "Information wurde gespeichert in"
 
 #: ddm-mx:702
 msgid "Possible previous install from source or smxi/sgfxi detected."
@@ -315,4 +319,4 @@ msgstr ""
 
 #: ddm-mx:760
 msgid "Use \\"
-msgstr ""
+msgstr "Verwende \\"

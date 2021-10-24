@@ -261,7 +261,7 @@ function install_nvidia {
 	DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
   fi
   
-  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86 -e304 -e340)
+  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86 -e304)
   
   # Testing
   if $TEST; then
@@ -282,10 +282,10 @@ function install_nvidia {
   update_sources
   check_cand
   
-#  if [ "$BUMBLEBEE_NVIDIA_VERSION" = "nvidia-legacy-340xx-driver" ] ; then   
-#		echo $"Unsupported configuration.  bumblebee only works with 390xx drivers and up."
-#		my_exit
-#  fi
+if [ "$BUMBLEBEE_NVIDIA_VERSION" = "nvidia-legacy-340xx-driver" ] ; then   
+		echo $"Unsupported configuration.  bumblebee only works with 390xx drivers and up."
+		my_exit
+fi
 
   MAIN_CAND=$CANDIDATE
   MAIN_NVIDIA=$NVIDIA_VERSION
@@ -819,6 +819,14 @@ set_packages(){
                                        else
                                            NVIDIA_XCONFIG=""
                                            DRIVER="$DRIVER nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms"
+                                       fi
+                                       ;;
+         nvidia-legacy-340xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms"
                                        fi
                                        ;;
         nvidia-tesla-418-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then

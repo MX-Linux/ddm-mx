@@ -20,7 +20,7 @@
 #add BitJam's soure cli-shell-utils
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 
-VERSION="21.09.02"
+VERSION="21.10.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -823,10 +823,10 @@ set_packages(){
                                        ;;
          nvidia-legacy-340xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
                                            NVIDIA_XCONFIG=""
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms"
+                                           DRIVER="$DRIVER nvidia-legacy-340xx-kernel-dkms"
                                        else
                                            NVIDIA_XCONFIG=""
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms"
+                                           DRIVER="$DRIVER nvidia-legacy-340xx-kernel-dkms"
                                        fi
                                        ;;
         nvidia-tesla-418-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then

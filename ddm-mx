@@ -20,7 +20,7 @@
 #add BitJam's soure cli-shell-utils
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 
-VERSION="21.10.02"
+VERSION="22.04.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -145,6 +145,8 @@ fi
 #log version
 echo "===================================" | tee -a $LOG
 echo "ddm-mx: $VERSION" | tee -a $LOG
+echo "kernel release: $(uname -r)" | tee -a $LOG
+echo "kernel version: $(uname -v)" | tee -a $LOG
 echo "===================================" | tee -a $LOG
 
 # =========================================================================

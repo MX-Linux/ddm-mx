@@ -556,7 +556,13 @@ echo $"Which driver do you wish to install" | tee -a $LOG
               BP=""
               NVIDIA_VERSION=$MAIN_NVIDIA
               rm /etc/apt/sources.list.d/debian-backports-temp.list
-              apt-get update            
+              apt-get update  
+              #replace nvidia-detect from main repo
+              #only install if nvidia-detect was present already (not present on 32 bit systems)
+              if [ "$ARCH" = "amd64" ]; then
+              	echo $"Reset nvidia-detect" | tee -a $LOG
+              	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y                     
+              fi
 	      ;;
            2) echo $"Ok"... | tee -a $LOG
                 #NVIDIA_XCONFIG=""
@@ -589,7 +595,13 @@ echo $"Which driver do you wish to install" | tee -a $LOG
                 NVIDIA_VERSION=$MAIN_NVIDIA
                 rm /etc/apt/sources.list.d/mx-test-repo-temp.list
                 apt-get update
-                    ;;
+                #replace nvidia-detect from main repo
+                #only install if nvidia-detect was present already (not present on 32 bit systems)
+                if [ "$ARCH" = "amd64" ]; then
+                	echo $"Reset nvidia-detect" | tee -a $LOG
+                	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y
+                fi
+                ;;
            2)   echo $"Ok"... | tee -a $LOG
                 SWITCH="-t"
                 BP="a=mx,c=test"

@@ -3,11 +3,10 @@ Section: admin
 Priority: optional
 Maintainer: Dolphin Oracle <dolphinoracle@gmail.com>
 Build-Depends: debhelper (>=10)
-Standards-Version: 3.9.5
+Standards-Version: 4.5.1
 Vcs-Git: https://github.com/mx-linux/ddm-mx
 
 Package: ddm-mx
 Architecture: all
 Depends: ${misc:Depends}, ${shlibs:Depends}, cli-shell-utils
-Description: ddm-mx
- CLI app for installing nvidia drivers
+Description: CLI app for installing nvidia drivers

@@ -6,7 +6,7 @@
 # Translators:
 # night1ynx <night1ynxd@gmail.com>, 2016
 # Geoff Gigg <geoffgigg@hotmail.com>, 2017
-# ふうせん Fu-sen. | BALLOON a.k.a. Fu-sen., 2017
+# BALLOON | FU-SEN, 2017
 # Green, 2021
 # 
 #, fuzzy
@@ -98,8 +98,8 @@ msgid ""
 "-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
 "legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
-"-f           指定した nvidia ドライバを強制的にインストール。 nvidia-driver, nvidia-legacy-"
-"390xx-driver, nvidia-legacy-340xx-driver"
+"-f           指定した nvidia ドライバを強制的にインストール。 nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-legacy-340xx-driver"
 
 #: ddm-mx:221
 msgid "-t           For development testing only!  simulate installs"

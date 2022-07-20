@@ -105,8 +105,8 @@ msgid ""
 "legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
 "-f           Erzwinge die Verwendung eines spezifischen Nvidia-"
-"Treiberpaketes.  Nvidia-Treiber, Nvidia-legacy-390xx-Treiber, Nvidia-legacy-"
-"340xx-Treiber."
+"Treiberpaketes.  Nvidia-Treiber, Nvidia-legacy-390xx-Treiber, Nvidia-"
+"legacy-340xx-Treiber."
 
 #: ddm-mx:221
 msgid "-t           For development testing only!  simulate installs"

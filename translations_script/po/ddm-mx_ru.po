@@ -9,6 +9,7 @@
 # Вячеслав Волошин <vol_vel@mail.ru>, 2017
 # Vladimir O <vldoduv@yandex.ru>, 2018
 # Radu Martin, 2020
+# Andrei Stepanov, 2022
 # 
 #, fuzzy
 msgid ""
@@ -17,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-07 21:28-0600\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Radu Martin, 2020\n"
+"Last-Translator: Andrei Stepanov, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/anticapitalista/teams/10162/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,7 +85,7 @@ msgstr "-i driver   Установить заданный драйвер."
 
 #: ddm-mx:214
 msgid "             drivers: nvidia, open, fixbumblebee"
-msgstr "драйверы: nvidia, open, fixbumblebee"
+msgstr "             драйверы: nvidia, open, fixbumblebee"
 
 #: ddm-mx:216
 msgid "-p driver    Purge given driver."
@@ -92,17 +93,20 @@ msgstr "-p driver  Сбросить заданный драйвер."
 
 #: ddm-mx:217
 msgid "             driver: nvidia"
-msgstr "драйвер: nvidia"
+msgstr "             драйвер: nvidia"
 
 #: ddm-mx:219
 msgid ""
 "-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
 "legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
+"-f           принудительно указать конкретный пакет драйвера Nvidia.  "
+"nvidia-driver, nvidia-legacy-390xx-driver, nvidia-legacy-340xx-driver"
 
 #: ddm-mx:221
 msgid "-t           For development testing only!  simulate installs"
 msgstr ""
+"-t           Только для тестирования при разработке! Симулирует установки"
 
 #: ddm-mx:222
 msgid "             This will install drivers for pre-defined hardware."
@@ -118,7 +122,7 @@ msgstr "Требуется драйвер:"
 
 #: ddm-mx:316
 msgid "NVIDIA packages to install are "
-msgstr ""
+msgstr "Пакеты NVIDIA для установки следующие"
 
 #: ddm-mx:318 ddm-mx:618
 msgid "Continue?"
@@ -178,7 +182,7 @@ msgstr "Устанавливается последний пакет nvidia-dete
 
 #: ddm-mx:475
 msgid "Enabling MX Test repo"
-msgstr ""
+msgstr "Включение тестового репозитория MX"
 
 #: ddm-mx:490
 msgid "Would you like to check debian-backports for a later version?"
@@ -211,7 +215,7 @@ msgstr "выход"
 
 #: ddm-mx:514 ddm-mx:515
 msgid "Would you like to check MX Test Repo for a later version?"
-msgstr "Хотите проверить наличие в репозитарии MX Test более свежей версии?"
+msgstr "Хотите проверить наличие более свежей версии в репозитории MX Test?"
 
 #: ddm-mx:532 ddm-mx:564
 msgid "Which driver do you wish to install"
@@ -256,19 +260,19 @@ msgstr "Возникла проблема с apt-get update. Посмотрит�
 
 #: ddm-mx:634
 msgid "To restore open source drivers use:  "
-msgstr ""
+msgstr "Для восстановления драйверов с открытым исходным кодом используйте:"
 
 #: ddm-mx:651
 msgid "To restore open source drivers later use:  "
-msgstr ""
+msgstr "Чтобы восстановить открытые драйвера позже, используйте:"
 
 #: ddm-mx:663
 msgid "For recovery help see "
-msgstr ""
+msgstr "Смотрите справку по восстановлению"
 
 #: ddm-mx:666
 msgid "Information written to "
-msgstr ""
+msgstr "Информация записана в "
 
 #: ddm-mx:702
 msgid "Possible previous install from source or smxi/sgfxi detected."
@@ -296,12 +300,13 @@ msgstr "обнаружен nvidia-optimus"
 
 #: ddm-mx:723
 msgid "Is this a NVIDIA/INTEL Optimus system?"
-msgstr ""
+msgstr "Это система с NVIDIA/INTEL Optimus?"
 
 #: ddm-mx:759
 msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
 msgstr ""
+"Вы можете использовать новый драйвер PRIMUS, встроенный в драйверы Nvidia."
 
 #: ddm-mx:760
 msgid "Use \\"
-msgstr ""
+msgstr "Использовать \\"

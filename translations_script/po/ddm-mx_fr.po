@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Jonathan Chevalier <jonathan.chevalier@icloud.com>, 2016
+# c1ddf36d8d5bed634b45ccc5d56be96f_99cf421 <c70f93bf335b7f698ba6752fd301b09c_531191>, 2016
 # anticapitalista <anticapitalista@riseup.net>, 2017
 # d4150ce1d189cce467e7f661b4839a18, 2019
 # cyril cottet <cyrilusber2001@yahoo.fr>, 2021
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ddm-mx:36
 msgid "Unknown error"

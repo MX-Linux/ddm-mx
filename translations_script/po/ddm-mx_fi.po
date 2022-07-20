@@ -99,8 +99,8 @@ msgid ""
 "-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
 "legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
-"-f           pakota valittu nvidia ajuri.  nvidia-driver, nvidia-legacy-"
-"390xx-driver, nvidia-legacy-340xx-driver"
+"-f           pakota valittu nvidia ajuri.  nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-legacy-340xx-driver"
 
 #: ddm-mx:221
 msgid "-t           For development testing only!  simulate installs"

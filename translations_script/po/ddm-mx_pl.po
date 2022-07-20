@@ -97,10 +97,12 @@ msgid ""
 "-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
 "legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
+"-f           wymuś określony pakiet sterowników nvidia.  nvidia-driver, "
+"nvidia-legacy-390xx-driver, nvidia-legacy-340xx-driver"
 
 #: ddm-mx:221
 msgid "-t           For development testing only!  simulate installs"
-msgstr ""
+msgstr "-t           Tylko do testów deweloperskich! symuluj instalacje"
 
 #: ddm-mx:222
 msgid "             This will install drivers for pre-defined hardware."

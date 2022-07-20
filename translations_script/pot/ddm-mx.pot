@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-19 23:32-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../ddm-mx:230
+msgid "             This will install drivers for pre-defined hardware."
+msgstr ""
+
+#: ../ddm-mx:231
+msgid "             Use with -i."
+msgstr ""
+
+#: ../ddm-mx:225
+msgid "             driver: nvidia"
+msgstr ""
+
+#: ../ddm-mx:222
+msgid "             drivers: nvidia, open, fixbumblebee"
+msgstr ""
+
+#: ../ddm-mx:227
+msgid ""
+"-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-tesla-418-driver, nvidia-tesla-450-driver, "
+"nvidia-tesla-460-driver"
+msgstr ""
+
+#: ../ddm-mx:221
+msgid "-i driver    Install given driver."
+msgstr ""
+
+#: ../ddm-mx:224
+msgid "-p driver    Purge given driver."
+msgstr ""
+
+#: ../ddm-mx:229
+msgid "-t           For development testing only!  simulate installs"
+msgstr ""
+
+#: ../ddm-mx:628
+msgid "Candidate is: "
+msgstr ""
+
+#: ../ddm-mx:326 ../ddm-mx:638
+msgid "Continue?"
+msgstr ""
+
+#: ../ddm-mx:215
+msgid "Device Driver Manager Help:"
+msgstr ""
+
+#: ../ddm-mx:371
+msgid "ERROR: Could not configure Bumblebee for user: "
+msgstr ""
+
+#: ../ddm-mx:202
+msgid "ERROR: Unknown argument: "
+msgstr ""
+
+#: ../ddm-mx:169
+#, sh-format
+msgid "ERROR: Unknown argument: $DRV"
+msgstr ""
+
+#. enabling mx_test_repo
+#: ../ddm-mx:483
+msgid "Enabling MX Test repo"
+msgstr ""
+
+#. enabling debian-backports
+#: ../ddm-mx:467
+msgid "Enabling backports repo"
+msgstr ""
+
+#: ../ddm-mx:550 ../ddm-mx:588
+msgid "Enter Number of selection"
+msgstr ""
+
+#: ../ddm-mx:548 ../ddm-mx:586
+msgid "Exit"
+msgstr ""
+
+#: ../ddm-mx:388
+msgid "Finished"
+msgstr ""
+
+#: ../ddm-mx:683
+msgid "For recovery help see "
+msgstr ""
+
+#: ../ddm-mx:686
+msgid "Information written to "
+msgstr ""
+
+#: ../ddm-mx:41
+msgid "Install drivers for: "
+msgstr ""
+
+#: ../ddm-mx:629
+msgid "Installed is: "
+msgstr ""
+
+#: ../ddm-mx:473 ../ddm-mx:489
+msgid "Installing latest nvidia-detect package"
+msgstr ""
+
+#. Invalid option: start GUI
+#. launch_gui $@
+#. Unknown error: start GUI
+#. launch_gui $@
+#: ../ddm-mx:100 ../ddm-mx:110
+msgid "Invalid option"
+msgstr ""
+
+#: ../ddm-mx:743
+msgid "Is this a NVIDIA/INTEL Optimus system?"
+msgstr ""
+
+#: ../ddm-mx:724
+msgid "Latest possible with this script : "
+msgstr ""
+
+#: ../ddm-mx:544 ../ddm-mx:582
+msgid "Main"
+msgstr ""
+
+#: ../ddm-mx:580
+msgid "Main repos or MX Test"
+msgstr ""
+
+#: ../ddm-mx:542
+msgid "Main repos or debian-backports?"
+msgstr ""
+
+#: ../ddm-mx:324
+msgid "NVIDIA packages to install are "
+msgstr ""
+
+#: ../ddm-mx:320
+msgid "Need driver: "
+msgstr ""
+
+#: ../ddm-mx:503
+msgid "No"
+msgstr ""
+
+#: ../ddm-mx:347
+msgid "Nvidia command "
+msgstr ""
+
+#: ../ddm-mx:509 ../ddm-mx:513 ../ddm-mx:526 ../ddm-mx:530 ../ddm-mx:554
+#: ../ddm-mx:567 ../ddm-mx:592 ../ddm-mx:605
+msgid "Ok"
+msgstr ""
+
+#: ../ddm-mx:418
+msgid "Open command "
+msgstr ""
+
+#: ../ddm-mx:422
+msgid "Open drivers installed"
+msgstr ""
+
+#: ../ddm-mx:38
+msgid "Option-"
+msgstr ""
+
+#: ../ddm-mx:725
+msgid ""
+"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish "
+"to proceed"
+msgstr ""
+
+#: ../ddm-mx:722
+msgid "Possible previous install from source or smxi/sgfxi detected."
+msgstr ""
+
+#: ../ddm-mx:453
+msgid "Press <Enter> to exit"
+msgstr ""
+
+#: ../ddm-mx:405
+msgid "Proprietary drivers removed"
+msgstr ""
+
+#: ../ddm-mx:160
+msgid "Purge drivers for: "
+msgstr ""
+
+#: ../ddm-mx:637
+msgid "Refreshing Sources with apt-get update"
+msgstr ""
+
+#: ../ddm-mx:563 ../ddm-mx:601
+msgid "Reset nvidia-detect"
+msgstr ""
+
+#: ../ddm-mx:436 ../ddm-mx:442
+msgid "Resetting sources"
+msgstr ""
+
+#: ../ddm-mx:40
+msgid "Run as root"
+msgstr ""
+
+#: ../ddm-mx:468 ../ddm-mx:484
+msgid "Running apt-get update..."
+msgstr ""
+
+#: ../ddm-mx:161 ../ddm-mx:183
+msgid "Start at (m/d/y):"
+msgstr ""
+
+#: ../ddm-mx:217
+msgid "The following options are allowed:"
+msgstr ""
+
+#: ../ddm-mx:644
+#, sh-format
+msgid "There was a problem with the apt-get update.  See $LOG for details"
+msgstr ""
+
+#: ../ddm-mx:671
+msgid "To restore open source drivers later use:  "
+msgstr ""
+
+#: ../ddm-mx:654
+msgid "To restore open source drivers use:  "
+msgstr ""
+
+#: ../ddm-mx:37
+msgid "Unknown error"
+msgstr ""
+
+#: ../ddm-mx:288
+msgid ""
+"Unsupported configuration.  bumblebee only works with 390xx drivers and up."
+msgstr ""
+
+#: ../ddm-mx:780
+msgid "Use \\"
+msgstr ""
+
+#: ../ddm-mx:723
+msgid "Version detected: "
+msgstr ""
+
+#: ../ddm-mx:540 ../ddm-mx:578
+msgid "Which driver do you wish to install"
+msgstr ""
+
+#: ../ddm-mx:522 ../ddm-mx:523
+msgid "Would you like to check MX Test Repo for a later version?"
+msgstr ""
+
+#: ../ddm-mx:498
+msgid "Would you like to check debian-backports for a later version?"
+msgstr ""
+
+#: ../ddm-mx:502
+msgid "Yes"
+msgstr ""
+
+#: ../ddm-mx:500
+msgid "Yes or No?"
+msgstr ""
+
+#: ../ddm-mx:779
+msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
+msgstr ""
+
+#: ../ddm-mx:379
+msgid "creating /etc/X11/xorg.conf file"
+msgstr ""
+
+#. ##file locking
+#: ../ddm-mx:128
+msgid "creating lock ..."
+msgstr ""
+
+#. NVIDIA_XCONFIG=""
+#: ../ddm-mx:516 ../ddm-mx:533 ../ddm-mx:570 ../ddm-mx:572 ../ddm-mx:610
+#: ../ddm-mx:612
+msgid "exiting"
+msgstr ""
+
+#: ../ddm-mx:516 ../ddm-mx:533 ../ddm-mx:572 ../ddm-mx:612
+msgid "invalid option."
+msgstr ""
+
+#: ../ddm-mx:740
+msgid "nvidia-optimus detected"
+msgstr ""
+
+#: ../ddm-mx:39
+msgid "requires an argument."
+msgstr ""
+
+#: ../ddm-mx:375
+msgid "test enabled, not creating xorg.conf file"
+msgstr ""

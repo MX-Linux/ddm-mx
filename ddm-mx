@@ -20,7 +20,7 @@
 #add BitJam's soure cli-shell-utils
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 
-VERSION="22.06.01"
+VERSION="22.07.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"

@@ -1,3 +1,9 @@
+ddm-mx (22.07.01mx21) mx; urgency=medium
+
+  * translation refresh
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 23 Jul 2022 11:09:43 -0400
+
 ddm-mx (22.06.01mx21) mx; urgency=medium
 
   * use pkexec instead of su-to-root

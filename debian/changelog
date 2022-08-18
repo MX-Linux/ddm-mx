@@ -1,3 +1,9 @@
+ddm-mx (22.08.02mx21) mx; urgency=medium
+
+  * add command parameters to log 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 17 Aug 2022 20:43:25 -0400
+
 ddm-mx (22.08.01mx21) mx; urgency=medium
 
   * add fr_BE 

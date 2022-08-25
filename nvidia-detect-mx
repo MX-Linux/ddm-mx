@@ -32,7 +32,7 @@ shopt -s compat31 nocasematch 2>/dev/null || { echo "Error: this script only wor
 
 # last time the PCI IDs were updated
 
-LATEST="460.73.01"
+LATEST="470.141.03"
 NVIDIA_DETECT_PRESENT="/usr/bin/nvidia-detect"
 # -------------------------------------------------------------------------
 #get release info
@@ -126,6 +126,15 @@ if [ "$ARCH" = "amd64" ]; then
 		VERSIONS[461]=460.32.03
 	fi
 	
+	if grep -q -i $NVGA $IDLISTDIR/nvidia-470.ids 2>/dev/null
+	then
+	VERSIONS[470]=470.103.01
+	fi
+
+	if grep -q -i $NVGA $IDLISTDIR/nvidia-tesla-470.ids 2>/dev/null
+	then
+	VERSIONS[471]=470.57.02
+	
 	if grep -q -i $NVGA $IDLISTDIR/nvidia.ids 2>/dev/null
 	then
 	# 999 means current
@@ -158,6 +167,9 @@ elif [[ -n ${VERSIONS[391]} ]]; then
 elif [[ -n ${VERSIONS[390]} ]]; then
 	echo "Your card is supported by the nvidia 390 driver"
 	PACKAGE="nvidia-legacy-390xx-driver" #; changes for mx
+elif [[ -n ${VERSIONS[471]} ]]; then
+	echo "Your card is supported by the Tesla 470 drivers series."
+	PACKAGE="nvidia-tesla-470-driver"
 elif [[ -n ${VERSIONS[461]} ]]; then
 	echo "Your card is supported by the Tesla 460 drivers series."
 	PACKAGE="nvidia-tesla-460-driver"

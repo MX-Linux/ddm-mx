@@ -20,7 +20,7 @@
 #add BitJam's soure cli-shell-utils
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 
-VERSION="22.08.02"
+VERSION="22.08.03"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -226,7 +226,10 @@ function usage() {
   echo $"-p driver    Purge given driver."
   echo $"             driver: nvidia"
   echo
-  echo $"-f           force specific nvidia driver package.  nvidia-driver, nvidia-legacy-390xx-driver, nvidia-tesla-418-driver, nvidia-tesla-450-driver, nvidia-tesla-460-driver"
+  echo $"-f           force specific nvidia driver package."
+  echo "               nvidia-driver, nvidia-legacy-390xx-driver, nvidia-tesla-418-driver,"
+  echo "               nvidia-tesla-450-driver, nvidia-tesla-460-driver, nvidia-tesla-470-driver"
+  echo "               nvidia-legacy-340xx-driver, bumblebee-nvidia"
   echo
   echo $"-t           For development testing only!  simulate installs"
   echo $"             This will install drivers for pre-defined hardware."
@@ -400,7 +403,7 @@ function purge_proprietary_drivers {
   rm /etc/modprobe.d/nvidia* 2>/dev/null
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
   # Leave nvidia-detect and nvidia-installer-cleanup
-  apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v detect | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
+  apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
 # apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
 
   if [ "$?" = "0" ]; then 
@@ -867,6 +870,14 @@ set_packages(){
                                        else
                                            NVIDIA_XCONFIG=""
                                            DRIVER="$DRIVER nvidia-settings-tesla-460 nvidia-tesla-460-kernel-dkms"
+                                       fi
+                                       ;;
+        nvidia-tesla-470-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-470 nvidia-tesla-460-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-470 nvidia-tesla-460-kernel-dkms"
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then

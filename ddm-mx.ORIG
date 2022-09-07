@@ -731,7 +731,7 @@ check_source_install(){
     echo $(eval_gettext "Latest possible with this script : ") $CANDIDATE | tee -a $LOG
     echo $(eval_gettext "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed") | tee -a $LOG
     #if [ $GUI ]; then
-	#	echo "$(eval_gettext 'Possible previous install from source or smxi/sgfxi detected.')" "$(eval_gettext 'Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed')" > /tmp/ddm-msg
+	#	echo $"Possible previous install from source or smxi/sgfxi detected." $"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed" > /tmp/ddm-msg
 	#fi
 	exit 10
   fi

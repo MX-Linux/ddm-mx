@@ -1,3 +1,9 @@
+ddm-mx (22.10.01mx21) mx; urgency=medium
+
+  * update polkit rule so DISPLAY is accessible under pkexec 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 01 Oct 2022 22:33:56 -0400
+
 ddm-mx (22.08.03mx21) mx; urgency=medium
 
   * cleanup debian folder

@@ -1,6 +1,8 @@
 ddm-mx (22.10.02mx21) mx; urgency=medium
 
   * fix missing strings left over from gettext migration
+  * fix optimus confirmation question
+  * install nvidia-detect if x86_64 system and its not already installed
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 12 Oct 2022 21:53:25 -0400
 

@@ -527,7 +527,7 @@ echo $(eval_gettext "Would you like to check debian-backports for a later versio
 mx_test_repo_dialog()
 {
 echo $(eval_gettext "Would you like to check MX Test Repo for a later version?") >> $LOG
-yes_NO $(eval_gettext "Would you like to check MX Test Repo for a later version?")
+yes_NO "$(eval_gettext "Would you like to check MX Test Repo for a later version?")"
 
         case $? in
            0)   echo $(eval_gettext "Ok")...| tee -a $LOG 
@@ -747,7 +747,7 @@ check_optimus(){
 				echo $(eval_gettext "nvidia-optimus detected") | tee -a $LOG
 				OPTIMUS=2
 			else
-				YES_no $(eval_gettext "Is this a NVIDIA/INTEL Optimus system?") | tee -a $LOG
+				YES_no "$(eval_gettext "Is this a NVIDIA/INTEL Optimus system?")" | tee -a $LOG
 				if [ $? = 0 ]; then
 					OPTIMUS=2
 				fi

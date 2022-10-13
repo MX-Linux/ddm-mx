@@ -68,7 +68,7 @@ PURGE=''
 INSTALL=''
 FORCEDRIVER=''
 TEST=false
-while getopts ":f:bi:p:ht:" opt; do
+while getopts ":f:bi:p:htd:" opt; do
   case $opt in
     h)
       usage HELP
@@ -86,6 +86,10 @@ while getopts ":f:bi:p:ht:" opt; do
       # Testing
       echo "TEST Install"
       TEST=true
+      ;;
+     d)
+      # Testing
+      echo "TEST Install"
       PCIID="$OPTARG"
       ;;
     b)
@@ -265,6 +269,8 @@ function preseed_nvidia {
 }
 
 function install_nvidia {
+  update_sources
+  install_nvidia_detect
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
   if [ -z "$FORCEDRIVER" ]; then
@@ -275,7 +281,9 @@ function install_nvidia {
   
   # Testing
   if $TEST; then
-    #DRIVER="nvidia-driver"
+    if [ -z "$PCIID" ]; then 
+		DRIVER="nvidia-driver"
+	fi
     TESTSWITCH="-s"
   fi
   
@@ -289,7 +297,6 @@ function install_nvidia {
   fi
   
   check_source_install
-  update_sources
   check_cand
   
 if [ "$BUMBLEBEE_NVIDIA_VERSION" = "nvidia-legacy-340xx-driver" ] ; then   
@@ -405,7 +412,7 @@ function purge_proprietary_drivers {
   rm /etc/X11/xorg.conf 2>/dev/null
   rm /etc/modprobe.d/nvidia* 2>/dev/null
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
-  # Leave nvidia-detect and nvidia-installer-cleanup
+  # Leave nvidia-installer-cleanup
   apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
 # apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
 
@@ -749,8 +756,8 @@ check_optimus(){
 				OPTIMUS=2
 			else
 				YES_no "$(eval_gettext "Is this a NVIDIA/INTEL Optimus system?")" | tee -a $LOG
-				if [ $? = 0 ]; then
-					OPTIMUS=2
+				if [ "$?" = "1" ]; then
+					OPTIMUS=1
 				fi
             
 			fi
@@ -967,6 +974,17 @@ check_for_nvidia_card(){
 			exit 8
 		fi
     fi
+}
+
+install_nvidia_detect(){
+if [ "$ARCH" = "amd64" ]; then
+	if [ ! -x "/usr/bin/nvidia-detect" ]; then
+		echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
+		echo ""
+		apt-get install $SWITCH $BP nvidia-detect |tee -a $LOG  
+		echo ""
+    fi
+fi
 }
 
 main "$@"

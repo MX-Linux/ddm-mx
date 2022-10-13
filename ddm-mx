@@ -21,7 +21,7 @@
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 source gettext.sh
 
-VERSION="22.10.01"
+VERSION="22.10.02"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -68,7 +68,7 @@ PURGE=''
 INSTALL=''
 FORCEDRIVER=''
 TEST=false
-while getopts ":f:bi:p:ht" opt; do
+while getopts ":f:bi:p:ht:" opt; do
   case $opt in
     h)
       usage HELP
@@ -86,6 +86,7 @@ while getopts ":f:bi:p:ht" opt; do
       # Testing
       echo "TEST Install"
       TEST=true
+      PCIID="$OPTARG"
       ;;
     b)
       # Testing
@@ -267,14 +268,14 @@ function install_nvidia {
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
   if [ -z "$FORCEDRIVER" ]; then
-	DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
+	DRIVER=$(nvidia-detect-mx $PCIID|grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
   fi
   
-  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86 -e304)
+  UNSUPPORTED_LEGACY=$(nvidia-detect-mx $PCIID| grep -e173.14 -e96.43 -e71.86 -e304)
   
   # Testing
   if $TEST; then
-    DRIVER="nvidia-driver"
+    #DRIVER="nvidia-driver"
     TESTSWITCH="-s"
   fi
   

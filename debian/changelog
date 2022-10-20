@@ -1,3 +1,9 @@
+ddm-mx (22.10.03mx21) mx; urgency=medium
+
+  * fix a bad status return in optimus detection question
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 19 Oct 2022 20:33:08 -0400
+
 ddm-mx (22.10.02mx21) mx; urgency=medium
 
   * fix missing strings left over from gettext migration

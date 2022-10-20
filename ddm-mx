@@ -756,8 +756,9 @@ check_optimus(){
 				OPTIMUS=2
 			else
 				YES_no "$(eval_gettext "Is this a NVIDIA/INTEL Optimus system?")" | tee -a $LOG
-				if [ "$?" = "1" ]; then
-					OPTIMUS=1
+				echo "$?"
+				if [ "$?" = "0" ]; then
+					OPTIMUS=2
 				fi
             
 			fi

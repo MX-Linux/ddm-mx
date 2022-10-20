@@ -88,8 +88,8 @@ while getopts ":f:bi:p:htd:" opt; do
       TEST=true
       ;;
      d)
-      # Testing
-      echo "TEST Install"
+      # 0fd4 is 390-legacy
+      echo "PCIID $OPTARG"
       PCIID="$OPTARG"
       ;;
     b)

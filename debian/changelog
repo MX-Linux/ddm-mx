@@ -1,3 +1,9 @@
+ddm-mx (22.10.04mx21) mx; urgency=medium
+
+  * fix bumblebee alternate text display
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 23 Oct 2022 10:53:18 -0400
+
 ddm-mx (22.10.03mx21) mx; urgency=medium
 
   * fix a bad status return in optimus detection question

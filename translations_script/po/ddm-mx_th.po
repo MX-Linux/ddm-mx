@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Pongpeera Wongprasitthiporn, 2021
+# Pongpeera Wongprasitthiporn, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-07 21:28-0600\n"
+"POT-Creation-Date: 2022-09-07 19:22-0400\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Pongpeera Wongprasitthiporn, 2021\n"
+"Last-Translator: Pongpeera Wongprasitthiporn, 2022\n"
 "Language-Team: Thai (https://www.transifex.com/anticapitalista/teams/10162/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,281 +21,446 @@ msgstr ""
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ddm-mx:36
+#: ../ddm-mx:39
+#, sh-format
 msgid "Unknown error"
 msgstr ""
 
-#: ddm-mx:37
+#: ../ddm-mx:40
+#, sh-format
 msgid "Option-"
 msgstr ""
 
-#: ddm-mx:38
+#: ../ddm-mx:41
+#, sh-format
 msgid "requires an argument."
 msgstr ""
 
-#: ddm-mx:39
+#: ../ddm-mx:42
+#, sh-format
 msgid "Run as root"
 msgstr ""
 
-#: ddm-mx:40
+#: ../ddm-mx:43
+#, sh-format
 msgid "Install drivers for: "
 msgstr ""
 
-#: ddm-mx:99 ddm-mx:109
+#. Invalid option: start GUI
+#. launch_gui $@
+#. Unknown error: start GUI
+#. launch_gui $@
+#: ../ddm-mx:102 ../ddm-mx:112
+#, sh-format
 msgid "Invalid option"
 msgstr ""
 
-#: ddm-mx:127
+#. ##file locking
+#: ../ddm-mx:130
+#, sh-format
 msgid "creating lock ..."
 msgstr ""
 
-#: ddm-mx:152
+#: ../ddm-mx:164
+#, sh-format
 msgid "Purge drivers for: "
 msgstr ""
 
-#: ddm-mx:153 ddm-mx:175
+#: ../ddm-mx:165 ../ddm-mx:187
+#, sh-format
 msgid "Start at (m/d/y):"
 msgstr ""
 
-#: ddm-mx:161
+#: ../ddm-mx:173
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
 msgstr ""
 
-#: ddm-mx:194
+#: ../ddm-mx:206 ../ddm-mx:899
+#, sh-format
 msgid "ERROR: Unknown argument: "
 msgstr ""
 
-#: ddm-mx:207
+#: ../ddm-mx:219
+#, sh-format
 msgid "Device Driver Manager Help:"
 msgstr ""
 
-#: ddm-mx:209
+#: ../ddm-mx:221
+#, sh-format
 msgid "The following options are allowed:"
 msgstr ""
 
-#: ddm-mx:213
+#: ../ddm-mx:223
+#, sh-format
+msgid "-b            Offer debian-backports alternative"
+msgstr ""
+
+#: ../ddm-mx:225
+#, sh-format
 msgid "-i driver    Install given driver."
 msgstr ""
 
-#: ddm-mx:214
+#: ../ddm-mx:226
+#, sh-format
 msgid "             drivers: nvidia, open, fixbumblebee"
 msgstr ""
 
-#: ddm-mx:216
+#: ../ddm-mx:228
+#, sh-format
 msgid "-p driver    Purge given driver."
 msgstr ""
 
-#: ddm-mx:217
+#: ../ddm-mx:229
+#, sh-format
 msgid "             driver: nvidia"
 msgstr "             ไดรเวอร์: nvidia"
 
-#: ddm-mx:219
-msgid ""
-"-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
-"legacy-390xx-driver, nvidia-legacy-340xx-driver"
+#: ../ddm-mx:231
+#, sh-format
+msgid "-f           force specific nvidia driver package."
 msgstr ""
 
-#: ddm-mx:221
+#: ../ddm-mx:236
+#, sh-format
 msgid "-t           For development testing only!  simulate installs"
 msgstr ""
 
-#: ddm-mx:222
+#: ../ddm-mx:237
+#, sh-format
 msgid "             This will install drivers for pre-defined hardware."
 msgstr ""
 
-#: ddm-mx:223
+#: ../ddm-mx:238
+#, sh-format
 msgid "             Use with -i."
 msgstr ""
 
-#: ddm-mx:312
+#: ../ddm-mx:295
+#, sh-format
+msgid ""
+"Unsupported configuration.  bumblebee only works with 390xx drivers and up."
+msgstr ""
+
+#: ../ddm-mx:327
+#, sh-format
 msgid "Need driver: "
 msgstr ""
 
-#: ddm-mx:316
+#: ../ddm-mx:331
+#, sh-format
 msgid "NVIDIA packages to install are "
 msgstr ""
 
-#: ddm-mx:318 ddm-mx:618
+#: ../ddm-mx:333 ../ddm-mx:645
+#, sh-format
 msgid "Continue?"
 msgstr "ดำเนินการต่อ?"
 
-#: ddm-mx:339
+#: ../ddm-mx:354
+#, sh-format
 msgid "Nvidia command "
 msgstr ""
 
-#: ddm-mx:363
+#: ../ddm-mx:378
+#, sh-format
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr ""
 
-#: ddm-mx:367
+#: ../ddm-mx:382
+#, sh-format
 msgid "test enabled, not creating xorg.conf file"
 msgstr ""
 
-#: ddm-mx:371
+#: ../ddm-mx:386
+#, sh-format
 msgid "creating /etc/X11/xorg.conf file"
 msgstr "กำลังสร้างไฟล์ /etc/X11/xorg.conf"
 
-#: ddm-mx:380
+#: ../ddm-mx:395
+#, sh-format
 msgid "Finished"
 msgstr "เสร็จสิ้น"
 
-#: ddm-mx:397
+#: ../ddm-mx:412
+#, sh-format
 msgid "Proprietary drivers removed"
 msgstr ""
 
-#: ddm-mx:410
+#: ../ddm-mx:425
+#, sh-format
 msgid "Open command "
 msgstr ""
 
-#: ddm-mx:414
+#: ../ddm-mx:429
+#, sh-format
 msgid "Open drivers installed"
 msgstr ""
 
-#: ddm-mx:428 ddm-mx:434
+#: ../ddm-mx:443 ../ddm-mx:449
+#, sh-format
 msgid "Resetting sources"
 msgstr ""
 
-#: ddm-mx:445
+#: ../ddm-mx:460
+#, sh-format
 msgid "Press <Enter> to exit"
 msgstr "กด <Enter> เพื่อออก"
 
-#: ddm-mx:459
+#. enabling debian-backports
+#: ../ddm-mx:474
+#, sh-format
 msgid "Enabling backports repo"
 msgstr ""
 
-#: ddm-mx:460 ddm-mx:476
+#: ../ddm-mx:475 ../ddm-mx:491
+#, sh-format
 msgid "Running apt-get update..."
 msgstr "กำลังรัน apt-get update..."
 
-#: ddm-mx:465 ddm-mx:481
+#: ../ddm-mx:480 ../ddm-mx:496
+#, sh-format
 msgid "Installing latest nvidia-detect package"
 msgstr "กำลังติดตั้งแพ็กเกจ nvidia-detect ล่าสุด"
 
-#: ddm-mx:475
+#. enabling mx_test_repo
+#: ../ddm-mx:490
+#, sh-format
 msgid "Enabling MX Test repo"
 msgstr "กำลังเปิดใช้งาน MX Test repo"
 
-#: ddm-mx:490
+#: ../ddm-mx:505
+#, sh-format
 msgid "Would you like to check debian-backports for a later version?"
 msgstr ""
 
-#: ddm-mx:492
+#: ../ddm-mx:507
+#, sh-format
 msgid "Yes or No?"
 msgstr ""
 
-#: ddm-mx:494
+#: ../ddm-mx:509
+#, sh-format
 msgid "Yes"
 msgstr "ใช่"
 
-#: ddm-mx:495
+#: ../ddm-mx:510
+#, sh-format
 msgid "No"
 msgstr "ไม่"
 
-#: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
-#: ddm-mx:578 ddm-mx:585
-msgid "Ok"
-msgstr ""
-
-#: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
-msgid "invalid option."
-msgstr ""
-
-#: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
-msgid "exiting"
-msgstr ""
-
-#: ddm-mx:514 ddm-mx:515
-msgid "Would you like to check MX Test Repo for a later version?"
-msgstr "Would you like to check MX Test Repo for a later version?"
-
-#: ddm-mx:532 ddm-mx:564
-msgid "Which driver do you wish to install"
-msgstr "ต้องการติดตั้งไดรเวอร์ใด"
-
-#: ddm-mx:534
-msgid "Main repos or debian-backports?"
-msgstr ""
-
-#: ddm-mx:536 ddm-mx:568
-msgid "Main"
-msgstr ""
-
-#: ddm-mx:540 ddm-mx:572
-msgid "Exit"
-msgstr ""
-
-#: ddm-mx:542 ddm-mx:574
+#: ../ddm-mx:512 ../ddm-mx:557 ../ddm-mx:595 ../ddm-mx:938
+#, sh-format
 msgid "Enter Number of selection"
 msgstr ""
 
-#: ddm-mx:566
+#: ../ddm-mx:516 ../ddm-mx:520 ../ddm-mx:533 ../ddm-mx:537 ../ddm-mx:561
+#: ../ddm-mx:574 ../ddm-mx:599 ../ddm-mx:612
+#, sh-format
+msgid "Ok"
+msgstr ""
+
+#: ../ddm-mx:523 ../ddm-mx:540 ../ddm-mx:579 ../ddm-mx:619 ../ddm-mx:944
+#, sh-format
+msgid "invalid option."
+msgstr ""
+
+#. NVIDIA_XCONFIG=""
+#: ../ddm-mx:523 ../ddm-mx:540 ../ddm-mx:577 ../ddm-mx:579 ../ddm-mx:617
+#: ../ddm-mx:619 ../ddm-mx:943 ../ddm-mx:944
+#, sh-format
+msgid "exiting"
+msgstr ""
+
+#: ../ddm-mx:529 ../ddm-mx:530
+#, sh-format
+msgid "Would you like to check MX Test Repo for a later version?"
+msgstr "Would you like to check MX Test Repo for a later version?"
+
+#: ../ddm-mx:547 ../ddm-mx:585
+#, sh-format
+msgid "Which driver do you wish to install"
+msgstr "ต้องการติดตั้งไดรเวอร์ใด"
+
+#: ../ddm-mx:549
+#, sh-format
+msgid "Main repos or debian-backports?"
+msgstr ""
+
+#: ../ddm-mx:551 ../ddm-mx:589
+#, sh-format
+msgid "Main"
+msgstr ""
+
+#: ../ddm-mx:555 ../ddm-mx:593
+#, sh-format
+msgid "Exit"
+msgstr ""
+
+#: ../ddm-mx:570 ../ddm-mx:608
+#, sh-format
+msgid "Reset nvidia-detect"
+msgstr ""
+
+#: ../ddm-mx:587
+#, sh-format
 msgid "Main repos or MX Test"
 msgstr ""
 
-#: ddm-mx:608
+#: ../ddm-mx:591
+#, sh-format
+msgid "MX Test"
+msgstr ""
+
+#: ../ddm-mx:635
+#, sh-format
 msgid "Candidate is: "
 msgstr ""
 
-#: ddm-mx:609
+#: ../ddm-mx:636 ../ddm-mx:911 ../ddm-mx:920
+#, sh-format
 msgid "Installed is: "
 msgstr "ติดตั้งแล้ว: "
 
-#: ddm-mx:617
+#: ../ddm-mx:644
+#, sh-format
 msgid "Refreshing Sources with apt-get update"
 msgstr ""
 
-#: ddm-mx:624
+#: ../ddm-mx:651
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
 
-#: ddm-mx:634
+#: ../ddm-mx:661
+#, sh-format
 msgid "To restore open source drivers use:  "
 msgstr ""
 
-#: ddm-mx:651
+#: ../ddm-mx:678
+#, sh-format
 msgid "To restore open source drivers later use:  "
 msgstr ""
 
-#: ddm-mx:663
+#: ../ddm-mx:690
+#, sh-format
 msgid "For recovery help see "
 msgstr ""
 
-#: ddm-mx:666
+#: ../ddm-mx:693
+#, sh-format
 msgid "Information written to "
 msgstr ""
 
-#: ddm-mx:702
+#: ../ddm-mx:729
+#, sh-format
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
 
-#: ddm-mx:703
+#: ../ddm-mx:730
+#, sh-format
 msgid "Version detected: "
 msgstr "เวอร์ชันที่ตรวจพบ: "
 
-#: ddm-mx:704
+#: ../ddm-mx:731
+#, sh-format
 msgid "Latest possible with this script : "
 msgstr ""
 
-#: ddm-mx:705
+#: ../ddm-mx:732
+#, sh-format
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
 
-#: ddm-mx:720
+#: ../ddm-mx:747
+#, sh-format
 msgid "nvidia-optimus detected"
 msgstr ""
 
-#: ddm-mx:723
+#: ../ddm-mx:750
+#, sh-format
 msgid "Is this a NVIDIA/INTEL Optimus system?"
 msgstr ""
 
-#: ddm-mx:759
+#: ../ddm-mx:786
+#, sh-format
 msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
 msgstr ""
 
-#: ddm-mx:760
-msgid "Use \\"
+#: ../ddm-mx:787
+#, sh-format
+msgid ""
+"Use \"nvidia-run-mx\" followed by your application command to use the nvidia"
+" graphics"
+msgstr ""
+
+#: ../ddm-mx:789
+#, sh-format
+msgid ""
+"If you want to force the older bumblebee optimus drivers,\\n quit and "
+"restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
+msgstr ""
+
+#: ../ddm-mx:793 ../ddm-mx:799
+#, sh-format
+msgid "You need to use the bumblebee-nvidia driver."
+msgstr ""
+
+#: ../ddm-mx:812
+#, sh-format
+msgid "nvidia driver not available, check your repo sources"
+msgstr ""
+
+#: ../ddm-mx:817
+#, sh-format
+msgid ""
+"Uh oh. Your card is only supported by older legacy drivers which are not in "
+"any current Debian suite."
+msgstr ""
+
+#: ../ddm-mx:909 ../ddm-mx:918
+#, sh-format
+msgid "Main repo candidate is:  "
+msgstr ""
+
+#: ../ddm-mx:910
+#, sh-format
+msgid "Debian backports candidate is:  "
+msgstr ""
+
+#: ../ddm-mx:919
+#, sh-format
+msgid "MX Test repo candidate is:  "
+msgstr ""
+
+#: ../ddm-mx:930
+#, sh-format
+msgid "nvidia driver already installed"
+msgstr ""
+
+#: ../ddm-mx:932
+#, sh-format
+msgid "Reinstall or quit?"
+msgstr ""
+
+#: ../ddm-mx:935
+#, sh-format
+msgid "Reinstall"
+msgstr "ติดตั้งใหม่"
+
+#: ../ddm-mx:936
+#, sh-format
+msgid "quit"
+msgstr ""
+
+#: ../ddm-mx:942
+#, sh-format
+msgid "reinstalling"
+msgstr ""
+
+#: ../ddm-mx:965
+#, sh-format
+msgid "No nvidia card found - exiting"
 msgstr ""

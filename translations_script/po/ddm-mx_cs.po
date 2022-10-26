@@ -5,17 +5,17 @@
 # 
 # Translators:
 # anticapitalista <anticapitalista@riseup.net>, 2017
-# joyinko <joyinko@azet.sk>, 2017
 # el Presidento, 2019
+# joyinko <joyinko@azet.sk>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-07 21:28-0600\n"
+"POT-Creation-Date: 2022-09-07 19:22-0400\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: el Presidento, 2019\n"
+"Last-Translator: joyinko <joyinko@azet.sk>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/anticapitalista/teams/10162/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,269 +23,359 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: ddm-mx:36
+#: ../ddm-mx:39
+#, sh-format
 msgid "Unknown error"
 msgstr "Neznámá chyba"
 
-#: ddm-mx:37
+#: ../ddm-mx:40
+#, sh-format
 msgid "Option-"
 msgstr "Možnost-"
 
-#: ddm-mx:38
+#: ../ddm-mx:41
+#, sh-format
 msgid "requires an argument."
 msgstr "vyžaduje se zadání argumentu"
 
-#: ddm-mx:39
+#: ../ddm-mx:42
+#, sh-format
 msgid "Run as root"
 msgstr "Spusti jako root"
 
-#: ddm-mx:40
+#: ../ddm-mx:43
+#, sh-format
 msgid "Install drivers for: "
 msgstr "Instalovat ovladače pro:"
 
-#: ddm-mx:99 ddm-mx:109
+#. Invalid option: start GUI
+#. launch_gui $@
+#. Unknown error: start GUI
+#. launch_gui $@
+#: ../ddm-mx:102 ../ddm-mx:112
+#, sh-format
 msgid "Invalid option"
 msgstr "Naplatná volba"
 
-#: ddm-mx:127
+#. ##file locking
+#: ../ddm-mx:130
+#, sh-format
 msgid "creating lock ..."
 msgstr "vytváření zámku ..."
 
-#: ddm-mx:152
+#: ../ddm-mx:164
+#, sh-format
 msgid "Purge drivers for: "
 msgstr ""
 
-#: ddm-mx:153 ddm-mx:175
+#: ../ddm-mx:165 ../ddm-mx:187
+#, sh-format
 msgid "Start at (m/d/y):"
 msgstr ""
 
-#: ddm-mx:161
+#: ../ddm-mx:173
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
 msgstr ""
 
-#: ddm-mx:194
+#: ../ddm-mx:206 ../ddm-mx:899
+#, sh-format
 msgid "ERROR: Unknown argument: "
 msgstr "CHYBA: neznámý argument:"
 
-#: ddm-mx:207
+#: ../ddm-mx:219
+#, sh-format
 msgid "Device Driver Manager Help:"
 msgstr ""
 
-#: ddm-mx:209
+#: ../ddm-mx:221
+#, sh-format
 msgid "The following options are allowed:"
 msgstr "Následující možnosti jsou povoleny:"
 
-#: ddm-mx:213
+#: ../ddm-mx:223
+#, sh-format
+msgid "-b            Offer debian-backports alternative"
+msgstr ""
+
+#: ../ddm-mx:225
+#, sh-format
 msgid "-i driver    Install given driver."
 msgstr ""
 
-#: ddm-mx:214
+#: ../ddm-mx:226
+#, sh-format
 msgid "             drivers: nvidia, open, fixbumblebee"
 msgstr "             ovladače: nvidia, open, fixbumblebee"
 
-#: ddm-mx:216
+#: ../ddm-mx:228
+#, sh-format
 msgid "-p driver    Purge given driver."
 msgstr ""
 
-#: ddm-mx:217
+#: ../ddm-mx:229
+#, sh-format
 msgid "             driver: nvidia"
 msgstr "             ovladač: nvidia"
 
-#: ddm-mx:219
-msgid ""
-"-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
-"legacy-390xx-driver, nvidia-legacy-340xx-driver"
+#: ../ddm-mx:231
+#, sh-format
+msgid "-f           force specific nvidia driver package."
 msgstr ""
 
-#: ddm-mx:221
+#: ../ddm-mx:236
+#, sh-format
 msgid "-t           For development testing only!  simulate installs"
 msgstr ""
 
-#: ddm-mx:222
+#: ../ddm-mx:237
+#, sh-format
 msgid "             This will install drivers for pre-defined hardware."
 msgstr ""
 "             Toto bude instalovat ovladače pro předdefinovaný hardware."
 
-#: ddm-mx:223
+#: ../ddm-mx:238
+#, sh-format
 msgid "             Use with -i."
 msgstr ""
 
-#: ddm-mx:312
+#: ../ddm-mx:295
+#, sh-format
+msgid ""
+"Unsupported configuration.  bumblebee only works with 390xx drivers and up."
+msgstr ""
+
+#: ../ddm-mx:327
+#, sh-format
 msgid "Need driver: "
 msgstr "Potřebuje ovladač:"
 
-#: ddm-mx:316
+#: ../ddm-mx:331
+#, sh-format
 msgid "NVIDIA packages to install are "
 msgstr ""
 
-#: ddm-mx:318 ddm-mx:618
+#: ../ddm-mx:333 ../ddm-mx:645
+#, sh-format
 msgid "Continue?"
 msgstr "Pokračovat?"
 
-#: ddm-mx:339
+#: ../ddm-mx:354
+#, sh-format
 msgid "Nvidia command "
 msgstr ""
 
-#: ddm-mx:363
+#: ../ddm-mx:378
+#, sh-format
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "CHYBA: Nemožné nakonfigurovat Bumblebee pro uživatele:"
 
-#: ddm-mx:367
+#: ../ddm-mx:382
+#, sh-format
 msgid "test enabled, not creating xorg.conf file"
 msgstr ""
 
-#: ddm-mx:371
+#: ../ddm-mx:386
+#, sh-format
 msgid "creating /etc/X11/xorg.conf file"
 msgstr "vytváření souboru /etc/X11/xorg.conf"
 
-#: ddm-mx:380
+#: ../ddm-mx:395
+#, sh-format
 msgid "Finished"
 msgstr "Dokončeno"
 
-#: ddm-mx:397
+#: ../ddm-mx:412
+#, sh-format
 msgid "Proprietary drivers removed"
 msgstr "Nesvobodné ovladače byly odstraněny"
 
-#: ddm-mx:410
+#: ../ddm-mx:425
+#, sh-format
 msgid "Open command "
 msgstr ""
 
-#: ddm-mx:414
+#: ../ddm-mx:429
+#, sh-format
 msgid "Open drivers installed"
 msgstr ""
 
-#: ddm-mx:428 ddm-mx:434
+#: ../ddm-mx:443 ../ddm-mx:449
+#, sh-format
 msgid "Resetting sources"
 msgstr ""
 
-#: ddm-mx:445
+#: ../ddm-mx:460
+#, sh-format
 msgid "Press <Enter> to exit"
 msgstr "Stiskněte <Enter> pro zavření"
 
-#: ddm-mx:459
+#. enabling debian-backports
+#: ../ddm-mx:474
+#, sh-format
 msgid "Enabling backports repo"
 msgstr "Povolování backports repozitáře"
 
-#: ddm-mx:460 ddm-mx:476
+#: ../ddm-mx:475 ../ddm-mx:491
+#, sh-format
 msgid "Running apt-get update..."
 msgstr "Spouštím apt-get update..."
 
-#: ddm-mx:465 ddm-mx:481
+#: ../ddm-mx:480 ../ddm-mx:496
+#, sh-format
 msgid "Installing latest nvidia-detect package"
 msgstr "Instalování nejnovějšího balíku nvidia-detect"
 
-#: ddm-mx:475
+#. enabling mx_test_repo
+#: ../ddm-mx:490
+#, sh-format
 msgid "Enabling MX Test repo"
 msgstr ""
 
-#: ddm-mx:490
+#: ../ddm-mx:505
+#, sh-format
 msgid "Would you like to check debian-backports for a later version?"
 msgstr ""
 "Přejete si zkontrolovat zda li je novější verze v repozitáři debian-"
 "backports?"
 
-#: ddm-mx:492
+#: ../ddm-mx:507
+#, sh-format
 msgid "Yes or No?"
 msgstr "Ano nebo Ne?"
 
-#: ddm-mx:494
+#: ../ddm-mx:509
+#, sh-format
 msgid "Yes"
 msgstr "Ano"
 
-#: ddm-mx:495
+#: ../ddm-mx:510
+#, sh-format
 msgid "No"
 msgstr "Ne"
 
-#: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
-#: ddm-mx:578 ddm-mx:585
-msgid "Ok"
-msgstr "OK"
-
-#: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
-msgid "invalid option."
-msgstr "neplatná volba."
-
-#: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
-msgid "exiting"
-msgstr "ukončování"
-
-#: ddm-mx:514 ddm-mx:515
-msgid "Would you like to check MX Test Repo for a later version?"
-msgstr ""
-
-#: ddm-mx:532 ddm-mx:564
-msgid "Which driver do you wish to install"
-msgstr "Který ovladač si přejete nainstalovat?"
-
-#: ddm-mx:534
-msgid "Main repos or debian-backports?"
-msgstr "Hlavní repozitář nebo debian-backports?"
-
-#: ddm-mx:536 ddm-mx:568
-msgid "Main"
-msgstr "Hlavní"
-
-#: ddm-mx:540 ddm-mx:572
-msgid "Exit"
-msgstr "Ukončit"
-
-#: ddm-mx:542 ddm-mx:574
+#: ../ddm-mx:512 ../ddm-mx:557 ../ddm-mx:595 ../ddm-mx:938
+#, sh-format
 msgid "Enter Number of selection"
 msgstr "Zadejte číslo volby"
 
-#: ddm-mx:566
+#: ../ddm-mx:516 ../ddm-mx:520 ../ddm-mx:533 ../ddm-mx:537 ../ddm-mx:561
+#: ../ddm-mx:574 ../ddm-mx:599 ../ddm-mx:612
+#, sh-format
+msgid "Ok"
+msgstr "OK"
+
+#: ../ddm-mx:523 ../ddm-mx:540 ../ddm-mx:579 ../ddm-mx:619 ../ddm-mx:944
+#, sh-format
+msgid "invalid option."
+msgstr "neplatná volba."
+
+#. NVIDIA_XCONFIG=""
+#: ../ddm-mx:523 ../ddm-mx:540 ../ddm-mx:577 ../ddm-mx:579 ../ddm-mx:617
+#: ../ddm-mx:619 ../ddm-mx:943 ../ddm-mx:944
+#, sh-format
+msgid "exiting"
+msgstr "ukončování"
+
+#: ../ddm-mx:529 ../ddm-mx:530
+#, sh-format
+msgid "Would you like to check MX Test Repo for a later version?"
+msgstr ""
+
+#: ../ddm-mx:547 ../ddm-mx:585
+#, sh-format
+msgid "Which driver do you wish to install"
+msgstr "Který ovladač si přejete nainstalovat?"
+
+#: ../ddm-mx:549
+#, sh-format
+msgid "Main repos or debian-backports?"
+msgstr "Hlavní repozitář nebo debian-backports?"
+
+#: ../ddm-mx:551 ../ddm-mx:589
+#, sh-format
+msgid "Main"
+msgstr "Hlavní"
+
+#: ../ddm-mx:555 ../ddm-mx:593
+#, sh-format
+msgid "Exit"
+msgstr "Ukončit"
+
+#: ../ddm-mx:570 ../ddm-mx:608
+#, sh-format
+msgid "Reset nvidia-detect"
+msgstr ""
+
+#: ../ddm-mx:587
+#, sh-format
 msgid "Main repos or MX Test"
 msgstr ""
 
-#: ddm-mx:608
+#: ../ddm-mx:591
+#, sh-format
+msgid "MX Test"
+msgstr ""
+
+#: ../ddm-mx:635
+#, sh-format
 msgid "Candidate is: "
 msgstr "Kandidát je:"
 
-#: ddm-mx:609
+#: ../ddm-mx:636 ../ddm-mx:911 ../ddm-mx:920
+#, sh-format
 msgid "Installed is: "
 msgstr "Nainstalováno:"
 
-#: ddm-mx:617
+#: ../ddm-mx:644
+#, sh-format
 msgid "Refreshing Sources with apt-get update"
 msgstr "Obnovování zdrojů s apt-get update"
 
-#: ddm-mx:624
+#: ../ddm-mx:651
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
 "Vyskytl se problém s příkazem apt-get update. Pro detaily zobrazte $LOG"
 
-#: ddm-mx:634
+#: ../ddm-mx:661
+#, sh-format
 msgid "To restore open source drivers use:  "
 msgstr ""
 
-#: ddm-mx:651
+#: ../ddm-mx:678
+#, sh-format
 msgid "To restore open source drivers later use:  "
 msgstr ""
 
-#: ddm-mx:663
+#: ../ddm-mx:690
+#, sh-format
 msgid "For recovery help see "
 msgstr ""
 
-#: ddm-mx:666
+#: ../ddm-mx:693
+#, sh-format
 msgid "Information written to "
 msgstr ""
 
-#: ddm-mx:702
+#: ../ddm-mx:729
+#, sh-format
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
 "Byla rozpoznána možná předchozí instalace ze zdrojového kódu nebo smxi/sgfxi"
 
-#: ddm-mx:703
+#: ../ddm-mx:730
+#, sh-format
 msgid "Version detected: "
 msgstr "Nalezena verze:"
 
-#: ddm-mx:704
+#: ../ddm-mx:731
+#, sh-format
 msgid "Latest possible with this script : "
 msgstr "Nejvyšší možný s tímto skriptem:"
 
-#: ddm-mx:705
+#: ../ddm-mx:732
+#, sh-format
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -293,18 +383,97 @@ msgstr ""
 "Prosím odeberte příkazem <sudo nvidia-install --uninstall> a restratujte PC "
 "pokud si přejete pokračavat"
 
-#: ddm-mx:720
+#: ../ddm-mx:747
+#, sh-format
 msgid "nvidia-optimus detected"
 msgstr "objevena nvidia-optimus "
 
-#: ddm-mx:723
+#: ../ddm-mx:750
+#, sh-format
 msgid "Is this a NVIDIA/INTEL Optimus system?"
 msgstr ""
 
-#: ddm-mx:759
+#: ../ddm-mx:786
+#, sh-format
 msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
 msgstr ""
 
-#: ddm-mx:760
-msgid "Use \\"
+#: ../ddm-mx:787
+#, sh-format
+msgid ""
+"Use \"nvidia-run-mx\" followed by your application command to use the nvidia"
+" graphics"
 msgstr ""
+
+#: ../ddm-mx:789
+#, sh-format
+msgid ""
+"If you want to force the older bumblebee optimus drivers,\\n quit and "
+"restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
+msgstr ""
+
+#: ../ddm-mx:793 ../ddm-mx:799
+#, sh-format
+msgid "You need to use the bumblebee-nvidia driver."
+msgstr ""
+
+#: ../ddm-mx:812
+#, sh-format
+msgid "nvidia driver not available, check your repo sources"
+msgstr ""
+"Ovladač Nvidia není k dispozici, zkontrolujte nastavení zdrojových "
+"repozitářů"
+
+#: ../ddm-mx:817
+#, sh-format
+msgid ""
+"Uh oh. Your card is only supported by older legacy drivers which are not in "
+"any current Debian suite."
+msgstr ""
+"Ale ne! Vaše karta je podporována pouze dřívěji vydanými ovladači, které se "
+"nenacházejí v aktuálním vydání Debian-u."
+
+#: ../ddm-mx:909 ../ddm-mx:918
+#, sh-format
+msgid "Main repo candidate is:  "
+msgstr "Kandidát z Hlavního repozitáře je:"
+
+#: ../ddm-mx:910
+#, sh-format
+msgid "Debian backports candidate is:  "
+msgstr "Kandidát z Debian Beackports je:"
+
+#: ../ddm-mx:919
+#, sh-format
+msgid "MX Test repo candidate is:  "
+msgstr ""
+
+#: ../ddm-mx:930
+#, sh-format
+msgid "nvidia driver already installed"
+msgstr "Nvidia ovladač je již nainstalován"
+
+#: ../ddm-mx:932
+#, sh-format
+msgid "Reinstall or quit?"
+msgstr "Přeinstalovat nebo skončit?"
+
+#: ../ddm-mx:935
+#, sh-format
+msgid "Reinstall"
+msgstr "Přeinstalovat"
+
+#: ../ddm-mx:936
+#, sh-format
+msgid "quit"
+msgstr "Konec"
+
+#: ../ddm-mx:942
+#, sh-format
+msgid "reinstalling"
+msgstr "přeinstalování"
+
+#: ../ddm-mx:965
+#, sh-format
+msgid "No nvidia card found - exiting"
+msgstr "Nebyla nazelezena karta Nvidia - odcházím"

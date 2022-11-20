@@ -31,8 +31,10 @@ make_mo()
 {
     for val in $lang; do
         if [ ! -e "mo/$val/$RESOURCE.mo" ]; then
-            mkdir -p mo/$val
-            msgfmt --output-file=mo/$val/"$RESOURCE".mo po/"${RESOURCE}_${val}.po"
+        	if [ -e po/"${RESOURCE}_${val}.po" ]; then
+            	mkdir -p mo/$val
+            	msgfmt --output-file=mo/$val/"$RESOURCE".mo po/"${RESOURCE}_${val}.po"
+            fi
         fi
     done
 }

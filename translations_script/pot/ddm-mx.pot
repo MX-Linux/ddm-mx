@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-19 20:40-0500\n"
+"POT-Creation-Date: 2022-11-20 18:33-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,11 +42,14 @@ msgstr ""
 msgid "Install drivers for: "
 msgstr ""
 
-#: ../ddm-mx:48
+#. The desktop entry name will be displayed within the menu.
+#: ../ddm-mx:48 ../xdg/ddm-nvidia.desktop.in:4
 msgid "Nvidia driver installer"
 msgstr ""
 
-#: ../ddm-mx:49
+#. TRANSLATORS:
+#. The desktop entry comment will be shown within the menu.
+#: ../ddm-mx:49 ../xdg/ddm-nvidia.desktop.in:7
 msgid "Install proprietary nvidia driver from repo"
 msgstr ""
 

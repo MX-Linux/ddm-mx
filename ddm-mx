@@ -45,8 +45,8 @@ NVIDIA_XCONFIG="nvidia-xconfig"
 
 ARCH=$(dpkg --print-architecture)
 
-DESKTOPFILENAME="Nvidia driver installer"
-DESKTOPFILECOMMENT="Install proprietary nvidia driver from repo"
+DESKTOPFILENAME=$(gettext "Nvidia driver installer")
+DESKTOPFILECOMMENT=$(gettext "Install proprietary nvidia driver from repo")
 
 main(){
 # -------------------------------------------------------------------------
@@ -227,20 +227,20 @@ function usage() {
   echo "======================================================================"
   echo $(gettext "The following options are allowed:")
   echo
-  echo $(gettext ddm-mx "-b            Offer debian-backports alternative")
+  echo $(eval_gettext '-b            Offer debian-backports alternative')
   echo
-  echo $(gettext ddm-mx "-i driver    Install given driver.")
+  echo $(eval_gettext '-i driver    Install given driver.')
   echo $(gettext "             drivers: nvidia, open, fixbumblebee")
   echo
-  echo $(gettext ddm-mx "-p driver    Purge given driver.")
+  echo $(eval_gettext '-p driver    Purge given driver.')
   echo $(gettext "             driver: nvidia")
   echo
-  echo $(gettext ddm-mx "-f           force specific nvidia driver package.")
+  echo $(eval_gettext '-f           force specific nvidia driver package.')
   echo "               nvidia-driver, nvidia-legacy-390xx-driver, nvidia-tesla-418-driver,"
   echo "               nvidia-tesla-450-driver, nvidia-tesla-460-driver, nvidia-tesla-470-driver"
   echo "               nvidia-legacy-340xx-driver, bumblebee-nvidia"
   echo
-  echo $(gettext ddm-mx "-t           For development testing only!  simulate installs")
+  echo $(eval_gettext  '-t           For development testing only!  simulate installs')
   echo $(gettext "             This will install drivers for pre-defined hardware.")
   echo $(gettext "             Use with -i.")
   echo

@@ -45,6 +45,9 @@ NVIDIA_XCONFIG="nvidia-xconfig"
 
 ARCH=$(dpkg --print-architecture)
 
+DESKTOPFILENAME="Nvidia driver installer"
+DESKTOPFILECOMMENT="Install proprietary nvidia driver from repo"
+
 main(){
 # -------------------------------------------------------------------------
 #get release info

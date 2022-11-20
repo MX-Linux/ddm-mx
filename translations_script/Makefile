@@ -39,7 +39,9 @@ $(BUILD)/xdg/%.desktop: $(XDGDIR)/%.desktop.in
 	@mkdir -p $(BUILD)/xdg
 	@echo "  " $@ 
 	msgfmt --desktop --template $< -d $(PO_DIR) -o $@ 
-	@sed -i '/^#/d' $@ 
+	@sed -i '/^#/d' $@
+	@sed -i 's/\[${PKGNAM}_/\[/' $@
+	cp $(BUILD)/xdg/*.desktop ../
 
 clean:
 	-@rm  -f $(DESKTOP)

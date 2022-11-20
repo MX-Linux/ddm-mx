@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-07 19:22-0400\n"
+"POT-Creation-Date: 2022-11-19 20:40-0500\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
 "Last-Translator: Henry Oquist <henryoquist@nomalm.se>, 2022\n"
 "Language-Team: Swedish (https://www.transifex.com/anticapitalista/teams/10162/sv/)\n"
@@ -23,122 +23,120 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../ddm-mx:39
+#: ../ddm-mx:38
 #, sh-format
 msgid "Unknown error"
 msgstr "Okänt fel"
 
-#: ../ddm-mx:40
+#: ../ddm-mx:39
 #, sh-format
 msgid "Option-"
 msgstr "Alternativ-"
 
-#: ../ddm-mx:41
+#: ../ddm-mx:40
 #, sh-format
 msgid "requires an argument."
 msgstr "behöver ett argument"
 
-#: ../ddm-mx:42
+#: ../ddm-mx:41
 #, sh-format
 msgid "Run as root"
 msgstr "Kör som root"
 
-#: ../ddm-mx:43
+#: ../ddm-mx:42
 #, sh-format
 msgid "Install drivers for: "
 msgstr "Installera drivrutiner för:"
+
+#: ../ddm-mx:48
+msgid "Nvidia driver installer"
+msgstr "Nvidia drivrutin-installerare"
+
+#: ../ddm-mx:49
+msgid "Install proprietary nvidia driver from repo"
+msgstr "Installera proprietär nvidia drivrutin från förråd"
 
 #. Invalid option: start GUI
 #. launch_gui $@
 #. Unknown error: start GUI
 #. launch_gui $@
-#: ../ddm-mx:102 ../ddm-mx:112
+#: ../ddm-mx:109 ../ddm-mx:119
 #, sh-format
 msgid "Invalid option"
 msgstr "Ogiltigt alternativ"
 
 #. ##file locking
-#: ../ddm-mx:130
+#: ../ddm-mx:137
 #, sh-format
 msgid "creating lock ..."
 msgstr "skapar lås ..."
 
-#: ../ddm-mx:164
+#: ../ddm-mx:171
 #, sh-format
 msgid "Purge drivers for: "
 msgstr "Avlägsna drivrutiner för:"
 
-#: ../ddm-mx:165 ../ddm-mx:187
+#: ../ddm-mx:172 ../ddm-mx:194
 #, sh-format
 msgid "Start at (m/d/y):"
 msgstr "Starta vid (m/d/y):"
 
-#: ../ddm-mx:173
+#: ../ddm-mx:180
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
 msgstr "FEL: Okänt argument: $DRV"
 
-#: ../ddm-mx:206 ../ddm-mx:899
+#: ../ddm-mx:213 ../ddm-mx:913
 #, sh-format
 msgid "ERROR: Unknown argument: "
 msgstr "FEL: Okänt argument:"
 
-#: ../ddm-mx:219
+#: ../ddm-mx:229
 #, sh-format
 msgid "Device Driver Manager Help:"
 msgstr "Enhetsdrivrutin-hanterare Hjälp"
 
-#: ../ddm-mx:221
-#, sh-format
+#: ../ddm-mx:231
 msgid "The following options are allowed:"
 msgstr "Följande alternativ är tillåtna:"
 
-#: ../ddm-mx:223
-#, sh-format
-msgid "-b            Offer debian-backports alternative"
-msgstr "-b            Erbjud debian-backports-alternativ"
+#: ../ddm-mx:233
+msgid "Offer debian-backports alternative"
+msgstr "Erbjud debian-backports alternativ"
 
-#: ../ddm-mx:225
-#, sh-format
-msgid "-i driver    Install given driver."
-msgstr "-i driver Installera angiven drivrutin"
-
-#: ../ddm-mx:226
-#, sh-format
-msgid "             drivers: nvidia, open, fixbumblebee"
-msgstr "drivrutiner: nvidia, open, fixbumblebee"
-
-#: ../ddm-mx:228
-#, sh-format
-msgid "-p driver    Purge given driver."
-msgstr "-p driver Avlägsna angiven drivrutin"
-
-#: ../ddm-mx:229
-#, sh-format
-msgid "             driver: nvidia"
-msgstr "drivrutin: nvidia"
-
-#: ../ddm-mx:231
-#, sh-format
-msgid "-f           force specific nvidia driver package."
-msgstr "-f           tvinga speciellt nvidia drivrutinspaket."
+#: ../ddm-mx:235
+msgid "Install given driver."
+msgstr "Installera given drivrutin."
 
 #: ../ddm-mx:236
-#, sh-format
-msgid "-t           For development testing only!  simulate installs"
-msgstr "-t            Enbart för utvecklingstester!  simulera installationer"
-
-#: ../ddm-mx:237
-#, sh-format
-msgid "             This will install drivers for pre-defined hardware."
-msgstr "Detta kommer att installera drivrutiner för fördefinierad hårdvara."
+msgid "drivers: nvidia, open, fixbumblebee"
+msgstr "drivrutiner: nvidia, öppen, fixbumblebee"
 
 #: ../ddm-mx:238
-#, sh-format
-msgid "             Use with -i."
+msgid "Purge given driver."
+msgstr "Rensa ut given drivrutin."
+
+#: ../ddm-mx:239
+msgid "driver: nvidia"
+msgstr "drivrutin: nvidia"
+
+#: ../ddm-mx:241
+msgid "force specific nvidia driver package."
+msgstr "tvinga specifikt nvidia drivrutinspaket."
+
+#: ../ddm-mx:246
+msgid "For development testing only!  simulate installs"
+msgstr "Enbart för utvecklingstest! simulera installationer"
+
+#: ../ddm-mx:247
+msgid "This will install drivers for pre-defined hardware."
+msgstr "Detta kommer att installera drivrutiner för fördefinierad hårdvara."
+
+#: ../ddm-mx:248
+msgid "Use with -i."
 msgstr "Använd med -i."
 
-#: ../ddm-mx:295
+#: ../ddm-mx:308
 #, sh-format
 msgid ""
 "Unsupported configuration.  bumblebee only works with 390xx drivers and up."
@@ -146,232 +144,232 @@ msgstr ""
 "Ej stödd konfiguration.  bumblebee fungerar bara med 390xx drivrutiner och "
 "högre."
 
-#: ../ddm-mx:327
+#: ../ddm-mx:340
 #, sh-format
 msgid "Need driver: "
 msgstr "Behöver drivrutin:"
 
-#: ../ddm-mx:331
+#: ../ddm-mx:344
 #, sh-format
 msgid "NVIDIA packages to install are "
 msgstr "NVIDIA paket att installera är "
 
-#: ../ddm-mx:333 ../ddm-mx:645
+#: ../ddm-mx:346 ../ddm-mx:658
 #, sh-format
 msgid "Continue?"
 msgstr "Fortsätta?"
 
-#: ../ddm-mx:354
+#: ../ddm-mx:367
 #, sh-format
 msgid "Nvidia command "
 msgstr "Nvidia kommando"
 
-#: ../ddm-mx:378
+#: ../ddm-mx:391
 #, sh-format
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "Fel: Kunde inte ställa in Bumblebee för användare:"
 
-#: ../ddm-mx:382
+#: ../ddm-mx:395
 #, sh-format
 msgid "test enabled, not creating xorg.conf file"
 msgstr "test aktiverad, skapar inte xorg.conf fil"
 
-#: ../ddm-mx:386
+#: ../ddm-mx:399
 #, sh-format
 msgid "creating /etc/X11/xorg.conf file"
 msgstr "skapar /etc/X11/xorg.conf fil"
 
-#: ../ddm-mx:395
+#: ../ddm-mx:408
 #, sh-format
 msgid "Finished"
 msgstr "Avslutad"
 
-#: ../ddm-mx:412
+#: ../ddm-mx:425
 #, sh-format
 msgid "Proprietary drivers removed"
 msgstr "Proprietära drivrutiner borttagna"
 
-#: ../ddm-mx:425
+#: ../ddm-mx:438
 #, sh-format
 msgid "Open command "
 msgstr "Öppna kommando"
 
-#: ../ddm-mx:429
+#: ../ddm-mx:442
 #, sh-format
 msgid "Open drivers installed"
 msgstr "Öppna drivrutiner installerade"
 
-#: ../ddm-mx:443 ../ddm-mx:449
+#: ../ddm-mx:456 ../ddm-mx:462
 #, sh-format
 msgid "Resetting sources"
 msgstr "Återställer källor"
 
-#: ../ddm-mx:460
+#: ../ddm-mx:473
 #, sh-format
 msgid "Press <Enter> to exit"
 msgstr "Tryck på <Enter> för att avsluta"
 
 #. enabling debian-backports
-#: ../ddm-mx:474
+#: ../ddm-mx:487
 #, sh-format
 msgid "Enabling backports repo"
 msgstr "Aktiverar backports repo"
 
-#: ../ddm-mx:475 ../ddm-mx:491
+#: ../ddm-mx:488 ../ddm-mx:504
 #, sh-format
 msgid "Running apt-get update..."
 msgstr "Kör apt-get update..."
 
-#: ../ddm-mx:480 ../ddm-mx:496
+#: ../ddm-mx:493 ../ddm-mx:509 ../ddm-mx:988
 #, sh-format
 msgid "Installing latest nvidia-detect package"
 msgstr "Installerar senaste nvidia-detect paketet"
 
 #. enabling mx_test_repo
-#: ../ddm-mx:490
+#: ../ddm-mx:503
 #, sh-format
 msgid "Enabling MX Test repo"
 msgstr "Aktivera MX Test repo"
 
-#: ../ddm-mx:505
+#: ../ddm-mx:518
 #, sh-format
 msgid "Would you like to check debian-backports for a later version?"
 msgstr "Skulle du vilja kolla debian-backports efter en senare version?"
 
-#: ../ddm-mx:507
+#: ../ddm-mx:520
 #, sh-format
 msgid "Yes or No?"
 msgstr "Ja eller Nej?"
 
-#: ../ddm-mx:509
+#: ../ddm-mx:522
 #, sh-format
 msgid "Yes"
 msgstr "Ja"
 
-#: ../ddm-mx:510
+#: ../ddm-mx:523
 #, sh-format
 msgid "No"
 msgstr "Nej"
 
-#: ../ddm-mx:512 ../ddm-mx:557 ../ddm-mx:595 ../ddm-mx:938
+#: ../ddm-mx:525 ../ddm-mx:570 ../ddm-mx:608 ../ddm-mx:952
 #, sh-format
 msgid "Enter Number of selection"
 msgstr "Skriv det valda alternativets nummer"
 
-#: ../ddm-mx:516 ../ddm-mx:520 ../ddm-mx:533 ../ddm-mx:537 ../ddm-mx:561
-#: ../ddm-mx:574 ../ddm-mx:599 ../ddm-mx:612
+#: ../ddm-mx:529 ../ddm-mx:533 ../ddm-mx:546 ../ddm-mx:550 ../ddm-mx:574
+#: ../ddm-mx:587 ../ddm-mx:612 ../ddm-mx:625
 #, sh-format
 msgid "Ok"
 msgstr "OK"
 
-#: ../ddm-mx:523 ../ddm-mx:540 ../ddm-mx:579 ../ddm-mx:619 ../ddm-mx:944
+#: ../ddm-mx:536 ../ddm-mx:553 ../ddm-mx:592 ../ddm-mx:632 ../ddm-mx:958
 #, sh-format
 msgid "invalid option."
 msgstr "Ogiltigt alternativ"
 
 #. NVIDIA_XCONFIG=""
-#: ../ddm-mx:523 ../ddm-mx:540 ../ddm-mx:577 ../ddm-mx:579 ../ddm-mx:617
-#: ../ddm-mx:619 ../ddm-mx:943 ../ddm-mx:944
+#: ../ddm-mx:536 ../ddm-mx:553 ../ddm-mx:590 ../ddm-mx:592 ../ddm-mx:630
+#: ../ddm-mx:632 ../ddm-mx:957 ../ddm-mx:958
 #, sh-format
 msgid "exiting"
 msgstr "Avslutar"
 
-#: ../ddm-mx:529 ../ddm-mx:530
+#: ../ddm-mx:542 ../ddm-mx:543
 #, sh-format
 msgid "Would you like to check MX Test Repo for a later version?"
 msgstr "Skulle du vilja kolla MX Test Repo efter en senare version?"
 
-#: ../ddm-mx:547 ../ddm-mx:585
+#: ../ddm-mx:560 ../ddm-mx:598
 #, sh-format
 msgid "Which driver do you wish to install"
 msgstr "Vilken drivrutin vill du installera"
 
-#: ../ddm-mx:549
+#: ../ddm-mx:562
 #, sh-format
 msgid "Main repos or debian-backports?"
 msgstr "Main repos eller debian-backports?"
 
-#: ../ddm-mx:551 ../ddm-mx:589
+#: ../ddm-mx:564 ../ddm-mx:602
 #, sh-format
 msgid "Main"
 msgstr "Main"
 
-#: ../ddm-mx:555 ../ddm-mx:593
+#: ../ddm-mx:568 ../ddm-mx:606
 #, sh-format
 msgid "Exit"
 msgstr "Avsluta"
 
-#: ../ddm-mx:570 ../ddm-mx:608
+#: ../ddm-mx:583 ../ddm-mx:621
 #, sh-format
 msgid "Reset nvidia-detect"
 msgstr "Återställ nvidia-detect"
 
-#: ../ddm-mx:587
+#: ../ddm-mx:600
 #, sh-format
 msgid "Main repos or MX Test"
 msgstr "Main repos eller MX Test"
 
-#: ../ddm-mx:591
+#: ../ddm-mx:604
 #, sh-format
 msgid "MX Test"
 msgstr "MX Test"
 
-#: ../ddm-mx:635
+#: ../ddm-mx:648
 #, sh-format
 msgid "Candidate is: "
 msgstr "Kandidat är:"
 
-#: ../ddm-mx:636 ../ddm-mx:911 ../ddm-mx:920
+#: ../ddm-mx:649 ../ddm-mx:925 ../ddm-mx:934
 #, sh-format
 msgid "Installed is: "
 msgstr "Installerad:"
 
-#: ../ddm-mx:644
+#: ../ddm-mx:657
 #, sh-format
 msgid "Refreshing Sources with apt-get update"
 msgstr "Uppdatera Förråd med apt-get update"
 
-#: ../ddm-mx:651
+#: ../ddm-mx:664
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr "Det var problem med apt-get update. Se $LOG för detaljer"
 
-#: ../ddm-mx:661
+#: ../ddm-mx:674
 #, sh-format
 msgid "To restore open source drivers use:  "
 msgstr "För att återställa öppen källkods-drivrutiner använd:"
 
-#: ../ddm-mx:678
+#: ../ddm-mx:691
 #, sh-format
 msgid "To restore open source drivers later use:  "
 msgstr "För att återställa öppen källkods-drivrutiner senare, använd:"
 
-#: ../ddm-mx:690
+#: ../ddm-mx:703
 #, sh-format
 msgid "For recovery help see "
 msgstr "För hjälp att återställa, se"
 
-#: ../ddm-mx:693
+#: ../ddm-mx:706
 #, sh-format
 msgid "Information written to "
 msgstr "Information skriven till"
 
-#: ../ddm-mx:729
+#: ../ddm-mx:742
 #, sh-format
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr "Möjlig tidigare installation från källkod eller smxi/sgfxi hittad."
 
-#: ../ddm-mx:730
+#: ../ddm-mx:743
 #, sh-format
 msgid "Version detected: "
 msgstr "Hittad version:"
 
-#: ../ddm-mx:731
+#: ../ddm-mx:744
 #, sh-format
 msgid "Latest possible with this script : "
 msgstr "Senast möjliga med detta skript :"
 
-#: ../ddm-mx:732
+#: ../ddm-mx:745
 #, sh-format
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
@@ -380,24 +378,24 @@ msgstr ""
 "Var vänlig ta bort med <sudo nvidia-install --uninstall> och starta om "
 "datorn om du vill fortsätta"
 
-#: ../ddm-mx:747
+#: ../ddm-mx:760
 #, sh-format
 msgid "nvidia-optimus detected"
 msgstr "nvidia-optimus hittad"
 
-#: ../ddm-mx:750
+#: ../ddm-mx:763
 #, sh-format
 msgid "Is this a NVIDIA/INTEL Optimus system?"
 msgstr "Är detta ett NVIDIA/INTEL Optimus system?"
 
-#: ../ddm-mx:786
+#: ../ddm-mx:800
 #, sh-format
 msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
 msgstr ""
 "Du kan använda den nya PRIMUS drivrutinen som är inbyggd i nvidia "
 "drivrutinerna."
 
-#: ../ddm-mx:787
+#: ../ddm-mx:801
 #, sh-format
 msgid ""
 "Use \"nvidia-run-mx\" followed by your application command to use the nvidia"
@@ -406,7 +404,7 @@ msgstr ""
 "Använd \"nvidia-run-mx\" följt av ditt programkommando för att använda "
 "nvidia-grafiken"
 
-#: ../ddm-mx:789
+#: ../ddm-mx:803
 #, sh-format
 msgid ""
 "If you want to force the older bumblebee optimus drivers,\\n quit and "
@@ -415,17 +413,17 @@ msgstr ""
 "Om du vill tvinga de äldre bumblebee optimus drivrutinerna,\\n avsluta och "
 "starta om med sudo ddm-mx -i nvidia -f bumblebee-nvidia"
 
-#: ../ddm-mx:793 ../ddm-mx:799
+#: ../ddm-mx:807 ../ddm-mx:813
 #, sh-format
 msgid "You need to use the bumblebee-nvidia driver."
 msgstr "Du måste använda bumblebee-nvidia drivrutin."
 
-#: ../ddm-mx:812
+#: ../ddm-mx:826
 #, sh-format
 msgid "nvidia driver not available, check your repo sources"
 msgstr "nvidia drivrutin ej tillgänglig,  kontrollera dina använda förråd"
 
-#: ../ddm-mx:817
+#: ../ddm-mx:831
 #, sh-format
 msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
@@ -434,47 +432,47 @@ msgstr ""
 "Å nej. Ditt kort stöds enbart av äldre legacy drivrutiner som inte finns i "
 "nuvarande Debian."
 
-#: ../ddm-mx:909 ../ddm-mx:918
+#: ../ddm-mx:923 ../ddm-mx:932
 #, sh-format
 msgid "Main repo candidate is:  "
 msgstr "Main repo kandidat är:"
 
-#: ../ddm-mx:910
+#: ../ddm-mx:924
 #, sh-format
 msgid "Debian backports candidate is:  "
 msgstr "Debian backports kandidat är:"
 
-#: ../ddm-mx:919
+#: ../ddm-mx:933
 #, sh-format
 msgid "MX Test repo candidate is:  "
 msgstr "MX Test repo kandidat är:  "
 
-#: ../ddm-mx:930
+#: ../ddm-mx:944
 #, sh-format
 msgid "nvidia driver already installed"
 msgstr "nvidia drivrutin redan installerad"
 
-#: ../ddm-mx:932
+#: ../ddm-mx:946
 #, sh-format
 msgid "Reinstall or quit?"
 msgstr "Ominstallera eller avsluta?"
 
-#: ../ddm-mx:935
+#: ../ddm-mx:949
 #, sh-format
 msgid "Reinstall"
 msgstr "Ominstallera"
 
-#: ../ddm-mx:936
+#: ../ddm-mx:950
 #, sh-format
 msgid "quit"
 msgstr "avsluta"
 
-#: ../ddm-mx:942
+#: ../ddm-mx:956
 #, sh-format
 msgid "reinstalling"
 msgstr "Ominstallerar"
 
-#: ../ddm-mx:965
+#: ../ddm-mx:979
 #, sh-format
 msgid "No nvidia card found - exiting"
 msgstr "Inget nvidia kort hittat - avslutar"

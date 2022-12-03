@@ -51,11 +51,11 @@ msgstr "Instal·la controladors per: "
 
 #: ../ddm-mx:48
 msgid "Nvidia driver installer"
-msgstr ""
+msgstr "Instal·lador de controlador Nvidia"
 
 #: ../ddm-mx:49
 msgid "Install proprietary nvidia driver from repo"
-msgstr ""
+msgstr "Instal·la el controlador propietari de Nvidia del repositori"
 
 #. Invalid option: start GUI
 #. launch_gui $@
@@ -103,39 +103,39 @@ msgstr "Es permeten les opcions següents: "
 
 #: ../ddm-mx:233
 msgid "Offer debian-backports alternative"
-msgstr ""
+msgstr "Ofereix l'alternativa de Debian-backports"
 
 #: ../ddm-mx:235
 msgid "Install given driver."
-msgstr ""
+msgstr "Instal·la el controlador donat."
 
 #: ../ddm-mx:236
 msgid "drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "controladors: nvidia, open, fixbumblebee"
 
 #: ../ddm-mx:238
 msgid "Purge given driver."
-msgstr ""
+msgstr "Purga el controlador donat."
 
 #: ../ddm-mx:239
 msgid "driver: nvidia"
-msgstr ""
+msgstr "controlador: nvidia"
 
 #: ../ddm-mx:241
 msgid "force specific nvidia driver package."
-msgstr ""
+msgstr "força el paquet específic de controlador nvidia."
 
 #: ../ddm-mx:246
 msgid "For development testing only!  simulate installs"
-msgstr ""
+msgstr "Només per prova de desenvolupament! Simula la instal·lació"
 
 #: ../ddm-mx:247
 msgid "This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "Això instal·larà els controladors per al maquinari predefinit."
 
 #: ../ddm-mx:248
 msgid "Use with -i."
-msgstr ""
+msgstr "Useu amb -i."
 
 #: ../ddm-mx:308
 #, sh-format

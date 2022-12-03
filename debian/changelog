@@ -1,3 +1,9 @@
+ddm-mx (22.12.01mx21) mx; urgency=medium
+
+  * update translations 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 02 Dec 2022 21:54:25 -0500
+
 ddm-mx (22.10.04mx21) mx; urgency=medium
 
   * fix bumblebee alternate text display

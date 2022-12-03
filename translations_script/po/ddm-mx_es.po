@@ -55,11 +55,11 @@ msgstr "Instalar controladores para: "
 
 #: ../ddm-mx:48
 msgid "Nvidia driver installer"
-msgstr ""
+msgstr "Instalador de controlador Nvidia"
 
 #: ../ddm-mx:49
 msgid "Install proprietary nvidia driver from repo"
-msgstr ""
+msgstr "Instalar controlador propietario de nvidia desde el repositorio"
 
 #. Invalid option: start GUI
 #. launch_gui $@
@@ -107,39 +107,39 @@ msgstr "Las siguientes opciones están permitidas:"
 
 #: ../ddm-mx:233
 msgid "Offer debian-backports alternative"
-msgstr ""
+msgstr "Ofrecer alternativa de debian-backports"
 
 #: ../ddm-mx:235
 msgid "Install given driver."
-msgstr ""
+msgstr "Instalar controlador especificado."
 
 #: ../ddm-mx:236
 msgid "drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "Controladores: nvidia, abierto, fixbumblebee"
 
 #: ../ddm-mx:238
 msgid "Purge given driver."
-msgstr ""
+msgstr "Purgar controlador especificado."
 
 #: ../ddm-mx:239
 msgid "driver: nvidia"
-msgstr ""
+msgstr "controlador: nvidia"
 
 #: ../ddm-mx:241
 msgid "force specific nvidia driver package."
-msgstr ""
+msgstr "forzar paquete de controlador nvidia específicado."
 
 #: ../ddm-mx:246
 msgid "For development testing only!  simulate installs"
-msgstr ""
+msgstr "¡Solo para pruebas de desarrollo! simular instalaciones"
 
 #: ../ddm-mx:247
 msgid "This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "Esto instalará controladores para hardware predefinido."
 
 #: ../ddm-mx:248
 msgid "Use with -i."
-msgstr ""
+msgstr "Usar con -i."
 
 #: ../ddm-mx:308
 #, sh-format

@@ -53,11 +53,11 @@ msgstr "Установка драйверов для:"
 
 #: ../ddm-mx:48
 msgid "Nvidia driver installer"
-msgstr ""
+msgstr "Установщик драйвера Nvidia"
 
 #: ../ddm-mx:49
 msgid "Install proprietary nvidia driver from repo"
-msgstr ""
+msgstr "Установить проприетарный драйвер Nvidia из репозитория"
 
 #. Invalid option: start GUI
 #. launch_gui $@
@@ -105,39 +105,39 @@ msgstr "Доступны следующие опции:"
 
 #: ../ddm-mx:233
 msgid "Offer debian-backports alternative"
-msgstr ""
+msgstr "Предлагать альтернативу debian-backports"
 
 #: ../ddm-mx:235
 msgid "Install given driver."
-msgstr ""
+msgstr "Установить данный драйвер."
 
 #: ../ddm-mx:236
 msgid "drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "драйверы: nvidia, open, fixbumblebee"
 
 #: ../ddm-mx:238
 msgid "Purge given driver."
-msgstr ""
+msgstr "Стереть данный драйвер."
 
 #: ../ddm-mx:239
 msgid "driver: nvidia"
-msgstr ""
+msgstr "драйвер: nvidia"
 
 #: ../ddm-mx:241
 msgid "force specific nvidia driver package."
-msgstr ""
+msgstr "принудительно использовать определённый пакет драйвера Nvidia."
 
 #: ../ddm-mx:246
 msgid "For development testing only!  simulate installs"
-msgstr ""
+msgstr "Только для тестирования разработки! имитировать установки"
 
 #: ../ddm-mx:247
 msgid "This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "Это позволит установить драйверы для предопределённого оборудования."
 
 #: ../ddm-mx:248
 msgid "Use with -i."
-msgstr ""
+msgstr "Использовать с -i."
 
 #: ../ddm-mx:308
 #, sh-format

@@ -50,11 +50,11 @@ msgstr "Namesti gonilnike za:"
 
 #: ../ddm-mx:48
 msgid "Nvidia driver installer"
-msgstr ""
+msgstr "Namestitev Nvidia gonilnika"
 
 #: ../ddm-mx:49
 msgid "Install proprietary nvidia driver from repo"
-msgstr ""
+msgstr "Iz repozitorija namesti avtorsko zaščitene Nvidia gonilnike"
 
 #. Invalid option: start GUI
 #. launch_gui $@
@@ -102,39 +102,39 @@ msgstr "Na voljo so naslednje opcije:"
 
 #: ../ddm-mx:233
 msgid "Offer debian-backports alternative"
-msgstr ""
+msgstr "Ponudi debian-backport alternativo"
 
 #: ../ddm-mx:235
 msgid "Install given driver."
-msgstr ""
+msgstr "Namesti podani gonilnik."
 
 #: ../ddm-mx:236
 msgid "drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "             gonilniki: nvidia, open, fixbumblebee"
 
 #: ../ddm-mx:238
 msgid "Purge given driver."
-msgstr ""
+msgstr "Počisti podani gonilnik."
 
 #: ../ddm-mx:239
 msgid "driver: nvidia"
-msgstr ""
+msgstr "gonilnik: nvidia"
 
 #: ../ddm-mx:241
 msgid "force specific nvidia driver package."
-msgstr ""
+msgstr "vsili uporabo določenega paketa nvidia gonilnikov"
 
 #: ../ddm-mx:246
 msgid "For development testing only!  simulate installs"
-msgstr ""
+msgstr "le za testne namene! simulira namestitve"
 
 #: ../ddm-mx:247
 msgid "This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "To bo namestilo gonilnike za vnaprej določeno strojno opremo."
 
 #: ../ddm-mx:248
 msgid "Use with -i."
-msgstr ""
+msgstr "Uporabite z -i"
 
 #: ../ddm-mx:308
 #, sh-format

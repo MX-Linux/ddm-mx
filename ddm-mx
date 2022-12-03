@@ -21,7 +21,7 @@
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 source gettext.sh
 
-VERSION="22.11.01"
+VERSION="22.12.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"

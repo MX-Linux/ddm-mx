@@ -9,9 +9,8 @@
 # James Bowlin <BitJam@gmail.com>, 2022
 # Geoff Gigg <geoffgigg@hotmail.com>, 2022
 # Richard  Holt <richard.holt@gmail.com>, 2022
-# Emmanuel Mateo Gonzalez Zaragoza <mateogonzar@gmail.com>, 2022
 # Roberto Saravia <saravia.jroberto@gmail.com>, 2022
-# Amigo, 2022
+# Amigo, 2023
 # 
 #, fuzzy
 msgid ""
@@ -20,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-19 20:40-0500\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Amigo, 2022\n"
+"Last-Translator: Amigo, 2023\n"
 "Language-Team: Spanish (https://www.transifex.com/anticapitalista/teams/10162/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -127,7 +126,7 @@ msgstr "controlador: nvidia"
 
 #: ../ddm-mx:241
 msgid "force specific nvidia driver package."
-msgstr "forzar paquete de controlador nvidia específicado."
+msgstr "forzar paquete de controlador nvidia específico."
 
 #: ../ddm-mx:246
 msgid "For development testing only!  simulate installs"
@@ -234,7 +233,7 @@ msgstr "Instalando el último paquete nvidia-detect"
 #: ../ddm-mx:503
 #, sh-format
 msgid "Enabling MX Test repo"
-msgstr "Habilitando el repo MX de Prueba"
+msgstr "Habilitando MX Repo de prueba"
 
 #: ../ddm-mx:518
 #, sh-format
@@ -314,7 +313,7 @@ msgstr "Restablecer nvidia-detect"
 #: ../ddm-mx:600
 #, sh-format
 msgid "Main repos or MX Test"
-msgstr "Repos principales o MX de Prueba"
+msgstr "Repositorios principales o MX de prueba"
 
 #: ../ddm-mx:604
 #, sh-format
@@ -456,7 +455,7 @@ msgstr "El candidato de Debian backports es:"
 #: ../ddm-mx:933
 #, sh-format
 msgid "MX Test repo candidate is:  "
-msgstr "El candidato de MX Test repo es:"
+msgstr "El candidato de MX Repo de prueba es:"
 
 #: ../ddm-mx:944
 #, sh-format

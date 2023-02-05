@@ -50,11 +50,11 @@ msgstr "Installeer drivers voor:"
 
 #: ../ddm-mx:48
 msgid "Nvidia driver installer"
-msgstr ""
+msgstr "Nvidia driver installeerder"
 
 #: ../ddm-mx:49
 msgid "Install proprietary nvidia driver from repo"
-msgstr ""
+msgstr "Installeer nvidia eigendomsdriver van pakketbron"
 
 #. Invalid option: start GUI
 #. launch_gui $@
@@ -102,45 +102,47 @@ msgstr "De volgende opties zijn toegestaan:"
 
 #: ../ddm-mx:233
 msgid "Offer debian-backports alternative"
-msgstr ""
+msgstr "Debian-backports alternatief aanbieden"
 
 #: ../ddm-mx:235
 msgid "Install given driver."
-msgstr ""
+msgstr "Installeer aangegeven driver."
 
 #: ../ddm-mx:236
 msgid "drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "drivers: nvidia, open, fixbumblebee"
 
 #: ../ddm-mx:238
 msgid "Purge given driver."
-msgstr ""
+msgstr "Wis aangegeven driver."
 
 #: ../ddm-mx:239
 msgid "driver: nvidia"
-msgstr ""
+msgstr "driver: nvidia"
 
 #: ../ddm-mx:241
 msgid "force specific nvidia driver package."
-msgstr ""
+msgstr "forceer specifiek nvidia stuurprogrammapakket.."
 
 #: ../ddm-mx:246
 msgid "For development testing only!  simulate installs"
-msgstr ""
+msgstr "Enkel voor ontwikkelingstesten!  simuleer installaties"
 
 #: ../ddm-mx:247
 msgid "This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "Dit zal drivers installeren voor vooraf gedefinieerde hardware."
 
 #: ../ddm-mx:248
 msgid "Use with -i."
-msgstr ""
+msgstr "Gebruik met -i."
 
 #: ../ddm-mx:308
 #, sh-format
 msgid ""
 "Unsupported configuration.  bumblebee only works with 390xx drivers and up."
 msgstr ""
+"Niet-ondersteunde configuratie.  bumbleblee  werkt alleen met 390xx "
+"stuurprogramma's en hoger."
 
 #: ../ddm-mx:340
 #, sh-format
@@ -300,7 +302,7 @@ msgstr "Afsluiten"
 #: ../ddm-mx:583 ../ddm-mx:621
 #, sh-format
 msgid "Reset nvidia-detect"
-msgstr ""
+msgstr "Nvidia-detect opnieuw instellen"
 
 #: ../ddm-mx:600
 #, sh-format
@@ -310,7 +312,7 @@ msgstr "Hoofd pakketbronnen of MX Test"
 #: ../ddm-mx:604
 #, sh-format
 msgid "MX Test"
-msgstr ""
+msgstr "MX Test"
 
 #: ../ddm-mx:648
 #, sh-format
@@ -400,6 +402,8 @@ msgid ""
 "Use \"nvidia-run-mx\" followed by your application command to use the nvidia"
 " graphics"
 msgstr ""
+"Gebruik \"nvidia-run-mx\" gevolgd door uw toepassing om de nvidia-graphics "
+"te gebruiken"
 
 #: ../ddm-mx:803
 #, sh-format
@@ -407,11 +411,14 @@ msgid ""
 "If you want to force the older bumblebee optimus drivers,\\n quit and "
 "restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
 msgstr ""
+"Als je de oudere bumblebee optimus drivers wilt forceren,\\n sluit af en "
+"start opnieuw op door gebruik te maken van sudo ddm-mx -i nvidia -f "
+"bumblebee-nvidia"
 
 #: ../ddm-mx:807 ../ddm-mx:813
 #, sh-format
 msgid "You need to use the bumblebee-nvidia driver."
-msgstr ""
+msgstr "Je moet het bumblebee-nvidia stuurprogramma gebruiken."
 
 #: ../ddm-mx:826
 #, sh-format

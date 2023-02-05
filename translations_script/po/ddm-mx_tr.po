@@ -8,6 +8,7 @@
 # anticapitalista <anticapitalista@riseup.net>, 2017
 # e0360fc3c0afcd70e5aed1cfc885bac6, 2022
 # mahmut özcan <mahmutozcan@protonmail.com>, 2022
+# Mehmet Akif 9oglu, 2022
 # 
 #, fuzzy
 msgid ""
@@ -16,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-19 20:40-0500\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: mahmut özcan <mahmutozcan@protonmail.com>, 2022\n"
+"Last-Translator: Mehmet Akif 9oglu, 2022\n"
 "Language-Team: Turkish (https://www.transifex.com/anticapitalista/teams/10162/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,11 +52,11 @@ msgstr "Şunun için sürücüleri yükle:"
 
 #: ../ddm-mx:48
 msgid "Nvidia driver installer"
-msgstr ""
+msgstr "Nvidia sürücü yükleme programı"
 
 #: ../ddm-mx:49
 msgid "Install proprietary nvidia driver from repo"
-msgstr ""
+msgstr "Depodan tescilli nvidia sürücüsünü yükleyin"
 
 #. Invalid option: start GUI
 #. launch_gui $@
@@ -103,45 +104,47 @@ msgstr "Aşağıdaki seçeneklere izin veriliyor:"
 
 #: ../ddm-mx:233
 msgid "Offer debian-backports alternative"
-msgstr ""
+msgstr "Debian-backports alternatifi öner"
 
 #: ../ddm-mx:235
 msgid "Install given driver."
-msgstr ""
+msgstr "Belirtilen sürücüyü yükleyin."
 
 #: ../ddm-mx:236
 msgid "drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "sürücüler: nvidia, open, fixbumblebee"
 
 #: ../ddm-mx:238
 msgid "Purge given driver."
-msgstr ""
+msgstr "Belirtilen sürücüyü kaldır."
 
 #: ../ddm-mx:239
 msgid "driver: nvidia"
-msgstr ""
+msgstr "sürücü: nvidia"
 
 #: ../ddm-mx:241
 msgid "force specific nvidia driver package."
-msgstr ""
+msgstr "belirli nvidia sürücü paketini zorla."
 
 #: ../ddm-mx:246
 msgid "For development testing only!  simulate installs"
-msgstr ""
+msgstr "Yalnızca geliştirme testi için! yüklemeleri simüle et"
 
 #: ../ddm-mx:247
 msgid "This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "Bu, önceden tanımlanmış donanım için sürücüleri kuracaktır."
 
 #: ../ddm-mx:248
 msgid "Use with -i."
-msgstr ""
+msgstr "-i ile kullanın."
 
 #: ../ddm-mx:308
 #, sh-format
 msgid ""
 "Unsupported configuration.  bumblebee only works with 390xx drivers and up."
 msgstr ""
+"Desteklenmeyen yapılandırma. bumblebee yalnızca 390xx ve üzeri sürümlerle "
+"çalışır."
 
 #: ../ddm-mx:340
 #, sh-format
@@ -301,7 +304,7 @@ msgstr "Çıkış"
 #: ../ddm-mx:583 ../ddm-mx:621
 #, sh-format
 msgid "Reset nvidia-detect"
-msgstr ""
+msgstr "Sıfırla nvidia-detect"
 
 #: ../ddm-mx:600
 #, sh-format
@@ -311,7 +314,7 @@ msgstr "Ana depolar veya MX sınama deposu"
 #: ../ddm-mx:604
 #, sh-format
 msgid "MX Test"
-msgstr ""
+msgstr "MX Test"
 
 #: ../ddm-mx:648
 #, sh-format
@@ -401,6 +404,8 @@ msgid ""
 "Use \"nvidia-run-mx\" followed by your application command to use the nvidia"
 " graphics"
 msgstr ""
+"nvidia grafiklerini kullanmak için \"nvidia-run-mx\" ve devamında uygulama "
+"komutunu kullanın"
 
 #: ../ddm-mx:803
 #, sh-format
@@ -408,11 +413,13 @@ msgid ""
 "If you want to force the older bumblebee optimus drivers,\\n quit and "
 "restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
 msgstr ""
+"Eski bumblebee optimus sürücülerini zorlamak istiyorsanız\\n çıkın ve sudo "
+"ddm-mx -i nvidia -f bumblebee-nvidia ile yeniden başlatın"
 
 #: ../ddm-mx:807 ../ddm-mx:813
 #, sh-format
 msgid "You need to use the bumblebee-nvidia driver."
-msgstr ""
+msgstr "bumblebee-nvidia sürücüsünü kullanmanız gerekiyor."
 
 #: ../ddm-mx:826
 #, sh-format

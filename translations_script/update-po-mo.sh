@@ -11,9 +11,9 @@ make_po()
 for val in $lang; do
     if [ ! -e "po/$val/$RESOURCE.po" ]; then
         mkdir -p po/$val
-        msginit --input=po/"$RESOURCE".pot --no-translator --locale=$val --output=po/$val/"$RESOURCE".po
+        msginit --input=po/"$RESOURCE".pot --no-translator --locale=$val --output=po/${"RESOURCE"}_${val}.po
     else
-        msgmerge --update po/$val/$RESOURCE.po po/$RESOURCE.pot
+        msgmerge --update po/"${RESOURCE}_${val}.po" po/$RESOURCE.pot
     fi
 done
 }

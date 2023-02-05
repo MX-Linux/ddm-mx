@@ -20,16 +20,17 @@
 #add BitJam's soure cli-shell-utils
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 source gettext.sh
+DEBIAN_VERSION_CODENAME=$(grep VERSION_CODENAME /etc/os-release|cut -d"=" -f2)
 
-VERSION="22.12.02"
+VERSION="23.02.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
 ERR_FILE="/dev/null"
 LOG="/var/log/ddm.log"
-BP_REPO="bullseye-backports"
+BP_REPO="$DEBIAN_VERSION_CODENAME-backports"
 BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
-MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ bullseye test"
+MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ $DEBIAN_VERSION_CODENAME test"
 BACKPORTS_OVERRIDE=false
 
 export TEXTDOMAINDIR=/usr/share/locale 

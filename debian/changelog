@@ -1,3 +1,9 @@
+ddm-mx (23.02.01mx21) mx; urgency=medium
+
+  * generalize debian version
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 04 Feb 2023 20:35:59 -0500
+
 ddm-mx (22.12.02mx22) mx; urgency=medium
 
   * more translations work

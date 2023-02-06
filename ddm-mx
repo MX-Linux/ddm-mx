@@ -406,6 +406,8 @@ fi
         fi
     fi
   fi
+  #add possible missing symlinks
+  create_modprobe_symlinks
   echo $(eval_gettext "Finished") | tee -a $LOG
   echo ""
   finish_purge_message
@@ -420,8 +422,9 @@ function purge_proprietary_drivers {
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
   # Leave nvidia-installer-cleanup
   apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
-# apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
-
+  # apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
+  # remove possible leftover symlinks
+	remove_modprobe_symlinks
   if [ "$?" = "0" ]; then 
       echo $(eval_gettext "Proprietary drivers removed") | tee -a $LOG
   fi
@@ -994,6 +997,27 @@ if [ "$ARCH" = "amd64" ]; then
 fi
 }
 
+create_modprobe_symlinks(){
+	#files to check for
+	#/etc/modprobe.d/nvidia-blacklists-nouveau.conf
+    #/etc/modprobe.d/nvidia-modprobe.conf
+    #/etc/modprobe.d/nvidia-options.conf
+    
+    if [ ! -e /etc/modprobe.d/nvidia-blacklists-nouveau.conf ]; then
+		ln -s /etc/nvidia/current/nvidia-blacklists-nouveau.conf /etc/modprobe.d/nvidia-blacklists-nouveau.conf
+	fi
+	if [ ! -e /etc/modprobe.d/nvidia-modprobe.conf ]; then
+		ln -s /etc/nvidia/current/nvidia-modprobe.conf /etc/modprobe.d/nvidia-modprobe.conf
+	fi
+	if [ ! -e /etc/modprobe.d/nvidia-options.conf ]; then
+		ln -s /etc/nvidia/current/nvidia-options.conf /etc/modprobe.d/nvidia-options.conf
+	fi
+    
+}
+
+remove_modprobe_symlinks(){
+	rm --force /etc/modprobe.d/nvidia-blacklists-nouveau.conf /etc/modprobe.d/nvidia-modprobe.conf /etc/modprobe.d/nvidia-options.conf
+}
 main "$@"
 
 

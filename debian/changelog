@@ -1,3 +1,9 @@
+ddm-mx (23.02.02mx21) mx; urgency=medium
+
+  * create symlinks in /etc/modprobe if driver install doesn't create files
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 05 Feb 2023 22:17:37 -0500
+
 ddm-mx (23.02.01mx21) mx; urgency=medium
 
   * generalize debian version

@@ -1,3 +1,9 @@
+ddm-mx (23.02.03mx21) mx; urgency=medium
+
+  * create 90-nvidia.conf file, add modules-load.d symlink
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 21 Feb 2023 18:28:41 -0500
+
 ddm-mx (23.02.02mx21) mx; urgency=medium
 
   * create symlinks in /etc/modprobe if driver install doesn't create files

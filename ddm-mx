@@ -71,7 +71,7 @@ PURGE=''
 INSTALL=''
 FORCEDRIVER=''
 TEST=false
-while getopts ":f:bi:p:htd:" opt; do
+while getopts ":f:bi:p:htd:c" opt; do
   case $opt in
     h)
       usage HELP
@@ -99,6 +99,10 @@ while getopts ":f:bi:p:htd:" opt; do
       # Testing
       BACKPORTS_OVERRIDE=true
       ;;
+    c) #force create of 90-nvidia.conf file
+    	create_90_nvidiaconf
+    	exit 0
+    	;;
     f)
       # Testing
       FORCEDRIVER="$FORCEDRIVER$OPTARG"
@@ -232,6 +236,7 @@ function usage() {
   echo $(gettext "The following options are allowed:")
   echo
   echo "-b            " $(gettext "Offer debian-backports alternative")
+  echo "-c            " $(gettext "Create 90-nvidia.conf")
   echo
   echo "-i [driver]   " $(gettext "Install given driver.")
   echo "              " $(gettext "drivers: nvidia, open, fixbumblebee")
@@ -408,6 +413,10 @@ fi
   fi
   #add possible missing symlinks
   create_modprobe_symlinks
+  #create 90_nvidia.conf file for non-optimus parts
+  if [ $OPTIMUS = 1 ]; then
+  	create_90_nvidiaconf
+  fi
   echo $(eval_gettext "Finished") | tee -a $LOG
   echo ""
   finish_purge_message
@@ -420,6 +429,7 @@ function purge_proprietary_drivers {
   rm /etc/X11/xorg.conf 2>/dev/null
   rm /etc/modprobe.d/nvidia* 2>/dev/null
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
+  remove_90_nvidiaconf
   # Leave nvidia-installer-cleanup
   apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
   # apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
@@ -1012,12 +1022,33 @@ create_modprobe_symlinks(){
 	if [ ! -e /etc/modprobe.d/nvidia-options.conf ]; then
 		ln -s /etc/nvidia/current/nvidia-options.conf /etc/modprobe.d/nvidia-options.conf
 	fi
+	if [ ! -e /etc/modules-load.d/nvidia.conf ]; then
+		ln -s /etc/nvidia/current/nvidia-load.conf /etc/modules-load.d/nvidia.conf
+	fi
     
 }
 
 remove_modprobe_symlinks(){
-	rm --force /etc/modprobe.d/nvidia-blacklists-nouveau.conf /etc/modprobe.d/nvidia-modprobe.conf /etc/modprobe.d/nvidia-options.conf
+	rm --force /etc/modprobe.d/nvidia-blacklists-nouveau.conf /etc/modprobe.d/nvidia-modprobe.conf /etc/modprobe.d/nvidia-options.conf /etc/modules-load.d/nvidia.conf
 }
+
+create_90_nvidiaconf(){
+	sudo tee /etc/X11/xorg.conf.d/90-nvidia.conf <<!
+Section "Device"
+     Identifier "Nvidia Card"
+     Driver "nvidia"
+     VendorName "NVIDIA Corporation"
+     Option "RegistryDwords" "EnableBrightnessControl=1"
+EndSection
+!
+}
+
+remove_90_nvidiaconf(){
+	if [ -e /etc/X11/xorg.conf.d/90_nvidia.conf ]; then
+		rm --force /etc/X11/xorg.conf.d/90_nvidia.conf
+	fi
+}
+
 main "$@"
 
 

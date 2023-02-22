@@ -99,8 +99,8 @@ while getopts ":f:bi:p:htd:c" opt; do
       # Testing
       BACKPORTS_OVERRIDE=true
       ;;
-    c) #force create of 90-nvidia.conf file
-    	create_90_nvidiaconf
+    c) #force create of 20-nvidia.conf file
+    	create_20_nvidiaconf
     	exit 0
     	;;
     f)
@@ -236,7 +236,7 @@ function usage() {
   echo $(gettext "The following options are allowed:")
   echo
   echo "-b            " $(gettext "Offer debian-backports alternative")
-  echo "-c            " $(gettext "Create 90-nvidia.conf")
+  echo "-c            " $(gettext "Create 20-nvidia.conf")
   echo
   echo "-i [driver]   " $(gettext "Install given driver.")
   echo "              " $(gettext "drivers: nvidia, open, fixbumblebee")
@@ -373,6 +373,9 @@ fi
   echo $(eval_gettext "Nvidia command ") "= apt-get install --install-recommends --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
   apt-get install --reinstall -y linux-headers-$(uname -r) build-essential $TESTSWITCH 2>&1 | tee -a $LOG
   apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
+  if [ "$?" = "0" ]; then
+  	POSTINSTALL=true;
+  fi
   
   #install certain 32 bit libs that don't like --install-recommends
   #if [ -n "$LIB32" ]; then
@@ -411,15 +414,27 @@ fi
         fi
     fi
   fi
-  #add possible missing symlinks
-  create_modprobe_symlinks
-  #create 90_nvidia.conf file for non-optimus parts
-  if [ $OPTIMUS = 1 ]; then
-    echo "90_nvidia.conf" | tee -a $LOG
-  	create_90_nvidiaconf
+  #POSTINSTALL
+  if [ $POSTINSTALL ]; then
+    echo "POSTINSTALL" | tee -a $LOG
+  	#add possible missing symlinks
+  	echo "symlinks" | tee -a $LOG
+  	create_modprobe_symlinks
+  	#create 20_nvidia.conf file for non-optimus parts
+  	if [ $OPTIMUS = 1 ]; then
+    	echo "20_nvidia.conf" | tee -a $LOG
+  		create_20_nvidiaconf
+  	fi
+  	#backup any existing xorg.conf file
+  	if [ -e /etc/X11/xorg.conf ]; then
+  		XORGBACKUP="/etc/X11/xorg.conf.bak.$(date +%Y%m%H%M%S)"
+  		echo "mv /etc/X11/xorg.conf --> $XORGBACKUP" | tee -a $LOG
+  		mv /etc/X11/xorg.conf $XORGBACKUP
+  	fi
+  	#update initramfs one more time
+  	
+  	update-initramfs -u -k all | tee -a $LOG
   fi
-  #update initramfs one more time
-  update-initramfs -u -k all | tee -a $LOG
   echo $(eval_gettext "Finished") | tee -a $LOG
   echo ""
   finish_purge_message
@@ -432,7 +447,7 @@ function purge_proprietary_drivers {
   rm /etc/X11/xorg.conf 2>/dev/null
   rm /etc/modprobe.d/nvidia* 2>/dev/null
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
-  remove_90_nvidiaconf
+  remove_20_nvidiaconf
   # Leave nvidia-installer-cleanup
   apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
   # apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
@@ -1032,11 +1047,12 @@ create_modprobe_symlinks(){
 }
 
 remove_modprobe_symlinks(){
+    echo "rm symlinks" | tee -a $LOG
 	rm --force /etc/modprobe.d/nvidia-blacklists-nouveau.conf /etc/modprobe.d/nvidia-modprobe.conf /etc/modprobe.d/nvidia-options.conf /etc/modules-load.d/nvidia.conf
 }
 
-create_90_nvidiaconf(){
-	sudo tee /etc/X11/xorg.conf.d/90-nvidia.conf <<!
+create_20_nvidiaconf(){
+	sudo tee /etc/X11/xorg.conf.d/20-nvidia.conf <<!
 Section "Device"
      Identifier "Nvidia Card"
      Driver "nvidia"
@@ -1046,9 +1062,10 @@ EndSection
 !
 }
 
-remove_90_nvidiaconf(){
-	if [ -e /etc/X11/xorg.conf.d/90_nvidia.conf ]; then
-		rm --force /etc/X11/xorg.conf.d/90_nvidia.conf
+remove_20_nvidiaconf(){
+    echo "rm 20-_nvidia.conf" | tee -a $LOG
+	if [ -e /etc/X11/xorg.conf.d/20_nvidia.conf ]; then
+		rm --force /etc/X11/xorg.conf.d/20_nvidia.conf
 	fi
 }
 

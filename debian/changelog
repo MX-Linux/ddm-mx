@@ -1,7 +1,8 @@
-ddm-mx (23.02.03mx21) mx; urgency=medium
+ddm-mx (23.02.04mx21) mx; urgency=medium
 
-  * create 90-nvidia.conf file, add modules-load.d symlink
-  * add -c switch to ONLY generate a 90-nvidia.conf file
+  * create 20-nvidia.conf file, add modules-load.d symlink
+  * add -c switch to ONLY generate a 20-nvidia.conf file
+  * backup any exisitng xorg.conf file when nvidia is installed
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 21 Feb 2023 18:28:41 -0500
 

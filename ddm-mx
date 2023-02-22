@@ -415,8 +415,11 @@ fi
   create_modprobe_symlinks
   #create 90_nvidia.conf file for non-optimus parts
   if [ $OPTIMUS = 1 ]; then
+    echo "90_nvidia.conf" | tee -a $LOG
   	create_90_nvidiaconf
   fi
+  #update initramfs one more time
+  update-initramfs -u -k all | tee -a $LOG
   echo $(eval_gettext "Finished") | tee -a $LOG
   echo ""
   finish_purge_message
@@ -766,7 +769,7 @@ check_source_install(){
 
 # Check for Optimus
 check_optimus(){
-    local OPTIMUS MIN_XORG_VERSION MIN_NVIDIA_VERSION MAJOR_NVIDIA_VERSION
+    local MIN_XORG_VERSION MIN_NVIDIA_VERSION MAJOR_NVIDIA_VERSION
     OPTIMUS=1
     if [ -z "$FORCEDRIVER" ]; then
 		if lspci -vnn | grep Intel |grep -q 0300 ; then

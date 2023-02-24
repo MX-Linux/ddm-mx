@@ -1064,8 +1064,8 @@ EndSection
 
 remove_20_nvidiaconf(){
     echo "rm 20-_nvidia.conf" | tee -a $LOG
-	if [ -e /etc/X11/xorg.conf.d/20_nvidia.conf ]; then
-		rm --force /etc/X11/xorg.conf.d/20_nvidia.conf
+	if [ -e /etc/X11/xorg.conf.d/20-nvidia.conf ]; then
+		rm --force /etc/X11/xorg.conf.d/20-nvidia.conf
 	fi
 }
 

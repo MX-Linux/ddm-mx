@@ -1,3 +1,9 @@
+ddm-mx (23.02.05mx21) mx; urgency=medium
+
+  * fix 20-nvidia.conf filename in removal stage
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 24 Feb 2023 23:25:33 -0500
+
 ddm-mx (23.02.04mx21) mx; urgency=medium
 
   * create 20-nvidia.conf file, add modules-load.d symlink

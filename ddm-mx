@@ -793,8 +793,7 @@ check_optimus(){
 				echo $(eval_gettext "nvidia-optimus detected") | tee -a $LOG
 				OPTIMUS=2
 			else
-				YES_no "$(eval_gettext "Is this a NVIDIA/INTEL Optimus system?")" | tee -a $LOG
-				echo "$?"
+				YES_no "$(eval_gettext "Is this a NVIDIA/INTEL Optimus system?")"
 				if [ "$?" = "0" ]; then
 					OPTIMUS=2
 				fi
@@ -802,6 +801,10 @@ check_optimus(){
 			fi
 		fi
     fi
+	
+	if [ -z $CANDIDATE ]; then
+		return
+	fi
 
     if [ $OPTIMUS = 2 ]; then
         # Bumblebee used to be required, but now NVIDIA drivers support Optimus out of the box.

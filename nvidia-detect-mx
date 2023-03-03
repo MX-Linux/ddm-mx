@@ -211,7 +211,7 @@ if [[ -n ${VERSIONS[451]} ]]; then
 	fi
 fi
 if [[ -n ${VERSIONS[461]} ]]; then
-	PACKAGE="nvidia-tesla-460-driver"
+	PACKAGE="nvidia-tesla-460-driver1"
 	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
 		echo "Your card is supported by the Tesla 460 drivers series. $PACKAGE"
 	else

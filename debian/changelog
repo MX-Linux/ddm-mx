@@ -1,4 +1,4 @@
-ddm-mx (23.03.01mx21) mx; urgency=medium
+ddm-mx (23.03.01) mx; urgency=medium
 
   * offer check against more packages
   * present alternatives

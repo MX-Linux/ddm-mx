@@ -166,43 +166,81 @@ fi
 
 if [[ -n ${VERSIONS[340]} ]]; then
 	PACKAGE="nvidia-legacy-340xx-driver"
-	echo "Your card is supported by the nvidia 340 drivers series. $PACKAGE"
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+		echo "Your card is supported by the nvidia 340 drivers series. $PACKAGE"
+	else
+		unset PACKAGE
+	fi
 fi
 if [[ -n ${VERSIONS[390]} ]]; then
 	PACKAGE="nvidia-legacy-390xx-driver" #; changes for mx
-	echo "Your card is supported by the nvidia 390 driver $PACKAGE"
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+		echo "Your card is supported by the nvidia 390 driver $PACKAGE"
+	else
+		unset PACKAGE
+	fi
 fi
 if [[ -n ${VERSIONS[391]} ]]; then
 	PACKAGE="nvidia-legacy-390xx-driver" #; changes for mx	
-	echo "Your card is supported by the nvidia 390 driver only on amd64 platform $PACKAGE"
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+	    echo "Your card is supported by the nvidia 390 driver only on amd64 platform $PACKAGE"
+	fi
 fi
 if [[ -n ${VERSIONS[419]} ]]; then
 	PACKAGE="nvidia-tesla-418-driver"
-	echo "Your card is supported by the Tesla 418 drivers series. $PACKAGE"
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+	    echo "Your card is supported by the Tesla 418 drivers series. $PACKAGE"
+	else
+		unset PACKAGE
+	fi
 fi
 if [[ -n ${VERSIONS[441]} ]]; then
 	PACKAGE="nvidia-tesla-440-driver"
-	echo "Your card is supported by the Tesla 440 drivers series. $PACKAGE" 
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+		echo "Your card is supported by the Tesla 440 drivers series. $PACKAGE" 
+	else
+		unset PACKAGE
+	fi
 fi
 if [[ -n ${VERSIONS[451]} ]]; then
 	PACKAGE="nvidia-tesla-450-driver"
-	echo "Your card is supported by the Tesla 450 drivers series. $PACKAGE"
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+		echo "Your card is supported by the Tesla 450 drivers series. $PACKAGE"
+	else
+		unset PACKAGE
+	fi
 fi
 if [[ -n ${VERSIONS[461]} ]]; then
 	PACKAGE="nvidia-tesla-460-driver"
-	echo "Your card is supported by the Tesla 460 drivers series. $PACKAGE"
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+		echo "Your card is supported by the Tesla 460 drivers series. $PACKAGE"
+	else
+		unset PACKAGE
+	fi
 fi
 if [[ -n ${VERSIONS[471]} ]]; then
 	PACKAGE="nvidia-tesla-470-driver"
-	echo "Your card is supported by the Tesla 470 drivers series.  $PACKAGE"
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+	    echo "Your card is supported by the Tesla 470 drivers series.  $PACKAGE"
+	else
+		unset PACKAGE
+	fi
 fi
 if [[ -n ${VERSIONS[510]} ]]; then
 	PACKAGE="nvidia-tesla-510-driver"
-	echo "Your card is supported by the Tesla 510 drivers series. $PACKAGE"
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+		echo "Your card is supported by the Tesla 510 drivers series. $PACKAGE"
+	else
+		unset PACKAGE
+	fi
 fi
 if [[ -n ${VERSIONS[999]} ]]; then
 	PACKAGE="nvidia-driver" #; changes for mx
-	echo "Your card is supported by the nvidia-driver $LATEST package $PACKAGE"
+	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+		echo "Your card is supported by the nvidia-driver $LATEST package $PACKAGE"
+	else
+		unset PACKAGE
+	fi
 fi
 
 if [[ -z $PACKAGE ]]; then
@@ -215,7 +253,7 @@ if [[ -z $PACKAGE ]]; then
 	elif [[ -n ${VERSIONS[71]} ]]; then
 		echo "Uh oh. Your card is only supported by the 71.86 legacy drivers series, which is not in any current Debian suite."
 	else
-		echo "Oops. Internal error 8 ($NVGA)"
+		echo "Oops. Supported driver not found ($NVGA)"
 	fi
 fi
 

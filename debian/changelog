@@ -1,3 +1,12 @@
+ddm-mx (23.03.01mx21) mx; urgency=medium
+
+  * offer check against more packages
+  * present alternatives
+  * fix bug in some question case handling
+  * support both bullseye and bookworm in same package
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 02 Mar 2023 20:31:39 -0500
+
 ddm-mx (23.02.05mx21) mx; urgency=medium
 
   * fix 20-nvidia.conf filename in removal stage

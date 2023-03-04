@@ -140,6 +140,12 @@ fi
 
 ###file locking
 echo $(eval_gettext "creating lock ...") | tee -a $LOG
+
+# if running in a chroot, /run/lock doesn't exist. so make it
+if [ ! -d "/run/lock" ];then
+	mkdir -p /run/lock
+fi
+
 trap clean_up EXIT
 do_flock 
 

@@ -1,3 +1,10 @@
+ddm-mx (23.03.03) mx; urgency=medium
+
+  * purge leftover i386 libs
+  * translation support for nvidia-detect-mx (not translated yet) 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 04 Mar 2023 10:46:14 -0500
+
 ddm-mx (23.03.01) mx; urgency=medium
 
   * offer check against more packages

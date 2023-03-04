@@ -23,7 +23,7 @@ make_pot()
 if [ ! -d "pot" ]; then
     mkdir pot
 fi
-xgettext --language Shell  --add-comments -o pot/$RESOURCE.pot ../ddm-mx
+xgettext --language Shell  --add-comments -o pot/$RESOURCE.pot ../ddm-mx ../nvidia-detect-mx
 xgettext --language Desktop --join --add-comments -o pot/$RESOURCE.pot ../xdg/ddm-nvidia.desktop.in
 }
 

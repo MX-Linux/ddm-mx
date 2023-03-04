@@ -456,7 +456,7 @@ function purge_proprietary_drivers {
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
   remove_20_nvidiaconf
   # Leave nvidia-installer-cleanup
-  apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
+  apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 *nvidia*:i386 2>&1 | tee -a $LOG
   # apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
   # remove possible leftover symlinks
 	remove_modprobe_symlinks

@@ -171,6 +171,7 @@ fi
 if [[ -n ${VERSIONS[340]} ]]; then
 	PACKAGE="nvidia-legacy-340xx-driver"
 	if [ -n "$(apt-cache madison $PACKAGE 2>/dev/null |grep $PACKAGE)" ]; then
+	    #inform which driver series works
 		printf "$(eval_gettext "Your card is supported by the nvidia %s drivers series. %s")" "340"  "$PACKAGE"
 		echo ""
 	else
@@ -261,6 +262,7 @@ fi
 
 if [[ -z $PACKAGE ]]; then
 	if [[ -n ${VERSIONS[304]} ]]; then
+	#. inform which driver series are totally unsupported
 	    printf "$(eval_gettext "Uh oh. Your card is only supported by the %s legacy drivers series, which is not in any current Debian suite.")" "304" 
 	    echo ""
 	elif [[ -n ${VERSIONS[173]} ]]; then

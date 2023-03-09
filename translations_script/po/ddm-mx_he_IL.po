@@ -5,6 +5,7 @@
 # 
 # Translators:
 # עומר א״ש <omeritzicschwartz@gmail.com>, 2022
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-04 14:51-0500\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: עומר א״ש <omeritzicschwartz@gmail.com>, 2022\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2023\n"
 "Language-Team: Hebrew (Israel) (https://www.transifex.com/anticapitalista/teams/10162/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -263,7 +264,7 @@ msgstr ""
 #: ../ddm-mx:626 ../ddm-mx:651 ../ddm-mx:664
 #, sh-format
 msgid "Ok"
-msgstr ""
+msgstr "אישור"
 
 #: ../ddm-mx:575 ../ddm-mx:592 ../ddm-mx:631 ../ddm-mx:671 ../ddm-mx:1009
 #, sh-format
@@ -458,7 +459,7 @@ msgstr "התקנה מחדש"
 #: ../ddm-mx:1001
 #, sh-format
 msgid "quit"
-msgstr ""
+msgstr "יציאה"
 
 #: ../ddm-mx:1007
 #, sh-format

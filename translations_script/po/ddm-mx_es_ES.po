@@ -5,7 +5,7 @@
 # 
 # Translators:
 # Casper, 2022
-# Manuel <senpai99@hotmail.com>, 2022
+# Manuel <senpai99@hotmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-04 14:51-0500\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Manuel <senpai99@hotmail.com>, 2022\n"
+"Last-Translator: Manuel <senpai99@hotmail.com>, 2023\n"
 "Language-Team: Spanish (Spain) (https://www.transifex.com/anticapitalista/teams/10162/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -108,7 +108,7 @@ msgstr "Ofrecer la alternativa debian-backports"
 
 #: ../ddm-mx:245
 msgid "Create 20-nvidia.conf"
-msgstr ""
+msgstr "Crear 20-nvidia.conf"
 
 #: ../ddm-mx:247
 msgid "Install given driver."
@@ -493,15 +493,19 @@ msgid ""
 "Reports the Debian packages supporting the NVIDIA GPU that is installed on "
 "the local system (or given as a PCIID parameter)."
 msgstr ""
+"Informa sobre los paquetes de Debian que admiten la GPU NVIDIA que está "
+"instalada en el sistema local (o proporcionada como un parámetro PCIID)."
 
 #: ../nvidia-detect-mx:58
 msgid "Latest"
-msgstr ""
+msgstr "Más reciente"
 
 #: ../nvidia-detect-mx:166
 #, sh-format
 msgid "A newer driver may add support for your card."
 msgstr ""
+"Es posible que un controlador más reciente añada compatibilidad con tu "
+"tarjeta."
 
 #: ../nvidia-detect-mx:167
 #, sh-format
@@ -509,6 +513,8 @@ msgid ""
 "Newer driver releases may be available in the MX testing repository or "
 "debian-backports."
 msgstr ""
+"Puede haber versiones más recientes del controlador en el repositorio de "
+"pruebas MX o en debian-backports."
 
 #. inform which driver series works
 #: ../nvidia-detect-mx:175 ../nvidia-detect-mx:184 ../nvidia-detect-mx:193
@@ -517,7 +523,7 @@ msgstr ""
 #: ../nvidia-detect-mx:256
 #, sh-format
 msgid "Your card is supported by the nvidia %s drivers series. %s"
-msgstr ""
+msgstr "Su tarjeta es compatible con la serie %s de controladores nvidia. %s"
 
 #. . inform which driver series are totally unsupported
 #: ../nvidia-detect-mx:266 ../nvidia-detect-mx:269 ../nvidia-detect-mx:272
@@ -527,18 +533,20 @@ msgid ""
 "Uh oh. Your card is only supported by the %s legacy drivers series, which is"
 " not in any current Debian suite."
 msgstr ""
+"¡Vaya! Su tarjeta sólo es compatible con la serie %s de controladores "
+"heredados, que no está en ningún paquete actual de Debian."
 
 #: ../nvidia-detect-mx:278
 #, sh-format
 msgid "Oops. Supported driver not found"
-msgstr ""
+msgstr "¡Vaya! No se ha encontrado el controlador compatible"
 
 #: ../nvidia-detect-mx:286
 #, sh-format
 msgid "It is recommended to install the following:"
-msgstr ""
+msgstr "Se recomienda instalar el siguiente:"
 
 #: ../nvidia-detect-mx:289
 #, sh-format
 msgid "To install alternate driver packages, use"
-msgstr ""
+msgstr "Para instalar paquetes de controladores alternativos, use "

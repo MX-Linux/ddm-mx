@@ -133,7 +133,7 @@ msgstr "controlador: nvidia"
 
 #: ../ddm-mx:253
 msgid "force specific nvidia driver package."
-msgstr "forzar paquete de controlador nvidia específico."
+msgstr "forzar paquete de controlador específico nvidia."
 
 #: ../ddm-mx:258
 msgid "For development testing only!  simulate installs"

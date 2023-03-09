@@ -14,6 +14,7 @@
 # Eugen Brodski <eugen.brodski@web.de>, 2022
 # Vinzenz Vietzke <vinz@vinzv.de>, 2022
 # wahnsinn, 2022
+# Der Dings, 2023
 # 
 #, fuzzy
 msgid ""
@@ -22,7 +23,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-04 14:51-0500\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: wahnsinn, 2022\n"
+"Last-Translator: Der Dings, 2023\n"
 "Language-Team: German (https://www.transifex.com/anticapitalista/teams/10162/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,13 +59,13 @@ msgstr "Installiere Treiber für:"
 #. The desktop entry name will be displayed within the menu.
 #: ../ddm-mx:49 ../xdg/ddm-nvidia.desktop.in:4
 msgid "Nvidia driver installer"
-msgstr ""
+msgstr "Nvidia-Treiber Installer"
 
 #. TRANSLATORS:
 #. The desktop entry comment will be shown within the menu.
 #: ../ddm-mx:50 ../xdg/ddm-nvidia.desktop.in:7
 msgid "Install proprietary nvidia driver from repo"
-msgstr ""
+msgstr "Proprietären nvidia-Treiber aus dem Repo installieren"
 
 #. Invalid option: start GUI
 #. launch_gui $@
@@ -112,11 +113,11 @@ msgstr "Folgende Optionen sind erlaubt :"
 
 #: ../ddm-mx:244
 msgid "Offer debian-backports alternative"
-msgstr ""
+msgstr "Debian-Backports-Alternative anbieten"
 
 #: ../ddm-mx:245
 msgid "Create 20-nvidia.conf"
-msgstr ""
+msgstr "20-nvidia.conf erstellen"
 
 #: ../ddm-mx:247
 msgid "Install given driver."
@@ -124,7 +125,7 @@ msgstr ""
 
 #: ../ddm-mx:248
 msgid "drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "Treiber: nvidia, open, fixbumblebee"
 
 #: ../ddm-mx:250
 msgid "Purge given driver."
@@ -132,29 +133,31 @@ msgstr ""
 
 #: ../ddm-mx:251
 msgid "driver: nvidia"
-msgstr ""
+msgstr "Treiber: nvidia"
 
 #: ../ddm-mx:253
 msgid "force specific nvidia driver package."
-msgstr ""
+msgstr "Erzwinge spezifisches nvidia-Treiber-Paket."
 
 #: ../ddm-mx:258
 msgid "For development testing only!  simulate installs"
-msgstr ""
+msgstr "Nur fürs Entwicklungstesten! Installation simulieren"
 
 #: ../ddm-mx:259
 msgid "This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "Dies wird Treiber für die vordefinierte Hardware installieren."
 
 #: ../ddm-mx:260
 msgid "Use with -i."
-msgstr ""
+msgstr "Anwenden mit -i."
 
 #: ../ddm-mx:321
 #, sh-format
 msgid ""
 "Unsupported configuration.  bumblebee only works with 390xx drivers and up."
 msgstr ""
+"Nicht unterstützte Konfiguration. bumblebee funktioniert nur mit 390xx-"
+"Treibern und darüber."
 
 #: ../ddm-mx:353
 #, sh-format
@@ -315,7 +318,7 @@ msgstr "Exit "
 #: ../ddm-mx:622 ../ddm-mx:660
 #, sh-format
 msgid "Reset nvidia-detect"
-msgstr ""
+msgstr "nvidia-detect zurücksetzen"
 
 #: ../ddm-mx:639
 #, sh-format
@@ -325,7 +328,7 @@ msgstr "Haupt-Repository oder MX Test"
 #: ../ddm-mx:643
 #, sh-format
 msgid "MX Test"
-msgstr ""
+msgstr "MX Test"
 
 #: ../ddm-mx:687
 #, sh-format
@@ -418,6 +421,8 @@ msgid ""
 "Use \"nvidia-run-mx\" followed by your application command to use the nvidia"
 " graphics"
 msgstr ""
+"Verwenden Sie \"nvidia-run-mx\", gefolgt von Ihrem Anwendungsbefehl, um die "
+"nvidia-Grafik zu verwenden"
 
 #: ../ddm-mx:845
 #, sh-format
@@ -425,6 +430,8 @@ msgid ""
 "If you want to force the older bumblebee optimus drivers,\\n quit and "
 "restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
 msgstr ""
+"Wenn Sie die älteren bumblebee optimus Treiber erzwingen wollen,\\n beenden "
+"und starten Sie neu mit sudo ddm-mx -i nvidia -f bumblebee-nvidia"
 
 #: ../ddm-mx:849 ../ddm-mx:855
 #, sh-format
@@ -498,12 +505,12 @@ msgstr ""
 
 #: ../nvidia-detect-mx:58
 msgid "Latest"
-msgstr ""
+msgstr "Neueste"
 
 #: ../nvidia-detect-mx:166
 #, sh-format
 msgid "A newer driver may add support for your card."
-msgstr ""
+msgstr "Ein neuer Treiber könnte Unterstützung für Ihre Karte hinzufügen."
 
 #: ../nvidia-detect-mx:167
 #, sh-format
@@ -511,6 +518,8 @@ msgid ""
 "Newer driver releases may be available in the MX testing repository or "
 "debian-backports."
 msgstr ""
+"Neuere Treiber-Releases könnten im MX-Testing-Repository oder in Debian "
+"Backports verfügbar sein."
 
 #. inform which driver series works
 #: ../nvidia-detect-mx:175 ../nvidia-detect-mx:184 ../nvidia-detect-mx:193
@@ -519,7 +528,7 @@ msgstr ""
 #: ../nvidia-detect-mx:256
 #, sh-format
 msgid "Your card is supported by the nvidia %s drivers series. %s"
-msgstr ""
+msgstr "Ihre Karte wird unterstützt durch die nvidia %s drivers series. %s"
 
 #. . inform which driver series are totally unsupported
 #: ../nvidia-detect-mx:266 ../nvidia-detect-mx:269 ../nvidia-detect-mx:272
@@ -533,14 +542,14 @@ msgstr ""
 #: ../nvidia-detect-mx:278
 #, sh-format
 msgid "Oops. Supported driver not found"
-msgstr ""
+msgstr "Oops. Unterstützter Treiber nicht gefunden"
 
 #: ../nvidia-detect-mx:286
 #, sh-format
 msgid "It is recommended to install the following:"
-msgstr ""
+msgstr "Es wird empfohlen, das Folgende zu installieren:"
 
 #: ../nvidia-detect-mx:289
 #, sh-format
 msgid "To install alternate driver packages, use"
-msgstr ""
+msgstr "Um alternative Treiberpakete zu installieren, verwenden Sie"

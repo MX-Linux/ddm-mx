@@ -8,7 +8,7 @@
 # 🎈 BALLOON | FU-SEN, 2017
 # Geoff Gigg <geoffgigg@hotmail.com>, 2022
 # Dolphin Oracle <dolphinoracle@gmail.com>, 2022
-# Green, 2022
+# Green, 2023
 # 
 #, fuzzy
 msgid ""
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-04 14:51-0500\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Green, 2022\n"
+"Last-Translator: Green, 2023\n"
 "Language-Team: Japanese (https://www.transifex.com/anticapitalista/teams/10162/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -111,7 +111,7 @@ msgstr "debian-backports を利用"
 
 #: ../ddm-mx:245
 msgid "Create 20-nvidia.conf"
-msgstr ""
+msgstr "20-nvidia.conf を作成する"
 
 #: ../ddm-mx:247
 msgid "Install given driver."
@@ -481,22 +481,24 @@ msgid ""
 "Reports the Debian packages supporting the NVIDIA GPU that is installed on "
 "the local system (or given as a PCIID parameter)."
 msgstr ""
+"ローカルシステムにインストールした (または PCIID パラメータを付与した) NVIDIA GPU をサポートする Debian "
+"パッケージを報告します。"
 
 #: ../nvidia-detect-mx:58
 msgid "Latest"
-msgstr ""
+msgstr "最新"
 
 #: ../nvidia-detect-mx:166
 #, sh-format
 msgid "A newer driver may add support for your card."
-msgstr ""
+msgstr "新しいドライバでは、使用しているカードのサポートを追加している場合があります。"
 
 #: ../nvidia-detect-mx:167
 #, sh-format
 msgid ""
 "Newer driver releases may be available in the MX testing repository or "
 "debian-backports."
-msgstr ""
+msgstr "新規リリースのドライバは、MX テストリポジトリまたは debian-backports で入手可能かもしれません。"
 
 #. inform which driver series works
 #: ../nvidia-detect-mx:175 ../nvidia-detect-mx:184 ../nvidia-detect-mx:193
@@ -505,7 +507,7 @@ msgstr ""
 #: ../nvidia-detect-mx:256
 #, sh-format
 msgid "Your card is supported by the nvidia %s drivers series. %s"
-msgstr ""
+msgstr "お使いのカードは、nvidia %s ドライバシリーズでサポートしています。%s"
 
 #. . inform which driver series are totally unsupported
 #: ../nvidia-detect-mx:266 ../nvidia-detect-mx:269 ../nvidia-detect-mx:272
@@ -514,19 +516,19 @@ msgstr ""
 msgid ""
 "Uh oh. Your card is only supported by the %s legacy drivers series, which is"
 " not in any current Debian suite."
-msgstr ""
+msgstr "残念です！ あなたのカードは %s レガシードライバシリーズでのみサポートします。しかし現在の Debian スイートには存在しません。"
 
 #: ../nvidia-detect-mx:278
 #, sh-format
 msgid "Oops. Supported driver not found"
-msgstr ""
+msgstr "対応可能なドライバがありません"
 
 #: ../nvidia-detect-mx:286
 #, sh-format
 msgid "It is recommended to install the following:"
-msgstr ""
+msgstr "以下のインストールを推奨します。"
 
 #: ../nvidia-detect-mx:289
 #, sh-format
 msgid "To install alternate driver packages, use"
-msgstr ""
+msgstr "代替ドライバのパッケージをインストールするには、次を使います"

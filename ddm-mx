@@ -291,7 +291,7 @@ function install_nvidia {
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
   if [ -z "$FORCEDRIVER" ]; then
-    nvidia-detect-mx | tee -a $LOG
+    nvidia-detect-mx $PCIID | tee -a $LOG
 	DRIVER=$(nvidia-detect-mx $PCIID|grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
   fi
   
@@ -314,6 +314,10 @@ function install_nvidia {
     echo "test for $DRIVER"
   fi
   
+  if [ -z "$DRIVER" ]; then
+  	nvidia_driver_override
+  fi
+  	
   check_source_install
   check_cand
   
@@ -1086,6 +1090,26 @@ remove_20_nvidiaconf(){
 	if [ -e /etc/X11/xorg.conf.d/20-nvidia.conf ]; then
 		rm --force /etc/X11/xorg.conf.d/20-nvidia.conf
 	fi
+}
+
+nvidia_driver_override(){
+	echo ""
+	## Ask to try installing the latest nvidia driver if graphics card is unknown
+    echo $(eval_gettext "Try latest nvidia-driver?") | tee -a $LOG
+    echo "" | tee -a $LOG
+    echo 1: $(eval_gettext "Yes") | tee -a $LOG
+    echo 2: $(eval_gettext "No") | tee -a $LOG
+    echo "" | tee -a $LOG
+    echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
+    read -n 1 -e x
+
+    case $x in
+       1) echo "" | tee -a $LOG
+          DRIVER="nvidia-driver";;
+       2) echo $(eval_gettext "exiting")... | tee -a $LOG && exit 0 ;;
+       *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
+    esac
+    echo ""
 }
 
 main "$@"

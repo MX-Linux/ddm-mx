@@ -1,3 +1,11 @@
+ddm-mx (23.03.05) mx; urgency=medium
+
+  * offer to install nvidia-driver if part not found
+  * update policy file with icon
+  * translations
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 11 Jun 2023 18:20:54 -0400
+
 ddm-mx (23.03.04) mx; urgency=medium
 
   * mx-launcher-l10n strings in policy file

@@ -291,11 +291,15 @@ function install_nvidia {
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
   if [ -z "$FORCEDRIVER" ]; then
-    nvidia-detect-mx $PCIID | tee -a $LOG
-	DRIVER=$(nvidia-detect-mx $PCIID|grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
+    nvidia-detect-mx $PCIID
+    nvidia_detect_exit_code=$?
+	DRIVER=$(nvidia-detect-mx $PCIID | tee -a $LOG |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
   fi
   
-  UNSUPPORTED_LEGACY=$(nvidia-detect-mx $PCIID| grep -e173.14 -e96.43 -e71.86 -e304 -e340)
+  UNSUPPORTED_LEGACY=""
+  if [ -z "$DRIVER" ]; then
+   UNSUPPORTED_LEGACY=$(nvidia-detect-mx $PCIID| grep -e173.14 -e96.43 -e71.86 -e304 -e340)
+  fi
   
   # Testing
   if $TEST; then
@@ -314,7 +318,7 @@ function install_nvidia {
     echo "test for $DRIVER"
   fi
   
-  if [ -z "$DRIVER" ]; then
+  if [ $nvidia_detect_exit_code = 3 ]; then
   	nvidia_driver_override
   fi
   	

@@ -488,7 +488,7 @@ msgstr "Fant ingen Nvidia-kort - avslutter"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "Forsøk seneste nvidia-driver?"
 
 #: ../nvidia-detect-mx:31
 msgid ""

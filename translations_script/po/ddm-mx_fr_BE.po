@@ -414,7 +414,7 @@ msgid ""
 " graphics"
 msgstr ""
 "Utiliser « nvidia-run-mx » suivi de la commande de votre application pour "
-"utiliser le système graphique nvidia"
+"utiliser le système graphique Nvidia"
 
 #: ../ddm-mx:849
 #, sh-format
@@ -494,7 +494,7 @@ msgstr "Aucune carte Nvidia trouvée - terminé"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "Essayer le dernier pilote Nvidia?"
 
 #: ../nvidia-detect-mx:31
 msgid ""

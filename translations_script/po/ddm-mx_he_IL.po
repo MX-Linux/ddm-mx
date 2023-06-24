@@ -45,12 +45,12 @@ msgstr "הרצה כמשתמש שורש (root)"
 #: ../ddm-mx:43
 #, sh-format
 msgid "Install drivers for: "
-msgstr ""
+msgstr "התקנת מנהלי התקנים עבור:"
 
 #. The desktop entry name will be displayed within the menu.
 #: ../ddm-mx:49 ../xdg/ddm-nvidia.desktop.in:4
 msgid "Nvidia driver installer"
-msgstr ""
+msgstr "מתקין מנהל התקן של Nvidia"
 
 #. TRANSLATORS:
 #. The desktop entry comment will be shown within the menu.
@@ -71,7 +71,7 @@ msgstr "אפשרות לא תקינה"
 #: ../ddm-mx:142
 #, sh-format
 msgid "creating lock ..."
-msgstr ""
+msgstr "נוצרת נעילה…"
 
 #: ../ddm-mx:182
 #, sh-format
@@ -86,12 +86,12 @@ msgstr ""
 #: ../ddm-mx:191
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
-msgstr ""
+msgstr "שגיאה: ארגומנט לא ידוע: $DRV"
 
 #: ../ddm-mx:224 ../ddm-mx:968
 #, sh-format
 msgid "ERROR: Unknown argument: "
-msgstr ""
+msgstr "שגיאה: ארגומנט לא ידוע:"
 
 #: ../ddm-mx:240
 #, sh-format
@@ -108,7 +108,7 @@ msgstr ""
 
 #: ../ddm-mx:245
 msgid "Create 20-nvidia.conf"
-msgstr ""
+msgstr "יצירת 20-nvidia.conf"
 
 #: ../ddm-mx:247
 msgid "Install given driver."
@@ -116,7 +116,7 @@ msgstr ""
 
 #: ../ddm-mx:248
 msgid "drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "מנהלי התקנים: nvidia,‏ open,‏ fixbumblebee"
 
 #: ../ddm-mx:250
 msgid "Purge given driver."
@@ -124,7 +124,7 @@ msgstr ""
 
 #: ../ddm-mx:251
 msgid "driver: nvidia"
-msgstr ""
+msgstr "מנהל התקן: nvidia"
 
 #: ../ddm-mx:253
 msgid "force specific nvidia driver package."
@@ -270,14 +270,14 @@ msgstr "אישור"
 #: ../ddm-mx:1110
 #, sh-format
 msgid "invalid option."
-msgstr ""
+msgstr "אפשרות שגויה"
 
 #. NVIDIA_XCONFIG=""
 #: ../ddm-mx:579 ../ddm-mx:596 ../ddm-mx:633 ../ddm-mx:635 ../ddm-mx:673
 #: ../ddm-mx:675 ../ddm-mx:1012 ../ddm-mx:1013 ../ddm-mx:1109 ../ddm-mx:1110
 #, sh-format
 msgid "exiting"
-msgstr ""
+msgstr "מתבצעת יציאה"
 
 #: ../ddm-mx:585 ../ddm-mx:586
 #, sh-format
@@ -287,17 +287,17 @@ msgstr ""
 #: ../ddm-mx:603 ../ddm-mx:641
 #, sh-format
 msgid "Which driver do you wish to install"
-msgstr ""
+msgstr "איזה מנהל התקן להתקין"
 
 #: ../ddm-mx:605
 #, sh-format
 msgid "Main repos or debian-backports?"
-msgstr ""
+msgstr "המאגרים הראשיים או debian-backports?"
 
 #: ../ddm-mx:607 ../ddm-mx:645
 #, sh-format
 msgid "Main"
-msgstr ""
+msgstr "ראשיים"
 
 #: ../ddm-mx:611 ../ddm-mx:649
 #, sh-format
@@ -307,57 +307,57 @@ msgstr "יציאה"
 #: ../ddm-mx:626 ../ddm-mx:664
 #, sh-format
 msgid "Reset nvidia-detect"
-msgstr ""
+msgstr "איפוס nvidia-detect"
 
 #: ../ddm-mx:643
 #, sh-format
 msgid "Main repos or MX Test"
-msgstr ""
+msgstr "המאגרים הראשיים או בדיקת MX"
 
 #: ../ddm-mx:647
 #, sh-format
 msgid "MX Test"
-msgstr ""
+msgstr "בדיקת MX"
 
 #: ../ddm-mx:691
 #, sh-format
 msgid "Candidate is: "
-msgstr ""
+msgstr "המועמד הוא:"
 
 #: ../ddm-mx:692 ../ddm-mx:980 ../ddm-mx:989
 #, sh-format
 msgid "Installed is: "
-msgstr ""
+msgstr "המותקן הוא:"
 
 #: ../ddm-mx:700
 #, sh-format
 msgid "Refreshing Sources with apt-get update"
-msgstr ""
+msgstr "המקורות מתעדכנים עם apt-get update"
 
 #: ../ddm-mx:707
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
-msgstr ""
+msgstr "קרתה תקלה עם apt-get update. יש מידע נוסף ב־$LOG"
 
 #: ../ddm-mx:717
 #, sh-format
 msgid "To restore open source drivers use:  "
-msgstr ""
+msgstr "כדי לשחזר את מנהלי ההתקנים בקוד פתוח יש להשתמש ב־:"
 
 #: ../ddm-mx:734
 #, sh-format
 msgid "To restore open source drivers later use:  "
-msgstr ""
+msgstr "כדי לשחזר את מנהלי ההתקנים בקוד פתוח בהמשך יש להשתמש ב־:"
 
 #: ../ddm-mx:746
 #, sh-format
 msgid "For recovery help see "
-msgstr ""
+msgstr "לעזרה בשחזור ר׳"
 
 #: ../ddm-mx:749
 #, sh-format
 msgid "Information written to "
-msgstr ""
+msgstr "המידע נכתב אל"
 
 #: ../ddm-mx:785
 #, sh-format
@@ -367,7 +367,7 @@ msgstr ""
 #: ../ddm-mx:786
 #, sh-format
 msgid "Version detected: "
-msgstr ""
+msgstr "גרסה שהתגלתה:"
 
 #: ../ddm-mx:787
 #, sh-format
@@ -430,7 +430,7 @@ msgstr ""
 #: ../ddm-mx:978 ../ddm-mx:987
 #, sh-format
 msgid "Main repo candidate is:  "
-msgstr ""
+msgstr "המועמד למאגר הראשי הוא:"
 
 #: ../ddm-mx:979
 #, sh-format
@@ -445,7 +445,7 @@ msgstr ""
 #: ../ddm-mx:999
 #, sh-format
 msgid "nvidia driver already installed"
-msgstr ""
+msgstr "מנהל ההתקן של nvidia כבר מותקן"
 
 #: ../ddm-mx:1001
 #, sh-format
@@ -465,19 +465,19 @@ msgstr "יציאה"
 #: ../ddm-mx:1011
 #, sh-format
 msgid "reinstalling"
-msgstr ""
+msgstr "מתבצעת התקנה מחדש"
 
 #: ../ddm-mx:1034
 #, sh-format
 msgid "No nvidia card found - exiting"
-msgstr ""
+msgstr "לא נמצא כרטיס של nvidia - מתבצעת יציאה"
 
 #. # Ask to try installing the latest nvidia driver if graphics card is
 #. unknown
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "לנסות את מנהל ההתקן העדכני ביותר מבית nvidia?"
 
 #: ../nvidia-detect-mx:31
 msgid ""
@@ -532,4 +532,4 @@ msgstr ""
 #: ../nvidia-detect-mx:289
 #, sh-format
 msgid "To install alternate driver packages, use"
-msgstr ""
+msgstr "כדי להתקין חבילות מנהלי התקנים חלופיות, יש להשתמש ב־"

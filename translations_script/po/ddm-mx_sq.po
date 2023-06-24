@@ -491,7 +491,7 @@ msgstr "S’u gjet kartë nvidia - po dilet"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "Të provohen përudhësit më të rinj Nvidia?"
 
 #: ../nvidia-detect-mx:31
 msgid ""
@@ -503,12 +503,12 @@ msgstr ""
 
 #: ../nvidia-detect-mx:58
 msgid "Latest"
-msgstr ""
+msgstr "Më të rinjtë"
 
 #: ../nvidia-detect-mx:166
 #, sh-format
 msgid "A newer driver may add support for your card."
-msgstr "Një përudhës më i ri mund të shtojcë mbulim për kartën tuaj."
+msgstr "Një përudhës më i ri mund të shtojë mbulim për kartën tuaj."
 
 #: ../nvidia-detect-mx:167
 #, sh-format
@@ -516,7 +516,7 @@ msgid ""
 "Newer driver releases may be available in the MX testing repository or "
 "debian-backports."
 msgstr ""
-"Versioni te rinj përudhësi mund të ketë të gatshëm në depon test të MX-it, "
+"Versione te rinj përudhësi mund të ketë të gatshëm në depon test të MX-it, "
 "ose te debian-backports."
 
 #. inform which driver series works

@@ -492,7 +492,7 @@ msgstr "Nisem našel nvidia kartice - zapiram"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "Ste preizkusili zadnje nvidia gonilnike?"
 
 #: ../nvidia-detect-mx:31
 msgid ""

@@ -31,12 +31,12 @@ msgstr "Ocorreu um erro desconhecido"
 #: ../ddm-mx:40
 #, sh-format
 msgid "Option-"
-msgstr "Opção-"
+msgstr "A opção"
 
 #: ../ddm-mx:41
 #, sh-format
 msgid "requires an argument."
-msgstr "Requer um argumento."
+msgstr "requer um argumento."
 
 #: ../ddm-mx:42
 #, sh-format
@@ -46,7 +46,7 @@ msgstr "Executar como administrador (root)"
 #: ../ddm-mx:43
 #, sh-format
 msgid "Install drivers for: "
-msgstr "Instalar controladores (drivers) para:"
+msgstr "Instalar os controladores para:"
 
 #. The desktop entry name will be displayed within the menu.
 #: ../ddm-mx:49 ../xdg/ddm-nvidia.desktop.in:4
@@ -88,7 +88,7 @@ msgstr "Iniciar em (m/d/a):"
 #: ../ddm-mx:191
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
-msgstr "OCORREU UM ERRO: O argumento $DRV não é conhecido"
+msgstr "OCORREU UM ERRO: O argumento ‘$DRV’ não é conhecido"
 
 #: ../ddm-mx:224 ../ddm-mx:968
 #, sh-format
@@ -107,7 +107,8 @@ msgstr "São permitidas as seguintes opções:"
 #: ../ddm-mx:244
 msgid "Offer debian-backports alternative"
 msgstr ""
-"Oferecer uma alternativa ao repositório retroportados (backports) do Debian"
+"Oferece uma alternativa ao repositório dos pacotes retroportados (backports)"
+" do Debian"
 
 #: ../ddm-mx:245
 msgid "Create 20-nvidia.conf"
@@ -136,7 +137,8 @@ msgstr "Forçar a instalação de um pacote específico do controlador da NVidia
 #: ../ddm-mx:258
 msgid "For development testing only!  simulate installs"
 msgstr ""
-"Apenas para testes de desenvolvimento! Simular instalações de controladores."
+"Apenas para testes de desenvolvimento! Simular a instalação dos "
+"controladores"
 
 #: ../ddm-mx:259
 msgid "This will install drivers for pre-defined hardware."
@@ -152,18 +154,18 @@ msgstr "Utilizar com parâmetro -i."
 msgid ""
 "Unsupported configuration.  bumblebee only works with 390xx drivers and up."
 msgstr ""
-"A configuração não é suportada. O bumblebee funciona apenas com os "
+"A configuração não é suportada. O ‘bumblebee’ funciona apenas com os "
 "controladores da série 390xx e superiores."
 
 #: ../ddm-mx:357
 #, sh-format
 msgid "Need driver: "
-msgstr "É necessário o controlador (driver):"
+msgstr "É necessário o controlador:"
 
 #: ../ddm-mx:361
 #, sh-format
 msgid "NVIDIA packages to install are "
-msgstr "Os pacotes da NVIDIA para serem instalados são"
+msgstr "Os pacotes da NVidia para serem instalados são"
 
 #: ../ddm-mx:363 ../ddm-mx:701
 #, sh-format
@@ -179,17 +181,18 @@ msgstr "Comando da NVidia"
 #, sh-format
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr ""
-"OCORREU UM ERRO: Não foi possível configurar o Bumblebee para o usuário:"
+"OCORREU UM ERRO: Não foi possível configurar o ‘bumblebee’ para o usuário:"
 
 #: ../ddm-mx:415
 #, sh-format
 msgid "test enabled, not creating xorg.conf file"
-msgstr "O teste foi ativado e não será criado o arquivo xorg.conf"
+msgstr ""
+"O teste foi ativado e não será criado o arquivo de configurações ‘xorg.conf’"
 
 #: ../ddm-mx:419
 #, sh-format
 msgid "creating /etc/X11/xorg.conf file"
-msgstr "Criando o arquivo /etc/X11/xorg.conf"
+msgstr "Criando o arquivo de configurações /etc/X11/xorg.conf"
 
 #: ../ddm-mx:449
 #, sh-format
@@ -204,17 +207,17 @@ msgstr "Foram removidos os controladores não-livres/proprietários"
 #: ../ddm-mx:481
 #, sh-format
 msgid "Open command "
-msgstr "Comando para Abrir"
+msgstr "Comando para abrir"
 
 #: ../ddm-mx:485
 #, sh-format
 msgid "Open drivers installed"
-msgstr "Controladores (drivers) de códigios abertos/livres instalados"
+msgstr "Controladores (drivers) de códigos abertos/livres instalados"
 
 #: ../ddm-mx:499 ../ddm-mx:505
 #, sh-format
 msgid "Resetting sources"
-msgstr "Reiniciando as origens/fontes"
+msgstr "Reiniciando as fontes"
 
 #: ../ddm-mx:516
 #, sh-format
@@ -230,12 +233,12 @@ msgstr "Ativando os repositórios retroportados (backports)"
 #: ../ddm-mx:531 ../ddm-mx:547
 #, sh-format
 msgid "Running apt-get update..."
-msgstr "Executando o comando “apt-get update”..."
+msgstr "Executando o comando ‘apt-get update’..."
 
 #: ../ddm-mx:536 ../ddm-mx:552 ../ddm-mx:1043
 #, sh-format
 msgid "Installing latest nvidia-detect package"
-msgstr "Instalando o pacote nvidia-detect mais recente"
+msgstr "Instalando o pacote ‘nvidia-detect’ mais recente"
 
 #. enabling mx_test_repo
 #: ../ddm-mx:546
@@ -268,13 +271,13 @@ msgstr "Não"
 #: ../ddm-mx:568 ../ddm-mx:613 ../ddm-mx:651 ../ddm-mx:1007 ../ddm-mx:1103
 #, sh-format
 msgid "Enter Number of selection"
-msgstr "Inserir o número da opção selecionada"
+msgstr "Selecione uma opção inserindo um número"
 
 #: ../ddm-mx:572 ../ddm-mx:576 ../ddm-mx:589 ../ddm-mx:593 ../ddm-mx:617
 #: ../ddm-mx:630 ../ddm-mx:655 ../ddm-mx:668
 #, sh-format
 msgid "Ok"
-msgstr "Aceitar"
+msgstr "Confirmar"
 
 #: ../ddm-mx:579 ../ddm-mx:596 ../ddm-mx:635 ../ddm-mx:675 ../ddm-mx:1013
 #: ../ddm-mx:1110
@@ -304,7 +307,7 @@ msgstr "Qual é o controlador que você quer instalar?"
 #: ../ddm-mx:605
 #, sh-format
 msgid "Main repos or debian-backports?"
-msgstr "Repositórios principais ou retroportados?"
+msgstr "Dos repositórios principais ou dos repositórios retroportados?"
 
 #: ../ddm-mx:607 ../ddm-mx:645
 #, sh-format
@@ -344,14 +347,14 @@ msgstr "O instalado é o: "
 #: ../ddm-mx:700
 #, sh-format
 msgid "Refreshing Sources with apt-get update"
-msgstr "A atualizar as fontes/origens com o comando “apt-get update”"
+msgstr "Atualizando as fontes com o comando ‘apt-get update’"
 
 #: ../ddm-mx:707
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
-"Ocorreu um problema com o comando “apt-get update”.  Por favor, verifique o "
-"registro $LOG para obter mais informações"
+"Ocorreu um problema com o comando ‘apt-get update’.  Por favor, verifique o "
+"registro ‘$LOG’ para obter mais informações."
 
 #: ../ddm-mx:717
 #, sh-format
@@ -367,8 +370,7 @@ msgstr "Para restaurar mais tarde os controladores de código aberto, utilize:"
 #, sh-format
 msgid "For recovery help see "
 msgstr ""
-"Para obter ajuda (em idioma inglês)  sobre a recuperação, por favor, "
-"consulte"
+"Para obter ajuda (em idioma inglês) sobre a recuperação, por favor, consulte"
 
 #: ../ddm-mx:749
 #, sh-format
@@ -379,8 +381,8 @@ msgstr "A informação foi guardada/gravada em "
 #, sh-format
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
-"Foi detectada uma possível instalação anterior de código fonte ou de "
-"smxi/sgfxi"
+"Foi detectada uma possível instalação anterior do código fonte ou do "
+"‘smxi/sgfxi’"
 
 #: ../ddm-mx:786
 #, sh-format
@@ -390,7 +392,7 @@ msgstr "A versão detectada é a:"
 #: ../ddm-mx:787
 #, sh-format
 msgid "Latest possible with this script : "
-msgstr "O mais recente possível com esta sequência de instruções (script):"
+msgstr "O mais recente possível com este conjunto de instruções (script):"
 
 #: ../ddm-mx:788
 #, sh-format
@@ -404,12 +406,12 @@ msgstr ""
 #: ../ddm-mx:803
 #, sh-format
 msgid "nvidia-optimus detected"
-msgstr "Foi detectado o nvidia-optimus"
+msgstr "Foi detectado o ‘nvidia-optimus’"
 
 #: ../ddm-mx:806
 #, sh-format
 msgid "Is this a NVIDIA/INTEL Optimus system?"
-msgstr "Este é um sistema NVIDIA / INTEL Optimus?"
+msgstr "Este computador possui uma placa de vídeo NVidia Optimus ou Intel?"
 
 #: ../ddm-mx:846
 #, sh-format
@@ -424,7 +426,7 @@ msgid ""
 "Use \"nvidia-run-mx\" followed by your application command to use the nvidia"
 " graphics"
 msgstr ""
-"Utilize o parâmetro “nvidia-run-mx” seguido pelo comando do seu aplicativo "
+"Utilize o parâmetro ‘nvidia-run-mx’ seguido pelo comando do seu aplicativo "
 "para utilizar os gráficos da NVidia"
 
 #: ../ddm-mx:849
@@ -433,13 +435,14 @@ msgid ""
 "If you want to force the older bumblebee optimus drivers,\\n quit and "
 "restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
 msgstr ""
-"Se você quiser forçar os controladores bumblebee da optimus, saia e\\n "
-"reinicie com o comando “sudo ddm-mx -i nvidia -f bumblebee-nvidia”"
+"Se você quiser forçar os controladores ‘bumblebee’ da série ‘Optimus’, saia "
+"da\\n sessão e reinicie com o comando ‘sudo ddm-mx -i nvidia -f bumblebee-"
+"nvidia’"
 
 #: ../ddm-mx:853 ../ddm-mx:859
 #, sh-format
 msgid "You need to use the bumblebee-nvidia driver."
-msgstr "Você precisa utilizar o controlador bumblebee-nvidia."
+msgstr "Você precisa utilizar o controlador ‘bumblebee-nvidia’."
 
 #: ../ddm-mx:872
 #, sh-format
@@ -507,14 +510,14 @@ msgstr "Nenhuma placa da NVidia foi encontrada - saindo"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "Você tentar instalar o controlador da NVidia mais recente?"
 
 #: ../nvidia-detect-mx:31
 msgid ""
 "Reports the Debian packages supporting the NVIDIA GPU that is installed on "
 "the local system (or given as a PCIID parameter)."
 msgstr ""
-"Relatar os pacotes do Debian que suportam a placa de vídeo ou GPU da NVIDIA "
+"Relate os pacotes do Debian que suportam a placa de vídeo ou GPU da NVidia "
 "que está instalada no sistema operacional local (ou fornecida como um "
 "parâmetro do tipo PCIID)."
 
@@ -570,9 +573,9 @@ msgstr "Não foi encontrado um controlador compatível com a sua placa de vídeo
 #: ../nvidia-detect-mx:286
 #, sh-format
 msgid "It is recommended to install the following:"
-msgstr "Recomenda-se instalar o seguinte controlador:"
+msgstr "É recomendado instalar o seguinte controlador:"
 
 #: ../nvidia-detect-mx:289
 #, sh-format
 msgid "To install alternate driver packages, use"
-msgstr "Para instalar pacotes de controladores alternativos, utilize"
+msgstr "Para instalar pacotes dos controladores alternativos, utilize"

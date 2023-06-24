@@ -79,7 +79,7 @@ msgstr "... をロック中"
 #: ../ddm-mx:182
 #, sh-format
 msgid "Purge drivers for: "
-msgstr "削除するドライバー:"
+msgstr "削除するドライバ:"
 
 #: ../ddm-mx:183 ../ddm-mx:205
 #, sh-format
@@ -99,7 +99,7 @@ msgstr "エラー: 不明な引数:"
 #: ../ddm-mx:240
 #, sh-format
 msgid "Device Driver Manager Help:"
-msgstr "デバイスマネージャーのヘルプ:"
+msgstr "デバイスマネージャのヘルプ:"
 
 #: ../ddm-mx:242
 msgid "The following options are allowed:"
@@ -194,7 +194,7 @@ msgstr "完了"
 #: ../ddm-mx:468
 #, sh-format
 msgid "Proprietary drivers removed"
-msgstr "プロプラエタリなドライバーが削除されました"
+msgstr "プロプラエタリなドライバが削除されました"
 
 #: ../ddm-mx:481
 #, sh-format
@@ -204,7 +204,7 @@ msgstr "コマンドを開始"
 #: ../ddm-mx:485
 #, sh-format
 msgid "Open drivers installed"
-msgstr "インストールしたドライバーを開始"
+msgstr "インストールしたドライバを開く"
 
 #: ../ddm-mx:499 ../ddm-mx:505
 #, sh-format
@@ -482,7 +482,7 @@ msgstr "nvidia カードが見つかりません - 終了中"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "最新の nvidia-driver を試してみますか？"
 
 #: ../nvidia-detect-mx:31
 msgid ""

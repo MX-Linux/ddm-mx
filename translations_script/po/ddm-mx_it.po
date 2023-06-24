@@ -493,7 +493,7 @@ msgstr "Non è stata trovata alcuna scheda nvidia - si esce"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "Provo l'ultimo driver nvidia?"
 
 #: ../nvidia-detect-mx:31
 msgid ""

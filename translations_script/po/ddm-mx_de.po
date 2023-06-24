@@ -10,8 +10,8 @@
 # count.negative <count.negative@gmx.de>, 2019
 # Robin, 2021
 # WPSchulz <fly@wp-schulz.de>, 2022
-# Taiwanoca <taiwanoca@gmail.com>, 2022
 # Eugen Brodski <eugen.brodski@web.de>, 2022
+# Taiwanoca <taiwanoca@gmail.com>, 2022
 # Vinzenz Vietzke <vinz@vinzv.de>, 2022
 # wahnsinn, 2022
 # Der Dings, 2023
@@ -251,7 +251,7 @@ msgstr "Aktiviere MX Test Repo"
 #, sh-format
 msgid "Would you like to check debian-backports for a later version?"
 msgstr ""
-"Möchten Sie in den Debian Backports nach einer neueren Version suchen?"
+"Möchten sie in den Debian Backports nach einer neueren Version suchen?"
 
 #: ../ddm-mx:563
 #, sh-format
@@ -295,12 +295,13 @@ msgstr "Beende"
 #: ../ddm-mx:585 ../ddm-mx:586
 #, sh-format
 msgid "Would you like to check MX Test Repo for a later version?"
-msgstr "Möchten Sie im MX Test Repo nach einer neueren Version suchen?"
+msgstr ""
+"Möchten sie in der MX-Test-Dateiquelle nach einer neueren Version suchen?"
 
 #: ../ddm-mx:603 ../ddm-mx:641
 #, sh-format
 msgid "Which driver do you wish to install"
-msgstr "Welchen Treiber möchten Sie installieren"
+msgstr "Welchen Treiber möchten sie installieren"
 
 #: ../ddm-mx:605
 #, sh-format
@@ -351,13 +352,13 @@ msgstr "Aktualisiere Quellen mit apt-get update"
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
-"Es gab ein Problem mit apt-get update. Werfen Sie einen Blick in $LOG für "
+"Es gab ein Problem mit apt-get update. Werfen sie einen Blick in $LOG für "
 "Details"
 
 #: ../ddm-mx:717
 #, sh-format
 msgid "To restore open source drivers use:  "
-msgstr "Um die Open-Source-Treiber wiederherzustellen, verwenden Sie: "
+msgstr "Um die Open-Source-Treiber wiederherzustellen, verwenden sie: "
 
 #: ../ddm-mx:734
 #, sh-format
@@ -397,8 +398,8 @@ msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
-"Bitte entfernen Sie <sudo nvidia-install --uninstall> und starten Sie neu, "
-"wenn Sie fortfahren möchten."
+"Bitte entfernen sie mit <sudo nvidia-install --uninstall> und starten sie "
+"neu, wenn sie fortfahren möchten."
 
 #: ../ddm-mx:803
 #, sh-format
@@ -423,7 +424,7 @@ msgid ""
 "Use \"nvidia-run-mx\" followed by your application command to use the nvidia"
 " graphics"
 msgstr ""
-"Verwenden Sie \"nvidia-run-mx\", gefolgt von Ihrem Anwendungsbefehl, um die "
+"Verwenden sie \"nvidia-run-mx\", gefolgt von Ihrem Anwendungsbefehl, um die "
 "nvidia-Grafik zu verwenden"
 
 #: ../ddm-mx:849
@@ -432,8 +433,8 @@ msgid ""
 "If you want to force the older bumblebee optimus drivers,\\n quit and "
 "restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
 msgstr ""
-"Wenn Sie die älteren bumblebee optimus Treiber erzwingen wollen,\\n beenden "
-"und starten Sie neu mit sudo ddm-mx -i nvidia -f bumblebee-nvidia"
+"Wenn sie die älteren bumblebee optimus Treiber erzwingen wollen,\\n beenden "
+"und starten sie neu mit sudo ddm-mx -i nvidia -f bumblebee-nvidia"
 
 #: ../ddm-mx:853 ../ddm-mx:859
 #, sh-format
@@ -443,7 +444,7 @@ msgstr "Sie müssen den bumblebee-nvidia-Treiber verwenden."
 #: ../ddm-mx:872
 #, sh-format
 msgid "nvidia driver not available, check your repo sources"
-msgstr "Nvidia-Treiber nicht verfügbar, prüfen Sie Ihre Repo-Quellen!"
+msgstr "Nvidia-Treiber nicht verfügbar, prüfen sie ihre Dateiquellen!"
 
 #: ../ddm-mx:877
 #, sh-format
@@ -504,13 +505,15 @@ msgstr "Keine Nvidia-Karte gefunden - verlasse das Programm"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "Den neuesten nvidia-Treiber benutzen?"
 
 #: ../nvidia-detect-mx:31
 msgid ""
 "Reports the Debian packages supporting the NVIDIA GPU that is installed on "
 "the local system (or given as a PCIID parameter)."
 msgstr ""
+"Ermittelt Debian-Pakete, die den NVIDIA-Grafikprozessor unterstützen, der im"
+" lokalen System installiert ist (oder als PCIID-Parameter angegeben wurde)."
 
 #: ../nvidia-detect-mx:58
 msgid "Latest"
@@ -527,7 +530,7 @@ msgid ""
 "Newer driver releases may be available in the MX testing repository or "
 "debian-backports."
 msgstr ""
-"Neuere Treiber-Releases könnten im MX-Testing-Repository oder in Debian "
+"Neuere Treiber könnten in der MX-Testing-Paketquelle oder in Debian "
 "Backports verfügbar sein."
 
 #. inform which driver series works
@@ -547,6 +550,8 @@ msgid ""
 "Uh oh. Your card is only supported by the %s legacy drivers series, which is"
 " not in any current Debian suite."
 msgstr ""
+"Ihre Karte wird nur von der %s Legacy-Treiberserie unterstützt, die in "
+"keiner aktuellen Debian-Suite enthalten ist."
 
 #: ../nvidia-detect-mx:278
 #, sh-format
@@ -561,4 +566,4 @@ msgstr "Es wird empfohlen, das Folgende zu installieren:"
 #: ../nvidia-detect-mx:289
 #, sh-format
 msgid "To install alternate driver packages, use"
-msgstr "Um alternative Treiberpakete zu installieren, verwenden Sie"
+msgstr "Um alternative Treiberpakete zu installieren, verwenden sie"

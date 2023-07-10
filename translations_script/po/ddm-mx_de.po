@@ -11,7 +11,6 @@
 # Robin, 2021
 # WPSchulz <fly@wp-schulz.de>, 2022
 # Eugen Brodski <eugen.brodski@web.de>, 2022
-# Taiwanoca <taiwanoca@gmail.com>, 2022
 # Vinzenz Vietzke <vinz@vinzv.de>, 2022
 # wahnsinn, 2022
 # Der Dings, 2023
@@ -50,7 +49,7 @@ msgstr "erfordert ein Argument."
 #: ../ddm-mx:42
 #, sh-format
 msgid "Run as root"
-msgstr "Als Root ausführen"
+msgstr "Mit Administratorrechten ausführen"
 
 #: ../ddm-mx:43
 #, sh-format
@@ -66,7 +65,7 @@ msgstr "Nvidia-Treiber Installer"
 #. The desktop entry comment will be shown within the menu.
 #: ../ddm-mx:50 ../xdg/ddm-nvidia.desktop.in:7
 msgid "Install proprietary nvidia driver from repo"
-msgstr "Proprietären nvidia-Treiber aus dem Repo installieren"
+msgstr "Proprietären nvidia-Treiber aus der Paketquelle installieren"
 
 #. Invalid option: start GUI
 #. launch_gui $@
@@ -229,7 +228,7 @@ msgstr "Drücke <Enter> zum verlassen"
 #: ../ddm-mx:530
 #, sh-format
 msgid "Enabling backports repo"
-msgstr "Aktiviere Backports-Repository"
+msgstr "Die Backports-Paketquellen aktivieren"
 
 #: ../ddm-mx:531 ../ddm-mx:547
 #, sh-format
@@ -239,13 +238,13 @@ msgstr "\"apt-get update\" läuft.."
 #: ../ddm-mx:536 ../ddm-mx:552 ../ddm-mx:1043
 #, sh-format
 msgid "Installing latest nvidia-detect package"
-msgstr "Installiere aktuelles nvidia-detect Paket"
+msgstr "Das aktuelles nvidia-detect Paket nstallieren"
 
 #. enabling mx_test_repo
 #: ../ddm-mx:546
 #, sh-format
 msgid "Enabling MX Test repo"
-msgstr "Aktiviere MX Test Repo"
+msgstr "Die MX-Test-Paketquellen aktivieren"
 
 #: ../ddm-mx:561
 #, sh-format
@@ -296,7 +295,7 @@ msgstr "Beende"
 #, sh-format
 msgid "Would you like to check MX Test Repo for a later version?"
 msgstr ""
-"Möchten sie in der MX-Test-Dateiquelle nach einer neueren Version suchen?"
+"Möchten sie in der MX-Test-Paketquelle nach einer neueren Version suchen?"
 
 #: ../ddm-mx:603 ../ddm-mx:641
 #, sh-format
@@ -306,7 +305,7 @@ msgstr "Welchen Treiber möchten sie installieren"
 #: ../ddm-mx:605
 #, sh-format
 msgid "Main repos or debian-backports?"
-msgstr "Haupt-Repository oder Debian Backports?"
+msgstr "Haupt-Paketquellen oder Debian-Backports?"
 
 #: ../ddm-mx:607 ../ddm-mx:645
 #, sh-format
@@ -326,7 +325,7 @@ msgstr "nvidia-detect zurücksetzen"
 #: ../ddm-mx:643
 #, sh-format
 msgid "Main repos or MX Test"
-msgstr "Haupt-Repository oder MX Test"
+msgstr "Haupt-Paketquellen oder MX-Test"
 
 #: ../ddm-mx:647
 #, sh-format
@@ -444,7 +443,7 @@ msgstr "Sie müssen den bumblebee-nvidia-Treiber verwenden."
 #: ../ddm-mx:872
 #, sh-format
 msgid "nvidia driver not available, check your repo sources"
-msgstr "Nvidia-Treiber nicht verfügbar, prüfen sie ihre Dateiquellen!"
+msgstr "Der Nvidia-Treiber ist nicht verfügbar, prüfen sie ihre Paketquellen!"
 
 #: ../ddm-mx:877
 #, sh-format
@@ -458,7 +457,7 @@ msgstr ""
 #: ../ddm-mx:978 ../ddm-mx:987
 #, sh-format
 msgid "Main repo candidate is:  "
-msgstr "Kandidat aus dem Hauptrepository ist:"
+msgstr "Kandidat aus den Hauptpaketquellen ist:"
 
 #: ../ddm-mx:979
 #, sh-format
@@ -468,7 +467,7 @@ msgstr "Kandidat aus den Debian Backports ist:"
 #: ../ddm-mx:988
 #, sh-format
 msgid "MX Test repo candidate is:  "
-msgstr "Kandidat aus dem MX Test Repository ist:"
+msgstr "Kandidat aus den MX-Test-Paketquellen ist:"
 
 #: ../ddm-mx:999
 #, sh-format

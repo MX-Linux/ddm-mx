@@ -369,7 +369,7 @@ msgstr "Pour l’aide à la restauration, voir "
 #: ../ddm-mx:749
 #, sh-format
 msgid "Information written to "
-msgstr "Informations écrites à "
+msgstr "Informations écrites dans "
 
 #: ../ddm-mx:785
 #, sh-format

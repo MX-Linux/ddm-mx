@@ -22,7 +22,7 @@ source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 source gettext.sh
 DEBIAN_VERSION_CODENAME=$(grep VERSION_CODENAME /etc/os-release|cut -d"=" -f2)
 
-VERSION="23.03.01"
+VERSION="23.07.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"

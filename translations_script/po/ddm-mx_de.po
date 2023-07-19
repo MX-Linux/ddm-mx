@@ -423,8 +423,8 @@ msgid ""
 "Use \"nvidia-run-mx\" followed by your application command to use the nvidia"
 " graphics"
 msgstr ""
-"Verwenden sie \"nvidia-run-mx\", gefolgt von Ihrem Anwendungsbefehl, um die "
-"nvidia-Grafik zu verwenden"
+"Verwenden sie \"nvidia-run-mx\", gefolgt von ihrem Anwendungsbefehl, um die "
+"nvidia-Grafik zu nutzen"
 
 #: ../ddm-mx:849
 #, sh-format

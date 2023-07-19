@@ -8,6 +8,7 @@
 # Przemek P <ppjg@dami.pl>, 2019
 # MX Linux Polska <mxlinuxpl@gmail.com>, 2022
 # Robin, 2023
+# kobaian <golemiko@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -16,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-11 15:22-0400\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Robin, 2023\n"
+"Last-Translator: kobaian <golemiko@gmail.com>, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/anticapitalista/teams/10162/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,7 +53,7 @@ msgstr "Zainstaluj sterowniki dla:"
 #. The desktop entry name will be displayed within the menu.
 #: ../ddm-mx:49 ../xdg/ddm-nvidia.desktop.in:4
 msgid "Nvidia driver installer"
-msgstr ""
+msgstr "Instalator sterowników Nvidia"
 
 #. TRANSLATORS:
 #. The desktop entry comment will be shown within the menu.
@@ -110,45 +111,48 @@ msgstr ""
 
 #: ../ddm-mx:245
 msgid "Create 20-nvidia.conf"
-msgstr ""
+msgstr "Utwórz 20-nvidia.conf"
 
 #: ../ddm-mx:247
 msgid "Install given driver."
-msgstr ""
+msgstr "Zainstaluj dany sterownik."
 
 #: ../ddm-mx:248
 msgid "drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "sterowniki: nvidia, open, fixbumblebee"
 
 #: ../ddm-mx:250
 msgid "Purge given driver."
-msgstr ""
+msgstr "Usuń dany sterownik."
 
 #: ../ddm-mx:251
 msgid "driver: nvidia"
-msgstr ""
+msgstr "sterownik: nvidia"
 
 #: ../ddm-mx:253
 msgid "force specific nvidia driver package."
-msgstr ""
+msgstr "wymuś określony pakiet sterownika nvidia"
 
 #: ../ddm-mx:258
 msgid "For development testing only!  simulate installs"
-msgstr ""
+msgstr "Tylko do testów deweloperskich! symuluj instalacje"
 
 #: ../ddm-mx:259
 msgid "This will install drivers for pre-defined hardware."
 msgstr ""
+"Spowoduje to zainstalowanie sterowników dla wstępnie zdefiniowanego sprzętu."
 
 #: ../ddm-mx:260
 msgid "Use with -i."
-msgstr ""
+msgstr "Użyj z -i."
 
 #: ../ddm-mx:325
 #, sh-format
 msgid ""
 "Unsupported configuration.  bumblebee only works with 390xx drivers and up."
 msgstr ""
+"Niewspierana konfiguracja. bumblebee działa jedynie ze sterownikami 390xx i "
+"wyższymi."
 
 #: ../ddm-mx:357
 #, sh-format
@@ -310,7 +314,7 @@ msgstr "Wyjście"
 #: ../ddm-mx:626 ../ddm-mx:664
 #, sh-format
 msgid "Reset nvidia-detect"
-msgstr ""
+msgstr "Zresetuj nvidia-detect"
 
 #: ../ddm-mx:643
 #, sh-format
@@ -320,7 +324,7 @@ msgstr "Główneg repozytoria lub MX Test"
 #: ../ddm-mx:647
 #, sh-format
 msgid "MX Test"
-msgstr ""
+msgstr "MX Test"
 
 #: ../ddm-mx:691
 #, sh-format

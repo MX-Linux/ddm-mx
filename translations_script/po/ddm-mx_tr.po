@@ -8,7 +8,7 @@
 # anticapitalista <anticapitalista@riseup.net>, 2017
 # e0360fc3c0afcd70e5aed1cfc885bac6, 2022
 # mahmut özcan <mahmutozcan@protonmail.com>, 2022
-# Mehmet Akif 9oglu, 2022
+# Mehmet Akif 9oglu, 2023
 # 
 #, fuzzy
 msgid ""
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-11 15:22-0400\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Mehmet Akif 9oglu, 2022\n"
+"Last-Translator: Mehmet Akif 9oglu, 2023\n"
 "Language-Team: Turkish (https://app.transifex.com/anticapitalista/teams/10162/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -111,7 +111,7 @@ msgstr "Debian-backports alternatifi öner"
 
 #: ../ddm-mx:245
 msgid "Create 20-nvidia.conf"
-msgstr ""
+msgstr "20-nvidia.conf oluştur"
 
 #: ../ddm-mx:247
 msgid "Install given driver."
@@ -493,22 +493,24 @@ msgstr "nvidia kartı bulunamadı - çıkılıyor"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr ""
+msgstr "En son nvidia-driver'ı dene?"
 
 #: ../nvidia-detect-mx:31
 msgid ""
 "Reports the Debian packages supporting the NVIDIA GPU that is installed on "
 "the local system (or given as a PCIID parameter)."
 msgstr ""
+"Yerel sistemde kurulu (veya bir PCIID parametresi olarak verilen) NVIDIA "
+"GPU'yu destekleyen Debian paketlerini bildirir."
 
 #: ../nvidia-detect-mx:58
 msgid "Latest"
-msgstr ""
+msgstr "En son"
 
 #: ../nvidia-detect-mx:166
 #, sh-format
 msgid "A newer driver may add support for your card."
-msgstr ""
+msgstr "Daha yeni bir sürücü kartınız için destek sağlayabilir."
 
 #: ../nvidia-detect-mx:167
 #, sh-format
@@ -516,6 +518,8 @@ msgid ""
 "Newer driver releases may be available in the MX testing repository or "
 "debian-backports."
 msgstr ""
+"Daha yeni sürücü sürümleri, MX test havuzunda veya debian-backport'larda "
+"mevcut olabilir."
 
 #. inform which driver series works
 #: ../nvidia-detect-mx:175 ../nvidia-detect-mx:184 ../nvidia-detect-mx:193
@@ -524,7 +528,7 @@ msgstr ""
 #: ../nvidia-detect-mx:256
 #, sh-format
 msgid "Your card is supported by the nvidia %s drivers series. %s"
-msgstr ""
+msgstr "Kartınız nvidia %s sürücüleri serisi %starafından desteklenmektedir."
 
 #. . inform which driver series are totally unsupported
 #: ../nvidia-detect-mx:266 ../nvidia-detect-mx:269 ../nvidia-detect-mx:272
@@ -534,18 +538,20 @@ msgid ""
 "Uh oh. Your card is only supported by the %s legacy drivers series, which is"
 " not in any current Debian suite."
 msgstr ""
+"Ah ah. Kartınız yalnızca, mevcut hiçbir Debian paketinde olmayan %s eski "
+"sürücü serisi tarafından destekleniyor."
 
 #: ../nvidia-detect-mx:278
 #, sh-format
 msgid "Oops. Supported driver not found"
-msgstr ""
+msgstr "Hata. Desteklenen sürücü bulunamadı"
 
 #: ../nvidia-detect-mx:286
 #, sh-format
 msgid "It is recommended to install the following:"
-msgstr ""
+msgstr "Aşağıdakileri yüklemeniz önerilir:"
 
 #: ../nvidia-detect-mx:289
 #, sh-format
 msgid "To install alternate driver packages, use"
-msgstr ""
+msgstr "Alternatif sürücü paketleri kurmak için şunu kullanın:"

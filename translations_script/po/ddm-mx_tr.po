@@ -216,7 +216,7 @@ msgstr "Kaynaklar sıfırlanıyor"
 #: ../ddm-mx:516
 #, sh-format
 msgid "Press <Enter> to exit"
-msgstr "çıkmak için <Enter>'e basın"
+msgstr "çıkmak için <Enter>’e basın"
 
 #. enabling debian-backports
 #: ../ddm-mx:530
@@ -243,7 +243,7 @@ msgstr "MX Test deposu etkinleştirme"
 #: ../ddm-mx:561
 #, sh-format
 msgid "Would you like to check debian-backports for a later version?"
-msgstr "Daha sonraki sürüm içindebian-backports'u incelemek ister misiniz?"
+msgstr "Daha sonraki sürüm için debian-backports’u incelemek ister misiniz?"
 
 #: ../ddm-mx:563
 #, sh-format
@@ -342,7 +342,7 @@ msgstr "apt-get update ile Kaynakları Yenileme"
 #: ../ddm-mx:707
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
-msgstr "Apt-get güncellemesinde bir sorun var. Ayrıntılar için $LOG'a bakın"
+msgstr "Apt-get güncellemesinde bir sorun var. Ayrıntılar için $LOG’a bakın"
 
 #: ../ddm-mx:717
 #, sh-format
@@ -368,7 +368,7 @@ msgstr "Yazılı bilgi"
 #: ../ddm-mx:785
 #, sh-format
 msgid "Possible previous install from source or smxi/sgfxi detected."
-msgstr "Kaynaktan veya smxi/sgfxi'den olası önceki yükleme algılandı."
+msgstr "Kaynaktan veya smxi/sgfxi’den olası önceki yükleme algılandı."
 
 #: ../ddm-mx:786
 #, sh-format
@@ -493,7 +493,7 @@ msgstr "nvidia kartı bulunamadı - çıkılıyor"
 #: ../ddm-mx:1098
 #, sh-format
 msgid "Try latest nvidia-driver?"
-msgstr "En son nvidia-driver'ı dene?"
+msgstr "En son nvidia-driver’ı dene?"
 
 #: ../nvidia-detect-mx:31
 msgid ""
@@ -501,7 +501,7 @@ msgid ""
 "the local system (or given as a PCIID parameter)."
 msgstr ""
 "Yerel sistemde kurulu (veya bir PCIID parametresi olarak verilen) NVIDIA "
-"GPU'yu destekleyen Debian paketlerini bildirir."
+"GPU’yu destekleyen Debian paketlerini bildirir."
 
 #: ../nvidia-detect-mx:58
 msgid "Latest"
@@ -518,7 +518,7 @@ msgid ""
 "Newer driver releases may be available in the MX testing repository or "
 "debian-backports."
 msgstr ""
-"Daha yeni sürücü sürümleri, MX test havuzunda veya debian-backport'larda "
+"Daha yeni sürücü sürümleri, MX test havuzunda veya debian-backport’larda "
 "mevcut olabilir."
 
 #. inform which driver series works

@@ -21,8 +21,9 @@
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 source gettext.sh
 DEBIAN_VERSION_CODENAME=$(grep VERSION_CODENAME /etc/os-release|cut -d"=" -f2)
+DEBIAN_VERSION_NUMBER=$(cat /etc/debian_version  |cut -d"." -f1)
 
-VERSION="23.07.01"
+VERSION="23.12.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -31,6 +32,7 @@ LOG="/var/log/ddm.log"
 BP_REPO="$DEBIAN_VERSION_CODENAME-backports"
 BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
 MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ $DEBIAN_VERSION_CODENAME test"
+NVIDIA_DIRECT_REPO_ADDRESS="deb [signed-by=/usr/share/keyrings/cuda-archive-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/debian$DEBIAN_VERSION_NUMBER/x86_64/ /"
 BACKPORTS_OVERRIDE=false
 
 export TEXTDOMAINDIR=/usr/share/locale 
@@ -336,7 +338,7 @@ fi
     if [ "$BACKPORTS_OVERRIDE" = "true" ]; then
         debian_backports_dialog
     else
-        mx_test_repo_dialog
+        nvidia_repo_dialog
     fi
   else
     debian_backports_dialog
@@ -365,7 +367,8 @@ fi
   echo $(eval_gettext "NVIDIA packages to install are ") $DRIVER | tee -a $LOG
 
   YES_no $(eval_gettext "Continue?")
-    if [ "$?" = "1" ]; then 
+    if [ ! "$?" = "0" ]; then 
+		clean_up
         exit 0
     fi
  
@@ -510,6 +513,19 @@ if [ -f /etc/apt/sources.list.d/mx-test-repo-temp.list ]; then
     apt-get update
     echo ""
 fi
+if [ -f /etc/apt/sources.list.d/nvidia-repo-temp.list ]; then
+    rm -f /etc/apt/sources.list.d/nvidia-repo-temp.list
+    echo $(eval_gettext "Resetting sources")
+    apt-get update
+    echo ""
+fi
+if [ -f /etc/apt/sources.list.d/cuda-debian$DEBIAN_VERSION_NUMBER-x86_64.list ]; then
+    echo $(eval_gettext "Resetting sources")
+    apt purge cuda-keyring -y
+    rm -f /etc/apt/sources.list.d/cuda-debian$DEBIAN_VERSION_NUMBER-x86_64.list
+    apt-get update
+    echo ""
+fi
 
 ##re-enable nvidia-peristenced availability
 
@@ -560,6 +576,33 @@ enable_mx_test_repo()
   fi
 }
 
+enable_nvidia_repo()
+{
+#enabling nvidia-direct repo
+  echo $(eval_gettext "Enabling Nvidia repo")
+  echo $(eval_gettext "Getting Nvidia repo signing key")
+  NVIDIA_KEY_ADDRESS="https://developer.download.nvidia.com/compute/cuda/repos/debian$DEBIAN_VERSION_NUMBER/x86_64/cuda-keyring_1.1-1_all.deb"
+  echo $NVIDIA_KEY_ADDRESS
+  wget $NVIDIA_KEY_ADDRESS -O /tmp/nvidia-keyring.deb
+  dpkg -i /tmp/nvidia-keyring.deb
+  rm /tmp/nvidia-keyring.deb
+  if [ $? = 0 ]; then
+       echo $(eval_gettext "Running apt-get update...")
+  else
+       echo $(eval_gettext "Error downloading nvidia direct repo key")
+       return
+  fi
+
+  update_sources
+  echo ""
+  if [ "$ARCH" = "amd64" ]; then
+    echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
+    echo ""
+    apt-get install $SWITCH "$BP" nvidia-detect |tee -a $LOG  
+    echo ""
+  fi
+}
+
 debian_backports_dialog()
 {
 echo $(eval_gettext "Would you like to check debian-backports for a later version?") | tee -a $LOG
@@ -594,6 +637,23 @@ yes_NO "$(eval_gettext "Would you like to check MX Test Repo for a later version
                 SWITCH="-t"
                 BP="a=mx,c=test"
                 enable_mx_test_repo	;;
+           1)   echo $(eval_gettext "Ok")... | tee -a $LOG
+                SWITCH=""
+                BP=""           ;;
+           *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
+        esac
+}
+
+nvidia_repo_dialog()
+{
+echo $(eval_gettext "Would you like to check the Nvidia direct repo for a later version?") >> $LOG
+yes_NO "$(eval_gettext "Would you like to check the Nvidia direct repo for a later version?")"
+
+        case $? in
+           0)   echo $(eval_gettext "Ok")...| tee -a $LOG 
+                SWITCH=""
+                BP=""
+                enable_nvidia_repo	;;
            1)   echo $(eval_gettext "Ok")... | tee -a $LOG
                 SWITCH=""
                 BP=""           ;;
@@ -680,6 +740,44 @@ echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
         esac
 }
 
+which_driver_nvidia()
+{
+echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo $(eval_gettext "Main repos or Nvidia direct repo") | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo 1: $(eval_gettext "Main") $DRIVER $MAIN_CAND $BUMBLEBEE_NVIDIA_VERSION $MAIN_NVIDIA| tee -a $LOG
+        echo "" | tee -a $LOG
+        echo 2: $(eval_gettext "Nvidia Direct") $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
+        echo "" | tee -a $LOG
+	echo 3: $(eval_gettext "Exit") | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
+        read -n 1 -e x
+
+        case $x in
+           1) echo $(eval_gettext "Ok")...| tee -a $LOG 
+                SWITCH=""
+                BP=""
+                NVIDIA_VERSION=$MAIN_NVIDIA
+                apt purge -y cuda-keyring
+                apt-get update
+                #replace nvidia-detect from main repo
+                #only install if nvidia-detect was present already (not present on 32 bit systems)
+                if [ "$ARCH" = "amd64" ]; then
+                	echo $(eval_gettext "Reset nvidia-detect") | tee -a $LOG
+                	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y
+                fi
+                ;;
+           2)   echo $(eval_gettext "Ok")... | tee -a $LOG
+                ;;
+                
+           3) echo $(eval_gettext "exiting") |tee -a $LOG && exit 0;;
+
+           *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
+        esac
+}
+
 
 check_cand()
 {
@@ -711,7 +809,7 @@ update_sources()
             echo $(eval_gettext 'There was a problem with the apt-get update.  See $LOG for details') | tee -a $LOG
             echo ""
             echo ""
-            my_exit
+			my_exit
         fi
     fi
 }
@@ -994,6 +1092,14 @@ choose_cand(){
        which_driver_mx
        echo ""
   fi  
+  if [ -f /etc/apt/sources.list.d/cuda-debian$DEBIAN_VERSION_NUMBER-x86_64.list ]; then
+       echo $(eval_gettext "Main repo candidate is:  ") $MAIN_CAND |tee -a $LOG
+       echo $(eval_gettext "Nvidia Direct repo candidate is:  ")  $CANDIDATE |tee -a $LOG
+       echo $(eval_gettext "Installed is: ") $INSTALLED | tee -a $LOG
+       echo ""
+       which_driver_nvidia
+       echo ""
+  fi 
 }
 
 confirm_reinstall(){

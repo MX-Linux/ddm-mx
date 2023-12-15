@@ -249,7 +249,7 @@ function usage() {
   echo $(gettext "The following options are allowed:")
   echo
   echo "-b            " $(gettext "Offer debian-backports alternative")
-  echo "-n            " $(gettext "Offer nvidia developer repo alternative")
+  echo "-N            " $(gettext "Offer Nvidia developer repo alternative")
   echo "-c            " $(gettext "Create 20-nvidia.conf")
   echo
   echo "-i [driver]   " $(gettext "Install given driver.")

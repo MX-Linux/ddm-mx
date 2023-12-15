@@ -34,6 +34,7 @@ BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
 MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ $DEBIAN_VERSION_CODENAME test"
 NVIDIA_DIRECT_REPO_ADDRESS="deb [signed-by=/usr/share/keyrings/cuda-archive-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/debian$DEBIAN_VERSION_NUMBER/x86_64/ /"
 BACKPORTS_OVERRIDE=false
+NVIDIA_OVERRIDE=false
 
 export TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
@@ -73,7 +74,7 @@ PURGE=''
 INSTALL=''
 FORCEDRIVER=''
 TEST=false
-while getopts ":f:bi:p:htd:c" opt; do
+while getopts ":f:bNi:p:htd:c" opt; do
   case $opt in
     h)
       usage HELP
@@ -98,8 +99,12 @@ while getopts ":f:bi:p:htd:c" opt; do
       PCIID="$OPTARG"
       ;;
     b)
-      # Testing
+      # off debian backports repo
       BACKPORTS_OVERRIDE=true
+      ;;
+     N)
+      #offer nvidia developer repo 
+      NVIDIA_OVERRIDE=true
       ;;
     c) #force create of 20-nvidia.conf file
     	create_20_nvidiaconf
@@ -244,6 +249,7 @@ function usage() {
   echo $(gettext "The following options are allowed:")
   echo
   echo "-b            " $(gettext "Offer debian-backports alternative")
+  echo "-n            " $(gettext "Offer nvidia developer repo alternative")
   echo "-c            " $(gettext "Create 20-nvidia.conf")
   echo
   echo "-i [driver]   " $(gettext "Install given driver.")
@@ -334,14 +340,12 @@ fi
 
   MAIN_CAND=$CANDIDATE
   MAIN_NVIDIA=$NVIDIA_VERSION
-  if [ "$DISTRIB_ID" = "MX" ]; then
-    if [ "$BACKPORTS_OVERRIDE" = "true" ]; then
-        debian_backports_dialog
-    else
-        nvidia_repo_dialog
-    fi
+  if [ "$BACKPORTS_OVERRIDE" = "true" ]; then
+	debian_backports_dialog
   else
-    debian_backports_dialog
+	if [ "$NVIDIA_OVERRIDE" = "true" ]; then
+		nvidia_repo_dialog
+	fi
   fi
   
   echo ""
@@ -519,12 +523,15 @@ if [ -f /etc/apt/sources.list.d/nvidia-repo-temp.list ]; then
     apt-get update
     echo ""
 fi
-if [ -f /etc/apt/sources.list.d/cuda-debian$DEBIAN_VERSION_NUMBER-x86_64.list ]; then
+#only cleanup nvidia sources if the -N switch was used
+if [ "$NVIDIA_OVERRIDE" = "true" ]; then
+  if [ -f /etc/apt/sources.list.d/cuda-debian$DEBIAN_VERSION_NUMBER-x86_64.list ]; then
     echo $(eval_gettext "Resetting sources")
     apt purge cuda-keyring -y
     rm -f /etc/apt/sources.list.d/cuda-debian$DEBIAN_VERSION_NUMBER-x86_64.list
     apt-get update
     echo ""
+  fi
 fi
 
 ##re-enable nvidia-peristenced availability
@@ -595,12 +602,14 @@ enable_nvidia_repo()
 
   update_sources
   echo ""
-  if [ "$ARCH" = "amd64" ]; then
-    echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
-    echo ""
-    apt-get install $SWITCH "$BP" nvidia-detect |tee -a $LOG  
-    echo ""
-  fi
+ #don't install nvidia-detect with nvidia developer repo...depends causes problems with existing nvidia packages
+ #if [ "$ARCH" = "amd64" ]; then
+ #  echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
+ #  echo ""
+ #  apt-get install $SWITCH "$BP" nvidia-detect |tee -a $LOG  
+ #
+ #  echo ""
+ #fi
 }
 
 debian_backports_dialog()

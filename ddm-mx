@@ -292,6 +292,9 @@ function usage() {
 # nvidia -------------------------------------------------------------------------
 
 function preseed_nvidia {
+	if [ $TEST  ]; then
+		return
+	fi
   CANDIDATE=$1
   echo 'nvidia-support nvidia-support/check-xorg-conf-on-removal boolean false' | debconf-set-selections
   echo 'nvidia-support nvidia-support/check-running-module-version boolean true' | debconf-set-selections

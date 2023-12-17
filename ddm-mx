@@ -470,7 +470,7 @@ fi
   	fi
   	#update initramfs one more time
   	
-  	update-initramfs -u -k all | tee -a $LOG
+  	update_initramfs
   fi
   echo $(eval_gettext "Finished") | tee -a $LOG
   echo ""
@@ -891,6 +891,9 @@ chown $USER:$USER "$USER_HOME_PATH"
 
 nvidia-340-fix()
 {
+if [ $TEST  ]; then
+	return
+fi
 # backup libglx.so
 local lib_version
 lib_version=$(LANG=C apt-cache policy nvidia-legacy-340xx-driver |grep Candidate |cut -d: -f2|cut -d. -f2|cut -d- -f1)
@@ -906,6 +909,9 @@ fi
 
 nvidia-340-reverse-fix()
 {
+if [ $TEST  ]; then
+	return
+fi
 	# if backup libglx.so exists, then revert it back.  this will take place just before reinstallation of the open drivers.
 if [ -L /usr/lib/xorg/modules/extensions/libglx.so ]; then
 	if [ -f /usr/lib/xorg/modules/extensions/libglx.so.bak ]; then
@@ -1204,6 +1210,9 @@ create_modprobe_symlinks(){
 	#/etc/modprobe.d/nvidia-blacklists-nouveau.conf
     #/etc/modprobe.d/nvidia-modprobe.conf
     #/etc/modprobe.d/nvidia-options.conf
+    if [ $TEST  ]; then
+		return
+	fi
     
     if [ ! -e /etc/modprobe.d/nvidia-blacklists-nouveau.conf ]; then
 		ln -s /etc/nvidia/current/nvidia-blacklists-nouveau.conf /etc/modprobe.d/nvidia-blacklists-nouveau.conf
@@ -1226,6 +1235,9 @@ remove_modprobe_symlinks(){
 }
 
 create_20_nvidiaconf(){
+	if [ $TEST  ]; then
+		return
+	fi
 	sudo tee /etc/X11/xorg.conf.d/20-nvidia.conf <<!
 Section "Device"
      Identifier "Nvidia Card"
@@ -1237,6 +1249,9 @@ EndSection
 }
 
 remove_20_nvidiaconf(){
+	if [ $TEST  ]; then
+		return
+	fi
     echo "rm 20-nvidia.conf" | tee -a $LOG
 	if [ -e /etc/X11/xorg.conf.d/20-nvidia.conf ]; then
 		rm --force /etc/X11/xorg.conf.d/20-nvidia.conf
@@ -1261,6 +1276,15 @@ nvidia_driver_override(){
        *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
     esac
     echo ""
+}
+
+update_initramfs()
+{
+if [ $TEST  ]; then
+	return
+fi
+	
+update-initramfs -u -k all | tee -a $LOG
 }
 
 main "$@"

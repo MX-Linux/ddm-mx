@@ -7,7 +7,7 @@
 # Kristian B <mopardud@hotmail.com>, 2017
 # anticapitalista <anticapitalista@riseup.net>, 2017
 # xmaus <49bolgen@gmail.com>, 2018
-# heskjestad <cato@heskjestad.xyz>, 2023
+# heskjestad <kc.madderloss@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-14 20:02-0500\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: heskjestad <cato@heskjestad.xyz>, 2023\n"
+"Last-Translator: heskjestad <kc.madderloss@gmail.com>, 2023\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/anticapitalista/teams/10162/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -121,7 +121,7 @@ msgstr "Tilby alternativer fra debian-backports"
 
 #: ../ddm-mx:262
 msgid "Offer Nvidia developer repo alternative"
-msgstr ""
+msgstr "Tilby Nvidias utviklingsversjoner som alternativ"
 
 #: ../ddm-mx:263
 msgid "Create 20-nvidia.conf"
@@ -269,19 +269,19 @@ msgstr "Aktiverer MX Test-pakkearkiv"
 #: ../ddm-mx:609
 #, sh-format
 msgid "Enabling Nvidia developer repo"
-msgstr ""
+msgstr "Slå på Nvidias utviklings-pakkearkiv"
 
 #. getting the nvidia gpg archive key
 #: ../ddm-mx:611
 #, sh-format
 msgid "Getting Nvidia repo signing key"
-msgstr ""
+msgstr "Henter Nvidias signeringsnøkkel for pakkearkiv"
 
 #. problem downloading and installing the nvidia gpg key package
 #: ../ddm-mx:621
 #, sh-format
 msgid "Error downloading nvidia direct repo key"
-msgstr ""
+msgstr "Klarte ikke laste ned Nvidias nøkkel for pakkearkiv"
 
 #: ../ddm-mx:639
 #, sh-format
@@ -338,7 +338,7 @@ msgstr "Vil du undersøke i MX Test-pakkearkivet etter nyere versjon?"
 #: ../ddm-mx:680 ../ddm-mx:681
 #, sh-format
 msgid "Would you like to check the Nvidia developer repo for a later version?"
-msgstr ""
+msgstr "Vil du undersøke i Nvidias utviklings-pakkearkiv etter nyere versjon?"
 
 #. a choice of driver versions is being offerred
 #: ../ddm-mx:699 ../ddm-mx:738 ../ddm-mx:778
@@ -380,12 +380,12 @@ msgstr "MX Test"
 #: ../ddm-mx:780
 #, sh-format
 msgid "Main repos or Nvidia direct repo"
-msgstr ""
+msgstr "Hovedpakkearkiv eller Nvidias direkte pakkearkiv"
 
 #: ../ddm-mx:784
 #, sh-format
 msgid "Nvidia Direct"
-msgstr ""
+msgstr "Nvidia direkte"
 
 #: ../ddm-mx:826
 #, sh-format
@@ -532,7 +532,7 @@ msgstr "Kandidat i MX Test-pakkearkiv:"
 #: ../ddm-mx:1139
 #, sh-format
 msgid "Nvidia developer repo candidate is:  "
-msgstr ""
+msgstr "Kandidat i Nvidias utviklings-pakkearkiv:"
 
 #: ../ddm-mx:1150
 #, sh-format

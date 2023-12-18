@@ -199,7 +199,8 @@ msgstr "NAPAKA: Nisem mogel konfigurirati Bumblebee za uporabnika:"
 #: ../ddm-mx:441
 #, sh-format
 msgid "test enabled, not creating xorg.conf file"
-msgstr "vključeno je preizkušanje, zato ne bom ustvaril xorg.conf datoteke"
+msgstr ""
+"vklopljen je preizkusni način, zato ne bom ustvaril xorg.conf datoteke"
 
 #: ../ddm-mx:445
 #, sh-format
@@ -245,7 +246,7 @@ msgstr "Pritisnite <Enter> za izhod"
 #: ../ddm-mx:576
 #, sh-format
 msgid "Enabling backports repo"
-msgstr "Vključi backport skladišča"
+msgstr "Vklop backport skladišč"
 
 #: ../ddm-mx:577 ../ddm-mx:594 ../ddm-mx:618
 #, sh-format
@@ -262,25 +263,25 @@ msgstr "Nameščam zadnjo različico paketa nvidia-detect"
 #: ../ddm-mx:593
 #, sh-format
 msgid "Enabling MX Test repo"
-msgstr "Omogočam MX testno skladišče"
+msgstr "Vklop MX testno skladišča"
 
 #. enabling nvidia-direct repo
 #: ../ddm-mx:609
 #, sh-format
 msgid "Enabling Nvidia developer repo"
-msgstr ""
+msgstr "Vklop Nvidia razvojnega skladišča"
 
 #. getting the nvidia gpg archive key
 #: ../ddm-mx:611
 #, sh-format
 msgid "Getting Nvidia repo signing key"
-msgstr ""
+msgstr "Pridobivanje ključa za podpis  Nvidia skladišča"
 
 #. problem downloading and installing the nvidia gpg key package
 #: ../ddm-mx:621
 #, sh-format
 msgid "Error downloading nvidia direct repo key"
-msgstr ""
+msgstr "Napaka pri prenosu ključa za Nvidia Direct skladišče"
 
 #: ../ddm-mx:639
 #, sh-format
@@ -342,6 +343,8 @@ msgstr ""
 #, sh-format
 msgid "Would you like to check the Nvidia developer repo for a later version?"
 msgstr ""
+"Ali bi radi preverili, če v Nvidia razvojnem skladišču obstaja novejša "
+"različica?"
 
 #. a choice of driver versions is being offerred
 #: ../ddm-mx:699 ../ddm-mx:738 ../ddm-mx:778
@@ -383,12 +386,12 @@ msgstr "MX testno"
 #: ../ddm-mx:780
 #, sh-format
 msgid "Main repos or Nvidia direct repo"
-msgstr ""
+msgstr "Glavna skladišča ali Nvidia Direct skladišče"
 
 #: ../ddm-mx:784
 #, sh-format
 msgid "Nvidia Direct"
-msgstr ""
+msgstr "Nvidia Direct"
 
 #: ../ddm-mx:826
 #, sh-format
@@ -536,7 +539,7 @@ msgstr "Kandidat MX testnega skladišča je:"
 #: ../ddm-mx:1139
 #, sh-format
 msgid "Nvidia developer repo candidate is:  "
-msgstr ""
+msgstr "Kandidat Nvidida razvojnega skladišča je:"
 
 #: ../ddm-mx:1150
 #, sh-format

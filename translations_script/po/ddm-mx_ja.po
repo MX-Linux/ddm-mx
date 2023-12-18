@@ -122,7 +122,7 @@ msgstr "debian-backports を利用"
 
 #: ../ddm-mx:262
 msgid "Offer Nvidia developer repo alternative"
-msgstr ""
+msgstr "Nvidia の開発用リポジトリを利用"
 
 #: ../ddm-mx:263
 msgid "Create 20-nvidia.conf"
@@ -268,24 +268,24 @@ msgstr "MX Test リポジトリを有効にしています"
 #: ../ddm-mx:609
 #, sh-format
 msgid "Enabling Nvidia developer repo"
-msgstr ""
+msgstr "Nvidia 開発用リポジトリを有効にしています"
 
 #. getting the nvidia gpg archive key
 #: ../ddm-mx:611
 #, sh-format
 msgid "Getting Nvidia repo signing key"
-msgstr ""
+msgstr "Nvidia リポジトリの署名キーを取得中です"
 
 #. problem downloading and installing the nvidia gpg key package
 #: ../ddm-mx:621
 #, sh-format
 msgid "Error downloading nvidia direct repo key"
-msgstr ""
+msgstr "Nvidia direct repo キーのダウンロードエラー"
 
 #: ../ddm-mx:639
 #, sh-format
 msgid "Would you like to check debian-backports for a later version?"
-msgstr "Debian-backports にある最新版をチェックしたいですか？"
+msgstr "Debian-backports にある最新版をチェックしますか？"
 
 #: ../ddm-mx:641
 #, sh-format
@@ -332,18 +332,18 @@ msgstr "終了中"
 #: ../ddm-mx:663 ../ddm-mx:664
 #, sh-format
 msgid "Would you like to check MX Test Repo for a later version?"
-msgstr "MX Test リポジトリにある最新版をチェックしたいですか？"
+msgstr "MX Test リポジトリにある最新版をチェックしますか？"
 
 #: ../ddm-mx:680 ../ddm-mx:681
 #, sh-format
 msgid "Would you like to check the Nvidia developer repo for a later version?"
-msgstr ""
+msgstr "Nvidia 開発版リポジトリの最新版をチェックしますか？"
 
 #. a choice of driver versions is being offerred
 #: ../ddm-mx:699 ../ddm-mx:738 ../ddm-mx:778
 #, sh-format
 msgid "Which driver do you wish to install"
-msgstr "どのドライバーをインストールしたいですか？"
+msgstr "どのドライバーをインストールしますか？"
 
 #: ../ddm-mx:701
 #, sh-format
@@ -379,17 +379,17 @@ msgstr "MX テスト"
 #: ../ddm-mx:780
 #, sh-format
 msgid "Main repos or Nvidia direct repo"
-msgstr ""
+msgstr "Main リポジトリまたは Nvidia direct リポジトリ"
 
 #: ../ddm-mx:784
 #, sh-format
 msgid "Nvidia Direct"
-msgstr ""
+msgstr "Nvidia Direct"
 
 #: ../ddm-mx:826
 #, sh-format
 msgid "Candidate is: "
-msgstr "これが候補です: "
+msgstr "候補は以下です: "
 
 #. installed version, if any
 #: ../ddm-mx:827 ../ddm-mx:1121 ../ddm-mx:1131 ../ddm-mx:1140
@@ -508,7 +508,7 @@ msgstr "だめです。あなたのカードは、現在の Debian 安定版に�
 #: ../ddm-mx:1117 ../ddm-mx:1128 ../ddm-mx:1137
 #, sh-format
 msgid "Main repo candidate is:  "
-msgstr "メインのリポジトリにある候補:  "
+msgstr "メインリポジトリにある候補:  "
 
 #. candidate from debian backports repo
 #: ../ddm-mx:1119
@@ -526,7 +526,7 @@ msgstr "MX Test リポジトリにある候補:  "
 #: ../ddm-mx:1139
 #, sh-format
 msgid "Nvidia developer repo candidate is:  "
-msgstr ""
+msgstr "Nvidia 開発版リポジトリにある候補:  "
 
 #: ../ddm-mx:1150
 #, sh-format

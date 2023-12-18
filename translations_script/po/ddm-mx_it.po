@@ -121,7 +121,7 @@ msgstr "Offre l'alternativa debian-backports"
 
 #: ../ddm-mx:262
 msgid "Offer Nvidia developer repo alternative"
-msgstr ""
+msgstr "Offre un repo alternativo agli sviluppatori Nvidia"
 
 #: ../ddm-mx:263
 msgid "Create 20-nvidia.conf"
@@ -269,19 +269,19 @@ msgstr "Abilitare il repository MX Test"
 #: ../ddm-mx:609
 #, sh-format
 msgid "Enabling Nvidia developer repo"
-msgstr ""
+msgstr "Abilitazione del repository per sviluppatori Nvidia"
 
 #. getting the nvidia gpg archive key
 #: ../ddm-mx:611
 #, sh-format
 msgid "Getting Nvidia repo signing key"
-msgstr ""
+msgstr "Ottengo la chiave del repository Nvidia"
 
 #. problem downloading and installing the nvidia gpg key package
 #: ../ddm-mx:621
 #, sh-format
 msgid "Error downloading nvidia direct repo key"
-msgstr ""
+msgstr "Errore durante il download della chiave del repository diretto nvidia"
 
 #: ../ddm-mx:639
 #, sh-format
@@ -339,6 +339,8 @@ msgstr "Volete controllare il repo MX Test per una versione successiva?"
 #, sh-format
 msgid "Would you like to check the Nvidia developer repo for a later version?"
 msgstr ""
+"Vuoi controllare il repository degli sviluppatori Nvidia per una versione "
+"successiva?"
 
 #. a choice of driver versions is being offerred
 #: ../ddm-mx:699 ../ddm-mx:738 ../ddm-mx:778
@@ -380,12 +382,12 @@ msgstr "MX Test"
 #: ../ddm-mx:780
 #, sh-format
 msgid "Main repos or Nvidia direct repo"
-msgstr ""
+msgstr "Repo principali o repo diretti di Nvidia"
 
 #: ../ddm-mx:784
 #, sh-format
 msgid "Nvidia Direct"
-msgstr ""
+msgstr "Nvidia diretto"
 
 #: ../ddm-mx:826
 #, sh-format
@@ -537,7 +539,7 @@ msgstr "Il candidato del repo MX Test è:"
 #: ../ddm-mx:1139
 #, sh-format
 msgid "Nvidia developer repo candidate is:  "
-msgstr ""
+msgstr "Il candidato del repo degli sviluppatori Nvidia è:"
 
 #: ../ddm-mx:1150
 #, sh-format

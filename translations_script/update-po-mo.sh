@@ -38,8 +38,8 @@ make_mo()
     	echo $val
         if [ -e $i ]; then
             echo $i
-            mkdir -p mo/$val
-            msgfmt --output-file=mo/$val/"$RESOURCE".mo "$i"
+            mkdir -p mo/usr/share/locale/$val/LC_MESSAGES
+            msgfmt --output-file=mo/usr/share/locale/$val/LC_MESSAGES/"$RESOURCE".mo "$i"
          fi
     done
 }

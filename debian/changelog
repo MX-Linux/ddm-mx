@@ -1,3 +1,9 @@
+ddm-mx (23.12.02) mx; urgency=medium
+
+  * update translations
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 09 Jan 2024 23:05:11 -0500
+
 ddm-mx (23.12.01) mx; urgency=medium
 
   * add -N switch for Nvidia developer repo

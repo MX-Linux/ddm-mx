@@ -1,0 +1,23 @@
+Package:  *nvidia*
+Pin:  version 535.183*
+Pin-Priority: 999
+
+Package:  *nvidia*:i386
+Pin:  version 535.183*
+Pin-Priority: 999
+
+Package: lib*nv*:i386
+Pin:  version 535.183*
+Pin-Priority: 999
+
+Package: lib*nv*
+Pin:  version 535.183*
+Pin-Priority: 999
+
+Package: libcuda*:i386
+Pin:  version 535.183*
+Pin-Priority: 999
+
+Package: libcuda*
+Pin:  version 535.183*
+Pin-Priority: 999

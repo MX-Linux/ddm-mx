@@ -23,7 +23,7 @@ source gettext.sh
 DEBIAN_VERSION_CODENAME=$(grep VERSION_CODENAME /etc/os-release|cut -d"=" -f2)
 DEBIAN_VERSION_NUMBER=$(cat /etc/debian_version  |cut -d"." -f1)
 
-VERSION="24.08.01"
+VERSION="25.01.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -526,6 +526,10 @@ clean_up()
 unflock $LOCK_FILE
 echo "" | tee -a $LOG 
 echo "" | tee -a $LOG 
+
+if [ -f /etc/apt/preferences.d/ddm-version-temp ]; then
+	rm /etc/apt/preferences.d/ddm-version-temp
+fi
 if [ -f /etc/apt/sources.list.d/debian-backports-temp.list ]; then
   rm -f /etc/apt/sources.list.d/debian-backports-temp.list
   #return sources to a state before this application made any changes
@@ -1148,7 +1152,7 @@ choose_cand(){
        echo $(eval_gettext "Nvidia developer repo candidate is:  ")  $CANDIDATE |tee -a $LOG
        echo $(eval_gettext "Installed is: ") $INSTALLED | tee -a $LOG
        echo ""
-       which_driver_nvidia
+       choose_version_nvidia
        echo ""
   fi 
 }
@@ -1241,7 +1245,7 @@ create_20_nvidiaconf(){
 	if [ $TEST  ]; then
 		return
 	fi
-	sudo tee /etc/X11/xorg.conf.d/20-nvidia.conf <<!
+	tee /etc/X11/xorg.conf.d/20-nvidia.conf <<!
 Section "Device"
      Identifier "Nvidia Card"
      Driver "nvidia"
@@ -1279,6 +1283,82 @@ nvidia_driver_override(){
        *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
     esac
     echo ""
+}
+
+set_up_pin_file(){
+  cp /usr/share/ddm-mx/apt/ddm* /etc/apt/preferences.d
+  sed -i "s/VERSION/$NVIDIA_VERSION/" /etc/apt/preferences.d/ddm-version-temp
+}
+
+choose_version_nvidia(){
+
+declare -a list
+echo "Available Nvidia Developer Repo Versions" | tee -a $LOG
+readarray -t list < <(apt-cache madison nvidia-driver |awk '{print $3}' |grep -v deb |grep -v mx)
+list[${#list[@]}]="Disable Nvidia Developer Repo (default)"
+list[${#list[@]}]="Quit"
+
+#size of array
+#echo "size of array is " "${#list[@]}"
+
+for i in ${!list[@]}; do
+  echo "$i - ${list[$i]}" | tee -a $LOG
+done
+
+#user enters a number of the driver they want
+echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
+
+read -e x
+
+#validate string
+
+case $x in
+   #check for not a number, or a null
+  *[!0-9]*) echo "Invalid Choice, try again" 
+  choose_version_nvidia  ;;
+esac
+  
+  if [ -z "$x" ]; then
+	disable_nvidia_developer_repo
+	break
+  fi
+	   
+  if [ $x -gt $((${#list[@]}-1)) ]; then
+		  echo "Invalid Choice, try again"
+	      else
+		  VERSION=${list[$x]}
+		  echo "Choice is " $VERSION |tee -a $LOG
+  fi
+
+
+if [ "$VERSION" = "Quit" ]; then
+	clean_up
+fi
+
+NVIDIA_VERSION=$VERSION
+CANDIDATE=$VERSION
+ 
+set_up_pin_file
+
+unset NVIDIA_VERSION
+
+}
+
+disable_nvidia_developer_repo(){
+
+echo "Disable Nvidia Developer Repo" |tee -a $LOG
+echo $(eval_gettext "Ok")...| tee -a $LOG 
+           SWITCH=""
+           BP=""
+           NVIDIA_VERSION=$MAIN_NVIDIA
+           apt purge -y cuda-keyring
+           apt-get update
+           #replace nvidia-detect from main repo
+           #only install if nvidia-detect was present already (not present on 32 bit systems)
+           if [ "$ARCH" = "amd64" ]; then
+           	echo $(eval_gettext "Reset nvidia-detect") | tee -a $LOG
+          	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y
+           fi
 }
 
 update_initramfs()

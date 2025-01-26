@@ -1293,8 +1293,10 @@ set_up_pin_file(){
 choose_version_nvidia(){
 
 declare -a list
+#Offer all versions of nvidia-driver available in repository
 echo $(eval_gettext "Available Nvidia Developer Repo Versions") | tee -a $LOG
 readarray -t list < <(apt-cache madison nvidia-driver |awk '{print $3}' |grep -v deb |grep -v mx)
+#Disable the Nvidia repo, menu options
 list[${#list[@]}]=$(eval_gettext "Disable Nvidia Developer Repo (default)")
 list[${#list[@]}]=$(eval_gettext "quit")
 
@@ -1305,7 +1307,7 @@ for i in ${!list[@]}; do
   echo "$i - ${list[$i]}" | tee -a $LOG
 done
 
-#user enters a number of the driver they want
+#user enters a number corresponding to the the driver version they want
 echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
 
 read -e x
@@ -1314,6 +1316,7 @@ read -e x
 
 case $x in
    #check for not a number, or a null
+   #Option chosen is invalid
   *[!0-9]*) echo $(eval_gettext "Invalid option") | tee -a $LOG
   choose_version_nvidia  ;;
 esac
@@ -1344,6 +1347,7 @@ unset NVIDIA_VERSION
 
 disable_nvidia_developer_repo(){
 
+#action to disable the nvidia developer repository
 echo "Disable Nvidia Developer Repo" |tee -a $LOG
 echo $(eval_gettext "Ok")...| tee -a $LOG 
            SWITCH=""

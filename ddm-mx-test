@@ -1287,16 +1287,16 @@ nvidia_driver_override(){
 
 set_up_pin_file(){
   cp /usr/share/ddm-mx/apt/ddm* /etc/apt/preferences.d
-  sed -i "s/VERSION/$NVIDIA_VERSION/" /etc/apt/preferences.d/ddm-version-temp
+  sed -i "s/VERSION/$1/" /etc/apt/preferences.d/ddm-version-temp
 }
 
 choose_version_nvidia(){
 
 declare -a list
-echo "Available Nvidia Developer Repo Versions" | tee -a $LOG
+echo $(eval_gettext "Available Nvidia Developer Repo Versions") | tee -a $LOG
 readarray -t list < <(apt-cache madison nvidia-driver |awk '{print $3}' |grep -v deb |grep -v mx)
-list[${#list[@]}]="Disable Nvidia Developer Repo (default)"
-list[${#list[@]}]="Quit"
+list[${#list[@]}]=$(eval_gettext "Disable Nvidia Developer Repo (default)")
+list[${#list[@]}]=$(eval_gettext "quit")
 
 #size of array
 #echo "size of array is " "${#list[@]}"
@@ -1314,7 +1314,7 @@ read -e x
 
 case $x in
    #check for not a number, or a null
-  *[!0-9]*) echo "Invalid Choice, try again" 
+  *[!0-9]*) echo $(eval_gettext "Invalid option") | tee -a $LOG
   choose_version_nvidia  ;;
 esac
   
@@ -1324,21 +1324,19 @@ esac
   fi
 	   
   if [ $x -gt $((${#list[@]}-1)) ]; then
-		  echo "Invalid Choice, try again"
+		  echo $(eval_gettext "Invalid option")
 	      else
-		  VERSION=${list[$x]}
-		  echo "Choice is " $VERSION |tee -a $LOG
+		  CANDIDATE=${list[$x]}
+		  echo $(eval_gettext "Candidate is: ") $VERSION |tee -a $LOG
   fi
 
 
-if [ "$VERSION" = "Quit" ]; then
+#quit is always last
+if [ $x = ${#list[@]} ]; then
 	clean_up
 fi
-
-NVIDIA_VERSION=$VERSION
-CANDIDATE=$VERSION
  
-set_up_pin_file
+set_up_pin_file $CANDIDATE
 
 unset NVIDIA_VERSION
 

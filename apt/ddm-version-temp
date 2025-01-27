@@ -1,3 +1,7 @@
+Package:  nvidia-persistenced*
+Pin:  release *
+Pin-Priority: -1
+
 Package:  *nvidia*
 Pin:  version VERSION
 Pin-Priority: 999

@@ -1,6 +1,8 @@
 ddm-mx (25.01.01) mx; urgency=medium
 
   * add particular nvidia driver selection for Nvidia Developer Repo
+  * imply -f nvidia-driver when using -N switch (disables detection)
+  * expanded messages in nvidia-detect-mx
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 25 Jan 2025 22:07:59 -0500
 

@@ -112,6 +112,7 @@ while getopts ":f:bNi:p:htd:c" opt; do
      N)
       #offer nvidia developer repo 
       NVIDIA_OVERRIDE=true
+      FORCEDRIVER=nvidia-driver
       ;;
     c) #force create of 20-nvidia.conf file
     	create_20_nvidiaconf
@@ -259,7 +260,10 @@ function usage() {
   echo $(gettext "The following options are allowed:")
   echo
   echo "-b            " $(gettext "Offer debian-backports alternative")
+  echo ""
   echo "-N            " $(gettext "Offer Nvidia developer repo alternative")
+  echo "              " $(gettext "Implies -f nvidia-driver")
+  echo ""
   echo "-c            " $(gettext "Create 20-nvidia.conf")
   echo
   echo "-i [driver]   " $(gettext "Install given driver.")

@@ -1345,7 +1345,7 @@ esac
   if [ -z "$x" ]; then
 	disable_nvidia_developer_repo
   fi
-	   
+  	   
   if [[ $x -gt $((${#list[@]}-1)) ]]; then
 		  echo $(eval_gettext "Invalid option")
 		  choose_version_nvidia
@@ -1354,6 +1354,11 @@ esac
 		  echo $(eval_gettext "Candidate is: ") $VERSION |tee -a $LOG
   fi
 
+#disable Nvidia Repo is next to last
+  
+  if [[ $x = $((${#list[@]}-1)) ]]; then
+	disable_nvidia_developer_repo
+  fi
 
 #quit is always last
 if [[ $x = ${#list[@]} ]]; then

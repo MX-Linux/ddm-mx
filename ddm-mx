@@ -444,7 +444,7 @@ fi
         sed -i 's/Exec=nvidia-settings/Exec=optirun -b none nvidia-settings -c :8/' /usr/lib/nvidia/current/nvidia-settings.desktop
       fi
       # purge nvidia-xconfig and move xorg.conf away
-      apt-get purge -y $FORCE nvidia-xconfig 2>&1 | tee -a $LOG
+      apt-get purge -y $FORCE nvidia-xconfig $TESTSWITCH 2>&1 | tee -a $LOG
       #mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.ddm 2>&1 | tee -a $LOG
     else
       echo $(eval_gettext "ERROR: Could not configure Bumblebee for user: ") $USER | tee -a $LOG
@@ -498,10 +498,10 @@ function purge_proprietary_drivers {
   rm /etc/modprobe.d/nvidia* 2>/dev/null
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
   #reset libxnvctrl0 to debian version 
-  apt-get install libxnvctrl0=$(apt-cache madison libxnvctrl0 | awk '{print $3}') --allow-downgrades -y
+  apt-get install libxnvctrl0=$(apt-cache madison libxnvctrl0 | awk '{print $3}') --allow-downgrades -y $TESTSWITCH
   remove_20_nvidiaconf
   # Leave nvidia-installer-cleanup
-  apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia |grep -v firmware | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 *nvidia*:i386 2>&1 | tee -a $LOG
+  apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia |grep -v firmware | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 *nvidia*:i386 $TESTSWITCH 2>&1 | tee -a $LOG
   # apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
   # remove possible leftover symlinks
 	remove_modprobe_symlinks
@@ -522,7 +522,7 @@ function install_open {
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
   #the command to restore open source drivers presented for the log
   echo $(eval_gettext "Open command ") "= apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
-  apt-get install --reinstall $FORCE $DRIVER 2>&1 | tee -a $LOG
+  apt-get install --reinstall $FORCE $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
   if [ "$?" = "0" ]; then 
       #success at installing open source drivers
@@ -1228,7 +1228,7 @@ if [ "$ARCH" = "amd64" ]; then
 	if [ ! -x "/usr/bin/nvidia-detect" ]; then
 		echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
 		echo ""
-		apt-get install $SWITCH $BP nvidia-detect |tee -a $LOG  
+		apt-get install $SWITCH $BP nvidia-detect $TESTSWITCH |tee -a $LOG  
 		echo ""
     fi
 fi

@@ -1356,12 +1356,12 @@ esac
 
 #disable Nvidia Repo is next to last
   
-  if [[ $x = $((${#list[@]}-1)) ]]; then
+  if [[ $x = $((${#list[@]}-2)) ]]; then
 	disable_nvidia_developer_repo
   fi
 
 #quit is always last
-if [[ $x = ${#list[@]} ]]; then
+if [[ $x = $((${#list[@]-1})) ]]; then
 	clean_up
 fi
  
@@ -1387,6 +1387,7 @@ echo $(eval_gettext "Ok")...| tee -a $LOG
            	echo $(eval_gettext "Reset nvidia-detect") | tee -a $LOG
           	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y
            fi
+           install_nvidia
 }
 
 update_initramfs()

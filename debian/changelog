@@ -1,3 +1,9 @@
+ddm-mx (25.01.03) mx; urgency=medium
+
+  * fix bug in quit selection in -N mode 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 02 Feb 2025 17:32:16 -0500
+
 ddm-mx (25.01.02) mx; urgency=medium
 
   * add particular nvidia driver selection for Nvidia Developer Repo

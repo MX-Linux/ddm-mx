@@ -959,8 +959,8 @@ check_source_install(){
 	echo "========================================"| tee -a $LOG
 	echo $(eval_gettext "Possible previous install detected.") | tee -a $LOG
 	echo "========================================"| tee -a $LOG
-	purge_message
-	exit 10
+#	purge_message
+#	exit 10
   fi
   
 }

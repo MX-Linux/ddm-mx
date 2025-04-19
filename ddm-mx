@@ -419,7 +419,7 @@ fi
   
   #install matching libxnvctrl0 for developer repo drivers
   if [ "$NVIDIA_OVERRIDE" = "true" ]; then
-	ap-get install  libxnvctrl0=$CANDIDATE --allow-downgrades -y $TESTSWITCH
+	apt-get install  libxnvctrl0=$CANDIDATE --allow-downgrades -y $TESTSWITCH
   fi
   
   apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG

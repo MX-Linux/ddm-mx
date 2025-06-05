@@ -21,7 +21,7 @@
 if ( -e "/usr/local/lib/cli-shell-utils/cli-shell-utils.bash" ); then
 	source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 else
-	/usr/lib/cli-shell-utils/cli-shell-utils.bash
+	source /usr/lib/cli-shell-utils/cli-shell-utils.bash
 fi
 
 source gettext.sh

@@ -18,7 +18,7 @@
 ##
 
 #add BitJam's soure cli-shell-utils
-if ( -e "/usr/local/lib/cli-shell-utils/cli-shell-utils.bash" ); then
+if [ -e "/usr/local/lib/cli-shell-utils/cli-shell-utils.bash" ]; then
 	source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
 else
 	source /usr/lib/cli-shell-utils/cli-shell-utils.bash

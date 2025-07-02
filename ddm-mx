@@ -28,7 +28,7 @@ source gettext.sh
 DEBIAN_VERSION_CODENAME=$(grep VERSION_CODENAME /etc/os-release|cut -d"=" -f2)
 DEBIAN_VERSION_NUMBER=$(cat /etc/debian_version  |cut -d"." -f1)
 
-VERSION="25.06.01"
+VERSION="25.07.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -639,7 +639,7 @@ enable_nvidia_repo()
   dpkg -i /tmp/nvidia-keyring.deb
   rm /tmp/nvidia-keyring.deb
   if [ $? = 0 ]; then
-       echo $(eval_gettext "Running apt-get update...")
+       echo ""
   else
   	   #problem downloading and installing the nvidia gpg key package
        echo $(eval_gettext "Error downloading nvidia direct repo key")

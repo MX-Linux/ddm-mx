@@ -28,7 +28,7 @@ source gettext.sh
 DEBIAN_VERSION_CODENAME=$(grep VERSION_CODENAME /etc/os-release|cut -d"=" -f2)
 DEBIAN_VERSION_NUMBER=$(cat /etc/debian_version  |cut -d"." -f1)
 
-VERSION="25.07.01"
+VERSION="25.07.02"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -40,6 +40,10 @@ MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ $DEBIAN_VERSION_CODE
 NVIDIA_DIRECT_REPO_ADDRESS="deb [signed-by=/usr/share/keyrings/cuda-archive-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/debian$DEBIAN_VERSION_NUMBER/x86_64/ /"
 BACKPORTS_OVERRIDE=false
 NVIDIA_OVERRIDE=false
+NVIDIA_DETECT_MX="/usr/bin/nvidia-detect-mx"
+if [ -x "./nvidia-detect-mx" ]; then
+	NVIDIA_DETECT_MX="./nvidia-detect-mx"
+fi
 
 export TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
@@ -321,14 +325,14 @@ function install_nvidia {
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
   if [ -z "$FORCEDRIVER" ]; then
-    nvidia-detect-mx $PCIID
+    $NVIDIA_DETECT_MX $PCIID
     nvidia_detect_exit_code=$?
-	DRIVER=$(nvidia-detect-mx $PCIID | tee -a $LOG |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
+	DRIVER=$($NVIDIA_DETECT_MX $PCIID | tee -a $LOG |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
   fi
   
   UNSUPPORTED_LEGACY=""
   if [ -z "$DRIVER" ]; then
-   UNSUPPORTED_LEGACY=$(nvidia-detect-mx $PCIID| grep -e173.14 -e96.43 -e71.86 -e304 -e340)
+   UNSUPPORTED_LEGACY=$($NVIDIA_DETECT_MX $PCIID| grep -e173.14 -e96.43 -e71.86 -e304 -e340)
   fi
   
   # Testing

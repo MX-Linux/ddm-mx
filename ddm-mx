@@ -280,7 +280,7 @@ function usage() {
   echo "-f [driver]   " $(gettext "force specific nvidia driver package.")
   echo "               nvidia-driver, nvidia-legacy-390xx-driver, nvidia-tesla-418-driver,"
   echo "               nvidia-tesla-450-driver, nvidia-tesla-460-driver, nvidia-tesla-470-driver"
-  echo "               nvidia-tesla-510-driver nvidia-legacy-340xx-driver, bumblebee-nvidia"
+  echo "               nvidia-tesla-510-driver nvidia-tesla-535-driver, nvidia-legacy-340xx-driver, bumblebee-nvidia"
   echo
   echo "-t            " $(gettext "For development testing only!  simulate installs")
   echo "              " $(gettext "This will install drivers for pre-defined hardware.")
@@ -1126,6 +1126,14 @@ set_packages(){
                                        else
                                            NVIDIA_XCONFIG=""
                                            DRIVER="$DRIVER nvidia-settings-tesla-510 nvidia-tesla-510-kernel-dkms"
+                                       fi
+                                       ;;
+        nvidia-tesla-535-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-535 nvidia-tesla-535-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-535 nvidia-tesla-535-kernel-dkms"
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then

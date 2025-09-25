@@ -983,6 +983,7 @@ check_source_install(){
 # Check for Optimus
 check_optimus(){
     local MIN_XORG_VERSION MIN_NVIDIA_VERSION MAJOR_NVIDIA_VERSION
+    local YELLOW="\033[0;33m" local NC="\033[0m" # No Color
     OPTIMUS=1
 	if lspci -vnn | grep Intel |grep -q 0300 ; then
 		if lspci -vnn | grep NVIDIA | grep -q 0302 ; then
@@ -991,6 +992,7 @@ check_optimus(){
 			OPTIMUS=2
 		else
 		    #ask if this system has hybrid graphics
+            echo -e "${YELLOW}$(eval_gettext) "Answer the next question NO if you are using your Optimus Nvidia card in discrete mode")${NC}"
 			YES_no "$(eval_gettext "Is this a NVIDIA/INTEL Optimus system?")"
 			if [ "$?" = "0" ]; then
 				OPTIMUS=2

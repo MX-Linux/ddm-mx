@@ -479,14 +479,14 @@ fi
   	#add possible missing symlinks
   	echo "symlinks" | tee -a $LOG
   	create_modprobe_symlinks
-  	
-  	#add grub and module options
-  	add_nvidia_module_config
-  	
+ 	
   	#create 20_nvidia.conf file for non-optimus parts
+    # also create grub config changes
   	if [ $OPTIMUS -eq 1 ]; then
     	echo "20_nvidia.conf" | tee -a $LOG
   		create_20_nvidiaconf
+        #add grub and module options
+  	    add_nvidia_module_config
   	fi
   	#backup any existing xorg.conf file
   	if [ -e /etc/X11/xorg.conf ]; then

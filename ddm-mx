@@ -484,7 +484,7 @@ fi
   	add_nvidia_module_config
   	
   	#create 20_nvidia.conf file for non-optimus parts
-  	if [ $OPTIMUS = 1 ]; then
+  	if [ $OPTIMUS -eq 1 ]; then
     	echo "20_nvidia.conf" | tee -a $LOG
   		create_20_nvidiaconf
   	fi
@@ -1004,7 +1004,7 @@ check_optimus(){
 		return
 	fi
 
-    if [ $OPTIMUS = 2 ]; then
+    if [ "$OPTIMUS" -eq 2 ]; then
         # Bumblebee used to be required, but now NVIDIA drivers support Optimus out of the box.
         # See https://wiki.debian.org/NVIDIA%20Optimus#Using_NVIDIA_PRIME_Render_Offload
         

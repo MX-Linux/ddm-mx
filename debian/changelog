@@ -1,3 +1,11 @@
+ddm-mx (25.09.01) mx; urgency=medium
+
+  * add some grub and module options necessary for wayland
+  * seems to be fine with X11 stuff too
+  * enables drm modesetting
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 24 Sep 2025 21:17:35 -0400
+
 ddm-mx (25.07.02) mx; urgency=medium
 
   * add tesla 535 support

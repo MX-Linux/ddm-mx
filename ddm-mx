@@ -479,6 +479,10 @@ fi
   	#add possible missing symlinks
   	echo "symlinks" | tee -a $LOG
   	create_modprobe_symlinks
+  	
+  	#add grub and module options
+  	add_nvidia_module_config
+  	
   	#create 20_nvidia.conf file for non-optimus parts
   	if [ $OPTIMUS = 1 ]; then
     	echo "20_nvidia.conf" | tee -a $LOG
@@ -491,8 +495,7 @@ fi
   		mv /etc/X11/xorg.conf $XORGBACKUP
   	fi
   	#update initramfs one more time
-  	
-  	update_initramfs
+  	  	update_initramfs
   fi
   echo $(eval_gettext "Finished") | tee -a $LOG
   echo ""
@@ -514,6 +517,9 @@ function purge_proprietary_drivers {
   # apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
   # remove possible leftover symlinks
 	remove_modprobe_symlinks
+  # remove module options and grub config
+  remove_nvidia_module_config
+  
   if [ "$?" = "0" ]; then 
       #success in removing proprietary drivers and returning to open source drivers
       echo $(eval_gettext "Proprietary drivers removed") | tee -a $LOG
@@ -1415,6 +1421,27 @@ fi
 	
 update-initramfs -u -k all | tee -a $LOG
 }
+
+#add grub config & module config
+add_nvidia_module_config()
+{
+	echo""
+	echo $(eval_gettext "adding module options and grub config")
+	echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' > /etc/default/grub.d/nvidia-modeset.cfg
+	echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1' > /etc/modprobe.d/nvidia-power-management.conf
+	command -v update-grub && update-grub
+	
+}
+
+#reverse nvidia module changes
+remove_nvidia_module_config()
+{
+	echo $(eval_gettext "removing module options and grub config")
+	rm -f /etc/default/grub.d/nvidia-modeset.cfg
+	rm -f /etc/modprobe.d/nvidia-power-management.conf
+	command -v update-grub && update-grub
+}
+
 
 main "$@"
 

@@ -1425,8 +1425,13 @@ update-initramfs -u -k all | tee -a $LOG
 #add grub config & module config
 add_nvidia_module_config()
 {
-	echo""
-	echo $(eval_gettext "adding module options and grub config")
+	echo ""
+	#set up nvidia kernel modules options and grub boot loader options
+	echo $(eval_gettext "adding module options and grub config") |tee -a $LOG
+	#display and log
+	echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1" > /etc/default/grub.d/nvidia-modeset.cfg' |tee -a $LOG
+	echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1 > /etc/modprobe.d/nvidia-power-management.conf' |tee -a $LOG
+	
 	echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' > /etc/default/grub.d/nvidia-modeset.cfg
 	echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1' > /etc/modprobe.d/nvidia-power-management.conf
 	command -v update-grub && update-grub
@@ -1436,7 +1441,11 @@ add_nvidia_module_config()
 #reverse nvidia module changes
 remove_nvidia_module_config()
 {
+    echo ""
+    ##remove nvidia kernel modules options and grub boot loader options
 	echo $(eval_gettext "removing module options and grub config")
+	echo "rm /etc/default/grub.d/nvidia-modeset.cfg" |tee -a $LOG
+	echo "rm /etc/modprobe.d/nvidia-power-management.conf" |tee -a $LOG
 	rm -f /etc/default/grub.d/nvidia-modeset.cfg
 	rm -f /etc/modprobe.d/nvidia-power-management.conf
 	command -v update-grub && update-grub

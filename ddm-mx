@@ -90,7 +90,7 @@ PURGE=''
 INSTALL=''
 FORCEDRIVER=''
 TEST=false
-while getopts ":f:bNi:p:htd:c" opt; do
+while getopts ":f:bNi:p:htd:cgr" opt; do
   case $opt in
     h)
       usage HELP
@@ -131,6 +131,16 @@ while getopts ":f:bNi:p:htd:c" opt; do
       # Testing
       FORCEDRIVER="$FORCEDRIVER$OPTARG"
       echo "FORCE DRIVER is $FORCEDRIVER"
+      ;;
+    g)
+      # add nvidia grub and module configurations
+      add_nvidia_module_config
+      exit 0
+      ;;
+    r)
+      # remove nvidia grub and module configurations
+      remove_nvidia_module_config
+      exit 0
       ;;
     \?)
       # Invalid option: start GUI
@@ -274,7 +284,11 @@ function usage() {
   echo "              " $(gettext "Implies -f nvidia-driver")
   echo ""
   echo "-c            " $(gettext "Create 20-nvidia.conf")
-  echo
+  echo ""
+  echo "-g            " $(gettext "Add grub commandline and modules options to help with wayland")
+  echo ""
+  echo "-r            " $(gettext "Remove grub commandline and modules options related to wayland")
+  echo ""
   echo "-i [driver]   " $(gettext "Install given driver.")
   echo "              " $(gettext "drivers: nvidia, open, fixbumblebee")
   echo

@@ -1,3 +1,9 @@
+ddm-mx (25.10.02) mx; urgency=medium
+
+  * version bump
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 09 Oct 2025 18:40:26 -0400
+
 ddm-mx (25.09.01) mx; urgency=medium
 
   * add some grub and module options necessary for wayland

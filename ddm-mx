@@ -598,7 +598,16 @@ if [ "$NVIDIA_OVERRIDE" = "true" ]; then
     rm -f /etc/apt/sources.list.d/cuda-debian$DEBIAN_VERSION_NUMBER-x86_64.list
     apt-get update
     echo ""
-  fi
+  else
+   #check fallback location
+   if [ -f /etc/apt/sources.list.d/cuda-debian12-x86_64.list ]; then
+  	 echo $(eval_gettext "Resetting sources")
+   	 apt purge cuda-keyring -y
+   	 rm -f /etc/apt/sources.list.d/cuda-debian12-x86_64.list
+   	 apt-get update
+   	 echo ""
+   fi
+   fi
 fi
 
 ##re-enable nvidia-peristenced availability
@@ -660,6 +669,15 @@ enable_nvidia_repo()
   NVIDIA_KEY_ADDRESS="https://developer.download.nvidia.com/compute/cuda/repos/debian$DEBIAN_VERSION_NUMBER/x86_64/cuda-keyring_1.1-1_all.deb"
   echo $NVIDIA_KEY_ADDRESS
   wget $NVIDIA_KEY_ADDRESS -O /tmp/nvidia-keyring.deb
+  if [ $? -ne 0 ]; then
+  	#try debian 12 version as a fallback
+  	echo $(eval_gettext "Debain 13 repo not found, falling back to debian 12 repository") 	
+  	DEBIAN_VERSION_NUMBER="12"
+  	echo $(eval_gettext "Getting Nvidia repo signing key")
+  NVIDIA_KEY_ADDRESS="https://developer.download.nvidia.com/compute/cuda/repos/debian$DEBIAN_VERSION_NUMBER/x86_64/cuda-keyring_1.1-1_all.deb"
+  echo $NVIDIA_KEY_ADDRESS
+  wget $NVIDIA_KEY_ADDRESS -O /tmp/nvidia-keyring.deb
+  fi
   dpkg -i /tmp/nvidia-keyring.deb
   rm /tmp/nvidia-keyring.deb
   if [ $? = 0 ]; then

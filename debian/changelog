@@ -1,6 +1,6 @@
 ddm-mx (25.10.03) mx; urgency=medium
 
-  * use debian 12 nvidia developer repo has fallback to missing debian 13 repo
+  * use debian 12 nvidia developer repo as fallback to missing debian 13 repo
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 19 Oct 2025 10:52:11 -0400
 

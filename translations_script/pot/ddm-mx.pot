@@ -284,7 +284,7 @@ msgstr ""
 #. try debian 12 version as a fallback
 #: ../ddm-mx:674
 #, sh-format
-msgid "Debain 13 repo not found, falling back to Debian 12 repository"
+msgid "Debian 13 repo not found, falling back to Debian 12 repository"
 msgstr ""
 
 #. problem downloading and installing the nvidia gpg key package

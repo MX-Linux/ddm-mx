@@ -671,7 +671,7 @@ enable_nvidia_repo()
   wget $NVIDIA_KEY_ADDRESS -O /tmp/nvidia-keyring.deb
   if [ $? -ne 0 ]; then
   	#try debian 12 version as a fallback
-  	echo $(eval_gettext "Debain 13 repo not found, falling back to Debian 12 repository") 	
+  	echo $(eval_gettext "Debian 13 repo not found, falling back to Debian 12 repository") 	
   	DEBIAN_VERSION_NUMBER="12"
   	echo $(eval_gettext "Getting Nvidia repo signing key")
   NVIDIA_KEY_ADDRESS="https://developer.download.nvidia.com/compute/cuda/repos/debian$DEBIAN_VERSION_NUMBER/x86_64/cuda-keyring_1.1-1_all.deb"

@@ -1,3 +1,9 @@
+ddm-mx (25.11.02) mx; urgency=medium
+
+  * fix 20_nvidia.conf creation (missing field) 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 15 Nov 2025 12:49:28 -0500
+
 ddm-mx (25.11.01) mx; urgency=medium
 
   * fix test switch

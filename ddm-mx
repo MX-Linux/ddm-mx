@@ -1332,6 +1332,7 @@ create_20_nvidiaconf(){
      echo "Identifier \"Nvidia Card\"" >>/etc/X11/xorg.conf.d/20-nvidia.conf
      echo "Driver \"nvidia\"" >>/etc/X11/xorg.conf.d/20-nvidia.conf
      echo "VendorName \"NVIDIA Corporation\"" >>/etc/X11/xorg.conf.d/20-nvidia.conf
+     echo "EndSection" >>/etc/X11/xorg.conf.d/20-nvidia.conf
      #echo "Option \"RegistryDwords\" \"EnableBrightnessControl=1\"" >>/etc/X11/xorg.conf.d/20-nvidia.conf
 }
 

@@ -28,7 +28,7 @@ source gettext.sh
 DEBIAN_VERSION_CODENAME=$(grep VERSION_CODENAME /etc/os-release|cut -d"=" -f2)
 DEBIAN_VERSION_NUMBER=$(cat /etc/debian_version  |cut -d"." -f1)
 
-VERSION="25.11.01"
+VERSION="25.11.03"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -498,7 +498,10 @@ fi
   	#create 20_nvidia.conf file for non-optimus parts
     # also create grub config changes
   	if [ $OPTIMUS -eq 1 ]; then
-  		create_20_nvidiaconf
+  	    #for 340xx legacy drivers, force creation of 20-nvidia.conf
+  	    if [ "$DRIVER_ORIGINAL" == "nvidia-legacy-340xx-driver" ]; then 
+  			create_20_nvidiaconf
+  		fi
         #add grub and module options
         if [ "$DRIVER_ORIGINAL" != "nvidia-legacy-340xx-driver" ]; then
   	        add_nvidia_module_config

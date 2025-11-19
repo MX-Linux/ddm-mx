@@ -1,3 +1,10 @@
+ddm-mx (25.11.04) mx; urgency=medium
+
+  * rebuild initramfs with nouveau
+  * nouveau kenrel module can get lost on removing nvidia drivers
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 18 Nov 2025 19:08:36 -0500
+
 ddm-mx (25.11.03) mx; urgency=medium
 
   * fix 20_nvidia.conf creation (missing field) 

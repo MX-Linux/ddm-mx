@@ -28,7 +28,7 @@ source gettext.sh
 DEBIAN_VERSION_CODENAME=$(grep VERSION_CODENAME /etc/os-release|cut -d"=" -f2)
 DEBIAN_VERSION_NUMBER=$(cat /etc/debian_version  |cut -d"." -f1)
 
-VERSION="25.11.03"
+VERSION="25.11.04"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
@@ -538,7 +538,13 @@ function purge_proprietary_drivers {
 	remove_modprobe_symlinks
   # remove module options and grub config
   remove_nvidia_module_config
-  
+  # try to rebuild initramfs, which can lose nouveau modules in some cases
+  # modprobe nouveau
+  # depmod
+  # update-initramfs 
+  modprobe nouveau
+  depmod
+  update_initramfs 
   if [ "$?" = "0" ]; then 
       #success in removing proprietary drivers and returning to open source drivers
       echo $(eval_gettext "Proprietary drivers removed") | tee -a $LOG

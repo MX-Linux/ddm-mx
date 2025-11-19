@@ -542,9 +542,9 @@ function purge_proprietary_drivers {
   # modprobe nouveau
   # depmod
   # update-initramfs 
-  echo "nouveau module"
+  echo "nouveau module" | tee -a $LOG
   modprobe nouveau
-  echo "depmod modules"
+  echo "depmod modules" | tee -a $LOG
   depmod
   update_initramfs 
   if [ "$?" = "0" ]; then 

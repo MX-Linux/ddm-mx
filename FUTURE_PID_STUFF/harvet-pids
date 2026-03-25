@@ -1,0 +1,39 @@
+#!/usr/bin/bash
+
+
+latest(){
+jq -r '
+  .chips
+  | map(select(has("legacybranch") | not) | .devid)
+  | unique[]
+' $FILE
+}
+
+legacy580(){
+jq -r '
+  .chips
+  | map(select(.legacybranch? == "580.xx") | .devid)
+  | unique[]
+' $FILE
+}
+
+legacy470(){
+jq -r '
+  .chips
+  | map(select(.legacybranch? == "470.xx") | .devid)
+  | unique[]
+' $FILE
+}
+
+name(){
+jq -r '
+  .chips
+  | map(select(has("legacybranch") | not))
+  | unique_by(.devid)
+  | .[]
+  | "\(.devid)\t\(.name)"
+' $FILE
+}
+
+FILE=$2
+$1

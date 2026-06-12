@@ -417,7 +417,6 @@ fi
 #keep going
   YES_no $(eval_gettext "Continue?")
     if [ ! "$?" = "0" ]; then 
-		clean_up
         exit 0
     fi
  
@@ -1433,7 +1432,7 @@ esac
 
 #quit is always last
 if [[ $x = $((${#list[@]}-1)) ]]; then
-	clean_up
+	exit 0
 fi
  
 set_up_pin_file $CANDIDATE

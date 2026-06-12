@@ -1,3 +1,9 @@
+ddm-mx (26.06.01) mx; urgency=medium
+
+  * adjustments to get Press Exit routine to only show once.
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 11 Jun 2026 20:54:23 -0400
+
 ddm-mx (25.11.04) mx; urgency=medium
 
   * rebuild initramfs with nouveau

@@ -6,7 +6,7 @@ jq -r '
   .chips
   | map(select(has("legacybranch") | not) | .devid)
   | unique[]
-' $FILE
+' $FILE |sed 's/0x/10DE/'
 }
 
 legacy580(){
@@ -14,14 +14,14 @@ jq -r '
   .chips
   | map(select(.legacybranch? == "580.xx") | .devid)
   | unique[]
-' $FILE
+' $FILE |sed 's/0x/10DE/'
 }
 
 legacy470(){
 jq -r '
   .chips
   | map(select(.legacybranch? == "470.xx") | .devid)
-  | unique[]
+  | unique[] |sed 's/0x/10DE/'
 ' $FILE
 }
 
@@ -32,7 +32,7 @@ jq -r '
   | unique_by(.devid)
   | .[]
   | "\(.devid)\t\(.name)"
-' $FILE
+' $FILE |sed 's/0x/10DE/'
 }
 
 open_kernel(){

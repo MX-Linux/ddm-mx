@@ -35,5 +35,14 @@ jq -r '
 ' $FILE
 }
 
+open_kernel(){
+  jq -r '
+    .chips[]
+    | select(.features | contains(["kernelopen"]))
+    | "10DE" + (.devid[2:] | ascii_upcase)
+  ' $FILE
+  }
+
+
 FILE=$2
 $1

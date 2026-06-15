@@ -38,8 +38,6 @@ shopt -s compat31 nocasematch 2>/dev/null || { echo "Error: this script only wor
 
 # last time the PCI IDs were updated
 
-LATEST="535.216.03"
-NVIDIA_DETECT_PRESENT="/usr/bin/nvidia-detect"
 # -------------------------------------------------------------------------
 #get release info
 source /etc/lsb-release
@@ -52,12 +50,13 @@ echo
 ARCH=$(dpkg --print-architecture)
 
 #check for existing nvidia-detect
-
-if [ -e "$NVIDIA_DETECT_PRESENT" ]; then
-    LATEST=$(cat /usr/bin/nvidia-detect|grep LATEST= |cut -d '"' -f2)
-fi
+LATEST="$(apt-cache madison nvidia-driver |grep -m 1 driver |cut -d"|" -f 2 | tr -d ' ')"
 
 echo $(gettext "Latest") " = $LATEST" 
+canonical_package=${LATEST%%.*}
+echo "$(gettext "Canonical Latest is") : $canonical_package"
+nvidia_ids="nvidia-$canonical_package.ids"
+echo "nvidia-driver ids files is " $nvidia_ids
 PACKAGE=
 
 NV_DETECT()
@@ -276,7 +275,7 @@ if [ "$ARCH" = "amd64" ]; then
 	VERSIONS[580]=580.xx
 	fi
 
-	PCIIDFILE="nvidia.ids"
+	PCIIDFILE="$nvidia_ids"
 	if [ -e $IDLISTDIR/$PCIIDFILE ]; then
 		IDFILE=$IDLISTDIR/$PCIIDFILE
 	else
@@ -289,14 +288,6 @@ if [ "$ARCH" = "amd64" ]; then
 		VERSIONS[999]=$LATEST
 	fi
 	
-fi
-
-if [ "$ARCH" = "amd64" ]; then
-	if grep -q -i $NVGA $IDLISTDIR/nvidia.ids 2>/dev/null
-	then
-	# 999 means current
-	VERSIONS[999]=$LATEST
-	fi
 fi
 
 if [[ ${#VERSIONS[*]} == 0 ]]; then

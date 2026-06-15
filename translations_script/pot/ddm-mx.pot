@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-14 20:50-0400\n"
+"POT-Creation-Date: 2026-06-14 20:53-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -621,54 +621,54 @@ msgid "Latest"
 msgstr ""
 
 #: ../nvidia-detect-mx:57
-msgid "Canonical Latest is"
+msgid "Series is"
 msgstr ""
 
-#: ../nvidia-detect-mx:295
+#: ../nvidia-detect-mx:294
 #, sh-format
 msgid "A newer driver may add support for your card."
 msgstr ""
 
-#: ../nvidia-detect-mx:296
+#: ../nvidia-detect-mx:295
 #, sh-format
 msgid ""
 "Newer driver releases may be available in the MX testing repository or "
 "debian-backports."
 msgstr ""
 
-#: ../nvidia-detect-mx:297
+#: ../nvidia-detect-mx:296
 #, sh-format
 msgid "There may be options in the Nvidia Developer Repository"
 msgstr ""
 
-#: ../nvidia-detect-mx:306 ../nvidia-detect-mx:314 ../nvidia-detect-mx:322
-#: ../nvidia-detect-mx:330 ../nvidia-detect-mx:338 ../nvidia-detect-mx:346
-#: ../nvidia-detect-mx:354 ../nvidia-detect-mx:362 ../nvidia-detect-mx:370
-#: ../nvidia-detect-mx:379 ../nvidia-detect-mx:388 ../nvidia-detect-mx:398
+#: ../nvidia-detect-mx:305 ../nvidia-detect-mx:313 ../nvidia-detect-mx:321
+#: ../nvidia-detect-mx:329 ../nvidia-detect-mx:337 ../nvidia-detect-mx:345
+#: ../nvidia-detect-mx:353 ../nvidia-detect-mx:361 ../nvidia-detect-mx:369
+#: ../nvidia-detect-mx:378 ../nvidia-detect-mx:387 ../nvidia-detect-mx:397
 #, sh-format
 msgid "Your card is supported by the nvidia %s drivers series. %s"
 msgstr ""
 
 #. . inform which driver series are totally unsupported
-#: ../nvidia-detect-mx:406 ../nvidia-detect-mx:409 ../nvidia-detect-mx:412
-#: ../nvidia-detect-mx:415
+#: ../nvidia-detect-mx:405 ../nvidia-detect-mx:408 ../nvidia-detect-mx:411
+#: ../nvidia-detect-mx:414
 #, sh-format
 msgid ""
 "Uh oh. Your card is only supported by the %s legacy drivers series, which is "
 "not in any current Debian suite."
 msgstr ""
 
-#: ../nvidia-detect-mx:418
+#: ../nvidia-detect-mx:417
 #, sh-format
 msgid "Oops. Supported driver not found"
 msgstr ""
 
-#: ../nvidia-detect-mx:426
+#: ../nvidia-detect-mx:425
 #, sh-format
 msgid "It is recommended to install the following:"
 msgstr ""
 
-#: ../nvidia-detect-mx:429
+#: ../nvidia-detect-mx:428
 #, sh-format
 msgid "To install alternate driver packages, use"
 msgstr ""

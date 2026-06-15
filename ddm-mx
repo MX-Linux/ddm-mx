@@ -11,7 +11,7 @@
 
 ###original code from the solydXK project.
 ####MODIFICATIONS FOR MX by dolphin oracle
-##depends: nvidia-detect-mx, nvidia-detect and cli-shell-utils
+##depends: nvidia-detect-mx and cli-shell-utils
 ##modifications assume MX repos for the nvidia drivers
 ##legacy detection and substantial command assistance from kmathern & fehlix
 ##PRIMUS additions by farius and dolphin oracel
@@ -657,12 +657,6 @@ enable_mx_test_repo()
   echo "$MX_TEST_REPO_ADDRESS">>/etc/apt/sources.list.d/mx-test-repo-temp.list
   update_sources
   echo ""
-  if [ "$ARCH" = "amd64" ]; then
-    echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
-    echo ""
-    apt-get install $SWITCH "$BP" nvidia-detect |tee -a $LOG  
-    echo ""
-  fi
 }
 
 enable_nvidia_repo()
@@ -695,14 +689,6 @@ enable_nvidia_repo()
 
   update_sources
   echo ""
- #don't install nvidia-detect with nvidia developer repo...depends causes problems with existing nvidia packages
- #if [ "$ARCH" = "amd64" ]; then
- #  echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
- #  echo ""
- #  apt-get install $SWITCH "$BP" nvidia-detect |tee -a $LOG  
- #
- #  echo ""
- #fi
 }
 
 debian_backports_dialog()
@@ -786,14 +772,7 @@ echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
               BP=""
               NVIDIA_VERSION=$MAIN_NVIDIA
               rm /etc/apt/sources.list.d/debian-backports-temp.list
-              apt-get update  
-              #replace nvidia-detect from main repo
-              #only install if nvidia-detect was present already (not present on 32 bit systems)
-              if [ "$ARCH" = "amd64" ]; then
-                #put nvidia-detect back to version in current enabled repos
-              	echo $(eval_gettext "Reset nvidia-detect") | tee -a $LOG
-              	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y                     
-              fi
+              apt-get update
 	      ;;
            2) echo $(eval_gettext "Ok")... | tee -a $LOG
                 #NVIDIA_XCONFIG=""
@@ -826,12 +805,6 @@ echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
                 NVIDIA_VERSION=$MAIN_NVIDIA
                 rm /etc/apt/sources.list.d/mx-test-repo-temp.list
                 apt-get update
-                #replace nvidia-detect from main repo
-                #only install if nvidia-detect was present already (not present on 32 bit systems)
-                if [ "$ARCH" = "amd64" ]; then
-                	echo $(eval_gettext "Reset nvidia-detect") | tee -a $LOG
-                	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y
-                fi
                 ;;
            2)   echo $(eval_gettext "Ok")... | tee -a $LOG
                 SWITCH="-t"
@@ -866,12 +839,6 @@ echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
                 NVIDIA_VERSION=$MAIN_NVIDIA
                 apt purge -y cuda-keyring
                 apt-get update
-                #replace nvidia-detect from main repo
-                #only install if nvidia-detect was present already (not present on 32 bit systems)
-                if [ "$ARCH" = "amd64" ]; then
-                	echo $(eval_gettext "Reset nvidia-detect") | tee -a $LOG
-                	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y
-                fi
                 ;;
            2)   echo $(eval_gettext "Ok")... | tee -a $LOG
                 ;;
@@ -1444,12 +1411,6 @@ echo $(eval_gettext "Ok")...| tee -a $LOG
            NVIDIA_VERSION=$MAIN_NVIDIA
            apt purge -y cuda-keyring
            apt-get update
-           #replace nvidia-detect from main repo
-           #only install if nvidia-detect was present already (not present on 32 bit systems)
-           if [ "$ARCH" = "amd64" ]; then
-           	echo $(eval_gettext "Reset nvidia-detect") | tee -a $LOG
-          	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y
-           fi
            install_nvidia
 }
 

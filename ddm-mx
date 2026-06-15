@@ -336,7 +336,7 @@ function preseed_nvidia {
 
 function install_nvidia {
   update_sources
-  install_nvidia_detect
+  #install_nvidia_detect
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
   if [ -z "$FORCEDRIVER" ]; then

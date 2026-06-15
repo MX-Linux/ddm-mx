@@ -647,13 +647,6 @@ enable_debian_backports()
   echo "$BP_REPO_ADDRESS $BP main contrib non-free">>/etc/apt/sources.list.d/debian-backports-temp.list
   update_sources
   echo ""
-  if [ "$ARCH" = "amd64" ]; then
-    #inform we are updating nvidia-detect package
-    echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
-    echo ""
-    apt-get install $SWITCH $BP nvidia-detect |tee -a $LOG  
-    echo ""
-  fi
 }
 
 enable_mx_test_repo()

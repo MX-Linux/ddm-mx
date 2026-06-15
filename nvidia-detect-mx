@@ -54,9 +54,8 @@ LATEST="$(apt-cache madison nvidia-driver |grep -m 1 driver |cut -d"|" -f 2 | tr
 
 echo $(gettext "Latest") " = $LATEST" 
 canonical_package=${LATEST%%.*}
-echo "$(gettext "Canonical Latest is") : $canonical_package"
+echo "$(gettext "Series is") : $canonical_package"
 nvidia_ids="nvidia-$canonical_package.ids"
-echo "nvidia-driver ids files is " $nvidia_ids
 PACKAGE=
 
 NV_DETECT()

@@ -3,6 +3,7 @@ ddm-mx (26.06.02) mx; urgency=medium
   * remove need for nvidia-detect (will use ids files if present)
   * add more information to nvidia-detect-mx
   * update translations
+  * add legacy PCIID files for older versions of nvidia driver
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 14 Jun 2026 20:59:20 -0400
 

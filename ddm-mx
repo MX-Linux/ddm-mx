@@ -1433,15 +1433,27 @@ remove_nvidia_module_config()
 #try nvidia-open-kernel-dkms rather than the proprietary modules package
 #for now only works with nvidia-developer repo, as the package names are different between nvidia and debian
 check_open_kernel_modules(){
-    #check to see if there is a version of nvidia-open-kernel-dkms that matches nvidia-kernel-dkms
-    local open_modules="nvidia-open-kernel-dkms"
-    ##debian's open kernel modules are named differently
-            if [ $NVIDIA_ENABLED = true ]; then
-              open_modules="nvidia-kernel-open-dkms"
-            fi
+
     local propriety_check="$(apt-cache madison nvidia-kernel-dkms |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
-    local open_check="$(apt-cache madison $open_modules |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
-    if [ "$propriety_check" = "$open_check" ]; then
+    local open_check1="$(apt-cache madison nvidia-open-kernel-dkms |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
+    local open_check2="$(apt-cache madison nvidia-kernel-open-dkms |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
+    local open_modules=""
+
+    echo "prop. check is $propriety_check"
+    echo "open_check1 is  $open_check1"
+    echo "open check2 is  $open_check2"
+
+    if [ "$propriety_check" = "$open_check1" ]; then
+      open_modules="nvidia-open-kernel-dkms"
+    else
+      if [ "$propriety_check" = "$open_check2" ]; then
+        open_modules="nvidia-kernel-open-dkms"
+      fi
+    fi
+
+    echo "open_modules is  $open_modules"
+
+    if [ -n "$open_modules" ]; then
       echo ""
       echo $(eval_gettext "Open Source Kernel Modules Found") | tee -a $LOG
       echo ""

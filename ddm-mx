@@ -38,8 +38,10 @@ BP_REPO="$DEBIAN_VERSION_CODENAME-backports"
 BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
 MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ $DEBIAN_VERSION_CODENAME test"
 NVIDIA_DIRECT_REPO_ADDRESS="deb [signed-by=/usr/share/keyrings/cuda-archive-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/debian$DEBIAN_VERSION_NUMBER/x86_64/ /"
+NVIDIA_KERNEL_DKMS="nvidia-kernel-dkms"
 BACKPORTS_OVERRIDE=false
 NVIDIA_OVERRIDE=false
+NVIDIA_ENABLED=false
 NVIDIA_DETECT_MX="/usr/bin/nvidia-detect-mx"
 if [ -x "./nvidia-detect-mx" ]; then
 	NVIDIA_DETECT_MX="./nvidia-detect-mx"
@@ -401,7 +403,7 @@ fi
   choose_cand
   
   check_cand
-  
+
   confirm_reinstall
   
   check_legacy
@@ -661,6 +663,7 @@ enable_mx_test_repo()
 
 enable_nvidia_repo()
 {
+
 #enabling nvidia-direct repo
   echo $(eval_gettext "Enabling Nvidia developer repo")
   #getting the nvidia gpg archive key
@@ -686,6 +689,8 @@ enable_nvidia_repo()
        echo $(eval_gettext "Error downloading nvidia direct repo key")
        return
   fi
+
+  NVIDIA_ENABLED=true
 
   update_sources
   echo ""
@@ -781,6 +786,8 @@ echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
 
            *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
         esac
+
+
 }
 
 which_driver_mx()
@@ -815,40 +822,8 @@ echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
 
            *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
         esac
+
 }
-
-which_driver_nvidia()
-{
-echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
-        echo "" | tee -a $LOG
-        echo $(eval_gettext "Main repos or Nvidia direct repo") | tee -a $LOG
-        echo "" | tee -a $LOG
-        echo 1: $(eval_gettext "Main") $DRIVER $MAIN_CAND $BUMBLEBEE_NVIDIA_VERSION $MAIN_NVIDIA| tee -a $LOG
-        echo "" | tee -a $LOG
-        echo 2: $(eval_gettext "Nvidia Direct") $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
-        echo "" | tee -a $LOG
-	echo 3: $(eval_gettext "Exit") | tee -a $LOG
-        echo "" | tee -a $LOG
-        echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
-        read -n 1 -e x
-
-        case $x in
-           1) echo $(eval_gettext "Ok")...| tee -a $LOG 
-                SWITCH=""
-                BP=""
-                NVIDIA_VERSION=$MAIN_NVIDIA
-                apt purge -y cuda-keyring
-                apt-get update
-                ;;
-           2)   echo $(eval_gettext "Ok")... | tee -a $LOG
-                ;;
-                
-           3) echo $(eval_gettext "exiting") |tee -a $LOG && exit 0;;
-
-           *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
-        esac
-}
-
 
 check_cand()
 {
@@ -1081,10 +1056,10 @@ set_packages(){
   case $DRIVER in 
                      nvidia-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
                                            NVIDIA_XCONFIG=""
-                                           DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libnvidia-encode1" 
+                                           DRIVER="$DRIVER nvidia-settings $NVIDIA_KERNEL_DKMS libnvidia-encode1"
                                        else
 										   NVIDIA_XCONFIG=""
-                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings libnvidia-encode1" 
+                                           DRIVER="$DRIVER $NVIDIA_KERNEL_DKMS nvidia-settings libnvidia-encode1"
                                        fi
                                        ;;
         nvidia-legacy-390xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
@@ -1160,7 +1135,7 @@ set_packages(){
 												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
 											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings nvidia-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings $NVIDIA_KERNEL_DKMS $BUMBLEBEE_EXTRA_LIBS"
 											fi
 											
                                        fi
@@ -1205,6 +1180,8 @@ choose_cand(){
        choose_version_nvidia
        echo ""
   fi 
+  check_open_kernel_modules
+
 }
 
 confirm_reinstall(){
@@ -1381,7 +1358,7 @@ esac
 		  choose_version_nvidia
 	      else
 		  CANDIDATE=${list[$x]}
-		  echo $(eval_gettext "Candidate is: ") $VERSION |tee -a $LOG
+		  echo $(eval_gettext "Candidate is: ") $CANDIDATE |tee -a $LOG
   fi
 
 #disable Nvidia Repo is next to last
@@ -1408,6 +1385,7 @@ echo "Disable Nvidia Developer Repo" |tee -a $LOG
 echo $(eval_gettext "Ok")...| tee -a $LOG 
            SWITCH=""
            BP=""
+           NVIDIA_ENABLED=false
            NVIDIA_VERSION=$MAIN_NVIDIA
            apt purge -y cuda-keyring
            apt-get update
@@ -1452,6 +1430,45 @@ remove_nvidia_module_config()
 	command -v update-grub && update-grub
 }
 
+#try nvidia-open-kernel-dkms rather than the proprietary modules package
+#for now only works with nvidia-developer repo, as the package names are different between nvidia and debian
+check_open_kernel_modules(){
+    #check to see if there is a version of nvidia-open-kernel-dkms that matches nvidia-kernel-dkms
+    local open_modules="nvidia-open-kernel-dkms"
+    ##debian's open kernel modules are named differently
+            if [ $NVIDIA_ENABLED = true ]; then
+              open_modules="nvidia-kernel-open-dkms"
+            fi
+    local propriety_check="$(apt-cache madison nvidia-kernel-dkms |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
+    local open_check="$(apt-cache madison $open_modules |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
+    if [ "$propriety_check" = "$open_check" ]; then
+      echo ""
+      echo $(eval_gettext "Open Source Kernel Modules Found") | tee -a $LOG
+      echo ""
+      ## Ask to try installing the latest open nvidia kernel modules if present
+      echo $(eval_gettext "Try Open Source Kernel Modules?") | tee -a $LOG
+      echo $(eval_gettext "These replace the proprietary Nvidia kernel modules") | tee -a $LOG
+      echo $(eval_gettext "These Open Source Kernel Modules are developed and supplied by Nvidia.") | tee -a $LOG
+      echo "" | tee -a $LOG
+      echo 1: $(eval_gettext "Yes") $(eval_gettext "(default)") | tee -a $LOG
+      echo 2: $(eval_gettext "No") | tee -a $LOG
+      echo "" | tee -a $LOG
+      echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
+      read -n 1 -e x
+      x=${x:-1}
+
+      case $x in
+        1) echo "" | tee -a $LOG
+            NVIDIA_KERNEL_DKMS="$open_modules";;
+        2) return ;;
+        *) check_open_kernel_modules
+      esac
+      echo ""
+    else
+      return
+    fi
+
+}
 
 main "$@"
 

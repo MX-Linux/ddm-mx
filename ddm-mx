@@ -1441,14 +1441,14 @@ check_open_kernel_modules(){
     if [ "$OPEN_SUPPORT" = "NO" ]; then
       return
     fi
-    local propriety_check="$(apt-cache madison nvidia-kernel-dkms |grep -v gpu | grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
-    local open_check1="$(apt-cache madison nvidia-open-kernel-dkms |grep -v gpu |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
-    local open_check2="$(apt-cache madison nvidia-kernel-open-dkms |grep -v gpu| grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
+    local propriety_check="$(apt-cache madison nvidia-kernel-dkms |grep -v nvidia-kernel-dkms | grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
+    local open_check1="$(apt-cache madison nvidia-open-kernel-dkms |grep -v nvidia-open-kernel-dkms |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
+    local open_check2="$(apt-cache madison nvidia-kernel-open-dkms |grep -v nvidia-kernel-open-dkms | grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
     local open_modules=""
 
     echo "prop. check is $propriety_check" >>$LOG
     echo "open_check1 is  $open_check1" >>$LOG
-    echo "open check2 is  $open_check2" >>$LOG>>$LOG
+    echo "open check2 is  $open_check2" >>$LOG
 
     if [ "$propriety_check" = "$open_check1" ]; then
       open_modules="nvidia-open-kernel-dkms"

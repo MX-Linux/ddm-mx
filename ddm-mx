@@ -342,9 +342,14 @@ function install_nvidia {
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
   if [ -z "$FORCEDRIVER" ]; then
-    $NVIDIA_DETECT_MX $PCIID
+    mkdir -p /run/ddm-mx
+    temp_detect=$(mktemp /run/ddm-mx/ddm-mx.temp.XXXX)
+    $NVIDIA_DETECT_MX $PCIID |tee -a $LOG $temp_detect
     nvidia_detect_exit_code=$?
-	DRIVER=$($NVIDIA_DETECT_MX $PCIID | tee -a $LOG |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
+	DRIVER=$(grep INSTALL: $temp_detect |tr -d ' ' |cut -d ':' -f2)
+	OPEN_SUPPORT=$(grep MODULES $temp_detect |tr -d ' ' |cut -d ':' -f2)
+	echo "OPEN_SUPPORT IS: "$OPEN_SUPPORT >>$LOG
+	rm -R $temp_detect
   fi
   
   UNSUPPORTED_LEGACY=""
@@ -1433,15 +1438,17 @@ remove_nvidia_module_config()
 #try nvidia-open-kernel-dkms rather than the proprietary modules package
 #for now only works with nvidia-developer repo, as the package names are different between nvidia and debian
 check_open_kernel_modules(){
-
+    if [ "$OPEN_SUPPORT" = "NO" ]; then
+      return
+    fi
     local propriety_check="$(apt-cache madison nvidia-kernel-dkms |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
     local open_check1="$(apt-cache madison nvidia-open-kernel-dkms |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
     local open_check2="$(apt-cache madison nvidia-kernel-open-dkms |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
     local open_modules=""
 
-    echo "prop. check is $propriety_check"
-    echo "open_check1 is  $open_check1"
-    echo "open check2 is  $open_check2"
+    echo "prop. check is $propriety_check" >>$LOG
+    echo "open_check1 is  $open_check1" >>$LOG
+    echo "open check2 is  $open_check2" >>$LOG
 
     if [ "$propriety_check" = "$open_check1" ]; then
       open_modules="nvidia-open-kernel-dkms"
@@ -1451,7 +1458,7 @@ check_open_kernel_modules(){
       fi
     fi
 
-    echo "open_modules is  $open_modules"
+    echo "open_modules is  $open_modules" >>$LOG
 
     if [ -n "$open_modules" ]; then
       echo ""

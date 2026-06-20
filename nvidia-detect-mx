@@ -56,6 +56,8 @@ echo $(gettext "Latest") " = $LATEST"
 canonical_package=${LATEST%%.*}
 echo "$(gettext "Series is") : $canonical_package"
 nvidia_ids="nvidia-$canonical_package.ids"
+nvidia_open_ids="nvidia-open-$canonical_package.ids"
+OPEN_SUPPORT="NO"
 PACKAGE=
 
 NV_DETECT()
@@ -274,6 +276,19 @@ if [ "$ARCH" = "amd64" ]; then
 	VERSIONS[580]=580.xx
 	fi
 
+    PCIIDFILE="$nvidia_open_ids"
+	if [ -e $IDLISTDIR/$PCIIDFILE ]; then
+		IDFILE=$IDLISTDIR/$PCIIDFILE
+	else
+		IDFILE=$IDLISTDIRDDM/$PCIIDFILE
+	fi
+
+	if grep -q -i $NVGA $IDFILE 2>/dev/null
+	then
+	#open module support
+	OPEN_SUPPORT="YES"
+	fi
+
 	PCIIDFILE="$nvidia_ids"
 	if [ -e $IDLISTDIR/$PCIIDFILE ]; then
 		IDFILE=$IDLISTDIR/$PCIIDFILE
@@ -423,8 +438,9 @@ echo ""
 
 if [ -n "$PACKAGE" ]; then
 	echo $(eval_gettext "It is recommended to install the following:") 
-	echo "INSTALL: "    $PACKAGE  
+	echo "INSTALL: "     $PACKAGE
 	echo "" 
+	echo "OPEN MODULES: "$OPEN_SUPPORT
 	echo "$(eval_gettext "To install alternate driver packages, use") sudo ddm-mx -i nvidia -f [driver package name]" 
 	echo "" 
 fi

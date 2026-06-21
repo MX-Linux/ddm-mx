@@ -71,6 +71,8 @@ DESKTOPFILENAME=$(gettext "Nvidia driver installer")
 DESKTOPFILECOMMENT=$(gettext "Install proprietary nvidia driver from repo")
 
 main(){
+#rotate LOG
+rotate_log
 # -------------------------------------------------------------------------
 #get release info
 source /etc/lsb-release
@@ -1486,6 +1488,25 @@ check_open_kernel_modules(){
     else
       return
     fi
+
+}
+
+rotate_log(){
+
+local test=$(stat -c%s $LOG)
+
+if (( $test > 200000 )); then
+    #keep 5 logs
+    #remove next in sequence if previous log version exists
+    test -e $LOG.4 && rm -f $LOG.5 && mv $LOG.4 $LOG.5
+    test -e $LOG.3 && rm -f $LOG.4 && mv $LOG.3 $LOG.4
+    test -e $LOG.2 && rm -f $LOG.3 && mv $LOG.2 $LOG.3
+    test -e $LOG.1 && rm -f $LOG.2 && mv $LOG>1 $LOG.2
+    test -e $LOG && rm -f $LOG.1 && mv $LOG $LOG.1
+    #make sure log exists
+    touch $LOG
+fi
+
 
 }
 

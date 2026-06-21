@@ -2,8 +2,12 @@ ddm-mx (26.06.02) mx; urgency=medium
 
   * remove need for nvidia-detect (will use ids files if present)
   * add more information to nvidia-detect-mx
+  * nvidia-detect-mx will provide information on Open Module support for nvidia-driver
   * update translations
   * add legacy PCIID files for older versions of nvidia driver
+  * add support for installing open kernel modules when version match nvidia-driver version
+  * rotate log files when var/log/ddm.log is larger than 200kb
+  * keep 5 historical log files of form ddm.log.X
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 14 Jun 2026 20:59:20 -0400
 

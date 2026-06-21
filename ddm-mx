@@ -1438,7 +1438,8 @@ remove_nvidia_module_config()
 }
 
 #try nvidia-open-kernel-dkms rather than the proprietary modules package
-#for now only works with nvidia-developer repo, as the package names are different between nvidia and debian
+#only offer is pciid is in list of open supported drivers
+#at the moment, there is no support offerred for tesla package drivers or legacy drivers
 check_open_kernel_modules(){
     if [ "$OPEN_SUPPORT" = "NO" ]; then
       return

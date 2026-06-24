@@ -638,28 +638,30 @@ msgstr "Entfernen von Moduloptionen und GRUB Konfiguration"
 #: ../ddm-mx:1446
 #, sh-format
 msgid "Open Source Kernel Modules Found"
-msgstr ""
+msgstr "Open-Source Kernelmodule gefunden"
 
 #. # Ask to try installing the latest open nvidia kernel modules if present
 #: ../ddm-mx:1449
 #, sh-format
 msgid "Try Open Source Kernel Modules?"
-msgstr ""
+msgstr "Sollen Open-Source Kernelmodule versucht werden ?"
 
 #: ../ddm-mx:1450
 #, sh-format
 msgid "These replace the proprietary Nvidia kernel modules"
-msgstr ""
+msgstr "Damit werden die proprietären Nvidia Kernelmodule ersetzt"
 
 #: ../ddm-mx:1451
 #, sh-format
 msgid "These Open Source Kernel Modules are developed and supplied by Nvidia."
 msgstr ""
+"Diese Open-Source Kernelmodule werden von Nvidia entwickelt und zur "
+"Verfügung gestellt."
 
 #: ../ddm-mx:1453
 #, sh-format
 msgid "(default)"
-msgstr ""
+msgstr "(voreingestellt)"
 
 #: ../nvidia-detect-mx:33
 msgid ""

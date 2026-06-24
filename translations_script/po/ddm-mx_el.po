@@ -630,28 +630,28 @@ msgstr "αφαίρεση αρθρωμάτων και ρύθμισης του gru
 #: ../ddm-mx:1446
 #, sh-format
 msgid "Open Source Kernel Modules Found"
-msgstr ""
+msgstr "Βρέθηκαν αρθρώματα πυρήνα ανοικτού κώδικα"
 
 #. # Ask to try installing the latest open nvidia kernel modules if present
 #: ../ddm-mx:1449
 #, sh-format
 msgid "Try Open Source Kernel Modules?"
-msgstr ""
+msgstr "Θέλετε να τα εγκαταστήσετε;"
 
 #: ../ddm-mx:1450
 #, sh-format
 msgid "These replace the proprietary Nvidia kernel modules"
-msgstr ""
+msgstr "Θα αντικαταστήσουν τα ιδιόκτητα αρθρώματα Nvidia του πυρήνα"
 
 #: ../ddm-mx:1451
 #, sh-format
 msgid "These Open Source Kernel Modules are developed and supplied by Nvidia."
-msgstr ""
+msgstr "Τα αρθώματα αυτά αναπτύσσονται και παρέχονται από την Nvidia."
 
 #: ../ddm-mx:1453
 #, sh-format
 msgid "(default)"
-msgstr ""
+msgstr "(προεπιλογή)"
 
 #: ../nvidia-detect-mx:33
 msgid ""

@@ -6,7 +6,7 @@
 # Translators:
 # anticapitalista <anticapitalista@riseup.net>, 2017
 # ko <ko.bros@gmail.com>, 2022
-# Eadwine Rose, 2025
+# Eadwine Rose, 2026
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-19 20:45-0400\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Eadwine Rose, 2025\n"
+"Last-Translator: Eadwine Rose, 2026\n"
 "Language-Team: Dutch (https://app.transifex.com/anticapitalista/teams/10162/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -135,10 +135,13 @@ msgstr "Creëer 20-nvidia.conf"
 #: ../ddm-mx:290
 msgid "Add grub commandline and modules options to help with wayland"
 msgstr ""
+"Grub-opdrachtregel- en module-opties toevoegen ter ondersteuning van Wayland"
 
 #: ../ddm-mx:292
 msgid "Remove grub commandline and modules options related to wayland"
 msgstr ""
+"Verwijder de opties voor de grub-opdrachtregel en modules die betrekking "
+"hebben op Wayland"
 
 #: ../ddm-mx:294
 msgid "Install given driver."
@@ -289,6 +292,7 @@ msgstr "Nvidia repo tekensleutel krijgen"
 #, sh-format
 msgid "Debian 13 repo not found, falling back to Debian 12 repository"
 msgstr ""
+"Debian 13-repository niet gevonden, terugval naar Debian 12-repository"
 
 #. problem downloading and installing the nvidia gpg key package
 #: ../ddm-mx:689
@@ -474,6 +478,8 @@ msgid ""
 "Answer the next question NO if you are using your Optimus Nvidia card in "
 "discrete mode"
 msgstr ""
+"Beantwoord de volgende vraag met NEE als je je Optimus Nvidia-kaart in de "
+"discrete modus gebruikt"
 
 #: ../ddm-mx:975
 #, sh-format
@@ -607,39 +613,40 @@ msgstr "Nvidia Developer Repo Uitschakelen (standaard)"
 #: ../ddm-mx:1409
 #, sh-format
 msgid "adding module options and grub config"
-msgstr ""
+msgstr "module-opties en grub-configuratie toevoegen"
 
 #. #remove nvidia kernel modules options and grub boot loader options
 #: ../ddm-mx:1425
 #, sh-format
 msgid "removing module options and grub config"
-msgstr ""
+msgstr "module-opties en grub-configuratie verwijderen"
 
 #: ../ddm-mx:1446
 #, sh-format
 msgid "Open Source Kernel Modules Found"
-msgstr ""
+msgstr "Open-source Kernelmodules Gevonden"
 
 #. # Ask to try installing the latest open nvidia kernel modules if present
 #: ../ddm-mx:1449
 #, sh-format
 msgid "Try Open Source Kernel Modules?"
-msgstr ""
+msgstr "Open-source Kernelmodules Uitproberen?"
 
 #: ../ddm-mx:1450
 #, sh-format
 msgid "These replace the proprietary Nvidia kernel modules"
-msgstr ""
+msgstr "Deze vervangen de eigen kernelmodules van Nvidia"
 
 #: ../ddm-mx:1451
 #, sh-format
 msgid "These Open Source Kernel Modules are developed and supplied by Nvidia."
 msgstr ""
+"Deze Open-source Kernelmodules zijn ontwikkeld en geleverd door Nvidia."
 
 #: ../ddm-mx:1453
 #, sh-format
 msgid "(default)"
-msgstr ""
+msgstr "(standaard)"
 
 #: ../nvidia-detect-mx:33
 msgid ""
@@ -655,7 +662,7 @@ msgstr "Meest recent"
 
 #: ../nvidia-detect-mx:57
 msgid "Series is"
-msgstr ""
+msgstr "Serie is"
 
 #: ../nvidia-detect-mx:294
 #, sh-format

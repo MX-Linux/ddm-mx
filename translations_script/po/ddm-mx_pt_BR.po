@@ -651,28 +651,30 @@ msgstr "Removendo as opções de módulo e configurações do GRUB..."
 #: ../ddm-mx:1446
 #, sh-format
 msgid "Open Source Kernel Modules Found"
-msgstr ""
+msgstr "Foram Encontrados Módulos do Kernel de Código Aberto"
 
 #. # Ask to try installing the latest open nvidia kernel modules if present
 #: ../ddm-mx:1449
 #, sh-format
 msgid "Try Open Source Kernel Modules?"
-msgstr ""
+msgstr "Gostaria de experimentar os Módulos de Código Aberto?"
 
 #: ../ddm-mx:1450
 #, sh-format
 msgid "These replace the proprietary Nvidia kernel modules"
-msgstr ""
+msgstr "Estes módulos substituem os módulos de kernel proprietários da NVIDIA"
 
 #: ../ddm-mx:1451
 #, sh-format
 msgid "These Open Source Kernel Modules are developed and supplied by Nvidia."
 msgstr ""
+"Estes Módulos do Kernel de Código Aberto são desenvolvidos e "
+"disponibilizados pela NVIDIA."
 
 #: ../ddm-mx:1453
 #, sh-format
 msgid "(default)"
-msgstr ""
+msgstr "(padrão)"
 
 #: ../nvidia-detect-mx:33
 msgid ""
@@ -689,7 +691,7 @@ msgstr "Mais recente"
 
 #: ../nvidia-detect-mx:57
 msgid "Series is"
-msgstr "A série é"
+msgstr "Geração"
 
 #: ../nvidia-detect-mx:294
 #, sh-format

@@ -440,7 +440,7 @@ if [ -n "$PACKAGE" ]; then
 	echo $(eval_gettext "It is recommended to install the following:") 
 	echo "INSTALL: "     $PACKAGE
 	echo "" 
-	echo "OPEN MODULES: "$OPEN_SUPPORT
+	echo "OPEN MODULES SUPPORT: "$OPEN_SUPPORT
 	echo "$(eval_gettext "To install alternate driver packages, use") sudo ddm-mx -i nvidia -f [driver package name]" 
 	echo "" 
 fi

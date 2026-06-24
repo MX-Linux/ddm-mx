@@ -1,4 +1,4 @@
-ddm-mx (26.06.02) mx; urgency=medium
+ddm-mx (26.06.03) mx; urgency=medium
 
   * remove need for nvidia-detect (will use ids files if present)
   * add more information to nvidia-detect-mx
@@ -9,7 +9,7 @@ ddm-mx (26.06.02) mx; urgency=medium
   * rotate log files when var/log/ddm.log is larger than 200kb
   * keep 5 historical log files of form ddm.log.X
 
- -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 14 Jun 2026 20:59:20 -0400
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 24 Jun 2026 19:37:55 -0400
 
 ddm-mx (26.06.01) mx; urgency=medium
 

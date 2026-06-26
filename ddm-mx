@@ -1448,7 +1448,9 @@ check_open_kernel_modules(){
     local open_check1="$(apt-cache madison nvidia-open-kernel-dkms |grep nvidia-open-kernel-dkms |grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
     local open_check2="$(apt-cache madison nvidia-kernel-open-dkms |grep nvidia-kernel-open-dkms | grep $CANDIDATE |cut -d"|" -f 2 | tr -d ' ')"
     local open_modules=""
+    local canonical_package=${CANDIDATE%%.*}
 
+    echo "canonical_package is " $canonical_package >>$LOG
     echo "prop. check is $propriety_check" >>$LOG
     echo "open_check1 is  $open_check1" >>$LOG
     echo "open check2 is  $open_check2" >>$LOG
@@ -1465,6 +1467,7 @@ check_open_kernel_modules(){
 
     if [ -n "$open_modules" ]; then
       echo ""
+      #Kernel modules debian packages found
       echo $(eval_gettext "Open Source Kernel Modules Found") | tee -a $LOG
       echo ""
       ## Ask to try installing the latest open nvidia kernel modules if present
@@ -1472,17 +1475,36 @@ check_open_kernel_modules(){
       echo $(eval_gettext "These replace the proprietary Nvidia kernel modules") | tee -a $LOG
       echo $(eval_gettext "These Open Source Kernel Modules are developed and supplied by Nvidia.") | tee -a $LOG
       echo "" | tee -a $LOG
-      echo 1: $(eval_gettext "Yes") $(eval_gettext "(default)") | tee -a $LOG
-      echo 2: $(eval_gettext "No") | tee -a $LOG
-      echo "" | tee -a $LOG
-      echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
-      read -n 1 -e x
-      x=${x:-1}
+
+      if (( $canonical_package >= 580 )); then
+        echo 1: $(eval_gettext "Yes") $(eval_gettext "(default)") | tee -a $LOG
+        echo 2: $(eval_gettext "No") | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
+        read -n 1 -e x
+        x=${x:-1}
+      else
+        echo 1: $(eval_gettext "Yes") | tee -a $LOG
+        echo 2: $(eval_gettext "No") $(eval_gettext "(default)") | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
+        read -n 1 -e x
+        x=${x:-2}
+      fi
 
       case $x in
         1) echo "" | tee -a $LOG
-            NVIDIA_KERNEL_DKMS="$open_modules";;
-        2) return ;;
+            NVIDIA_KERNEL_DKMS="$open_modules"
+            echo "" |tee -a $LOG
+            #message confirming choice of using open kernel modules
+            echo $(eval_gettext "Trying open kernel modules") | tee -a $LOG
+            echo "" | tee -a $LOG
+            ;;
+        2)  echo "" |tee -a $LOG
+            #message confirming choice of using nvidia's propreitary kernel modules
+            echo $(eval_gettext "Using propreitary kernel modules") | tee -a $LOG
+            echo "" | tee -a $LOG
+            return ;;
         *) check_open_kernel_modules
       esac
       echo ""

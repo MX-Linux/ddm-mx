@@ -1501,8 +1501,8 @@ check_open_kernel_modules(){
             echo "" | tee -a $LOG
             ;;
         2)  echo "" |tee -a $LOG
-            #message confirming choice of using nvidia's propreitary kernel modules
-            echo $(eval_gettext "Using propreitary kernel modules") | tee -a $LOG
+            #message confirming choice of using nvidia's proprietary kernel modules
+            echo $(eval_gettext "Using proprietary kernel modules") | tee -a $LOG
             echo "" | tee -a $LOG
             return ;;
         *) check_open_kernel_modules

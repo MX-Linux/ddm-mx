@@ -666,7 +666,7 @@ msgstr "Essai des modules « open » du noyau"
 #: ../ddm-mx:1505
 #, sh-format
 msgid "Using proprietary kernel modules"
-msgstr ""
+msgstr "Modules « proprietary » du noyau en cours d’utilisation"
 
 #: ../nvidia-detect-mx:33
 msgid ""

@@ -668,13 +668,13 @@ msgstr "(voreingestellt)"
 #: ../ddm-mx:1500
 #, sh-format
 msgid "Trying open kernel modules"
-msgstr ""
+msgstr "Versuch der Öffnung der Kernelmodule"
 
 #. message confirming choice of using nvidia's proprietary kernel modules
 #: ../ddm-mx:1505
 #, sh-format
 msgid "Using proprietary kernel modules"
-msgstr ""
+msgstr "Die proprietären Kernelmodule werden benutzt"
 
 #: ../nvidia-detect-mx:33
 msgid ""

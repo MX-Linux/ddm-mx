@@ -1,3 +1,9 @@
+ddm-mx (26.07.02) mx; urgency=medium
+
+  * during -p purge operation, also remove corresponding firmware-nvidia-gsp package
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 17 Jul 2026 19:48:20 -0400
+
 ddm-mx (26.07.01) mx; urgency=medium
 
   * add support for differntly named nvidia-driver-open alternative

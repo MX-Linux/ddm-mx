@@ -1,3 +1,10 @@
+ddm-mx (26.07.01) mx; urgency=medium
+
+  * add support for differntly named nvidia-driver-open alternative
+  * use nvidia-driver-open if it exists and open source modules are to be used
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 16 Jul 2026 20:15:34 -0400
+
 ddm-mx (26.06.04) mx; urgency=medium
 
   * remove need for nvidia-detect (will use ids files if present)

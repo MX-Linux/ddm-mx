@@ -8,28 +8,29 @@ _ddm_mx()
     prev="${COMP_WORDS[COMP_CWORD-1]}"
 
     case "$prev" in
-        -i)
+        -i|--install)
             COMPREPLY=( $(compgen -W "nvidia open fixbumblebee" -- "$cur") )
             return 0
             ;;
-        -p)
+        -p|--purge)
             COMPREPLY=( $(compgen -W "nvidia" -- "$cur") )
             return 0
             ;;
-        -f)
+        -f|--force)
             COMPREPLY=( $(compgen -W "nvidia-driver nvidia-legacy-340xx-driver nvidia-legacy-390xx-driver \
                 nvidia-tesla-418-driver nvidia-tesla-450-driver nvidia-tesla-460-driver \
                 nvidia-tesla-470-driver nvidia-tesla-510-driver nvidia-tesla-535-driver \
                 bumblebee-nvidia" -- "$cur") )
             return 0
             ;;
-        -d)
+        -d|--device)
             # PCI ID, no static completion available
             return 0
             ;;
     esac
 
-    COMPREPLY=( $(compgen -W "-b -N -c -g -r -h -t -i -p -f -d" -- "$cur") )
+    COMPREPLY=( $(compgen -W "-b --backports -N --nvidia-repo -c --create-conf -g --add-grub \
+        -r --remove-grub -h --help -t --test -i --install -p --purge -f --force -d --device" -- "$cur") )
     return 0
 }
 complete -F _ddm_mx ddm-mx

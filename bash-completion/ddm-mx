@@ -1,0 +1,35 @@
+# bash completion for ddm-mx
+
+_ddm_mx()
+{
+    local cur prev
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    case "$prev" in
+        -i)
+            COMPREPLY=( $(compgen -W "nvidia open fixbumblebee" -- "$cur") )
+            return 0
+            ;;
+        -p)
+            COMPREPLY=( $(compgen -W "nvidia" -- "$cur") )
+            return 0
+            ;;
+        -f)
+            COMPREPLY=( $(compgen -W "nvidia-driver nvidia-legacy-340xx-driver nvidia-legacy-390xx-driver \
+                nvidia-tesla-418-driver nvidia-tesla-450-driver nvidia-tesla-460-driver \
+                nvidia-tesla-470-driver nvidia-tesla-510-driver nvidia-tesla-535-driver \
+                bumblebee-nvidia" -- "$cur") )
+            return 0
+            ;;
+        -d)
+            # PCI ID, no static completion available
+            return 0
+            ;;
+    esac
+
+    COMPREPLY=( $(compgen -W "-b -N -c -g -r -h -t -i -p -f -d" -- "$cur") )
+    return 0
+}
+complete -F _ddm_mx ddm-mx

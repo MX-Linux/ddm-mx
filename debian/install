@@ -8,5 +8,4 @@ PIDS/*              usr/share/ddm-mx
 apt/*				usr/share/ddm-mx/apt
 polkit/*			usr/share/polkit-1/actions
 bash-completion/ddm-mx			usr/share/bash-completion/completions
-bash-completion/nvidia-detect-mx	usr/share/bash-completion/completions
 translations_script/mo/* /

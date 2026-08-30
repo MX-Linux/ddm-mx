@@ -1,3 +1,10 @@
+ddm-mx (26.08.01) mx; urgency=medium
+
+  * add bash-completion function
+  * add --longname commandline switches
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 30 Aug 2026 11:47:44 -0400
+
 ddm-mx (26.07.02) mx; urgency=medium
 
   * during -p purge operation, also remove corresponding firmware-nvidia-gsp package

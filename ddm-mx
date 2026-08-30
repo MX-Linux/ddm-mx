@@ -954,7 +954,7 @@ echo "========================================"| tee -a $LOG
 echo "========================================"| tee -a $LOG
 echo ""| tee -a $LOG
 echo "$PURGE_MESSAGE"  | tee -a $LOG
-echo "sudo ddm-mx -p nvidia"| tee -a $LOG
+echo "sudo ddm-mx --purge nvidia"| tee -a $LOG
 echo ""| tee -a $LOG
 echo "========================================"| tee -a $LOG
 echo "========================================"| tee -a $LOG
@@ -971,7 +971,7 @@ echo "========================================"| tee -a "$USER_HOME_PATH"
 echo "========================================"| tee -a "$USER_HOME_PATH"
 echo ""| tee -a "$USER_HOME_PATH"
 echo "$PURGE_MESSAGE"  | tee -a "$USER_HOME_PATH"
-echo "sudo ddm-mx -p nvidia"| tee -a "$USER_HOME_PATH"
+echo "sudo ddm-mx --purge nvidia"| tee -a "$USER_HOME_PATH"
 echo ""| tee -a $USER_HOME_PATH
 echo "========================================"| tee -a "$USER_HOME_PATH"
 echo "========================================"| tee -a "$USER_HOME_PATH"
